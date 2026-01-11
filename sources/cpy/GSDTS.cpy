@@ -1,0 +1,6 @@
+       01  WK-C-GSDTS-RECORD.
+           05  WK-C-GSDTS-OUTPUT.
+           10  WK-C-GSDTS-VALID-OUTPUT.
+           15  WK-N-GSDTS-NXTPROCDT  PIC S9(08).
+           15  WK-N-GSDTS-SYSDTE     PIC S9(08).
+           15  WK-N-GSDTS-LSTPROCDT  PIC S9(08).

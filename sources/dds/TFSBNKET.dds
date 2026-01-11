@@ -1,0 +1,34 @@
+      ****************************************************************
+     A*                                 AMENDMENT    HISTORY                             *
+     jA* *************************************************************
+     A*   NUMBER   DATE            BY         DESCRIPTION                                *
+     A* GHISDF     25/09/2002      TMPSDF     GLOBAL    HUBBING:                         *
+     A*                                       1.    REMOVE   HARDCODE LIB.(DDSDB)        *
+     A*                                       2.    CHANGE   REFERENCE     FILE   FROM   *
+     A*                                             COMREF   TO   REMREF                 *
+ ^ic*A************************************************************
+GHISDF*                                                  REF(DDSDB/COMREF)
+GHISDF                                                   REF(REMREF)
+                                                         UNIQUE
+                   R   TFSBNKETR
+                       BNKENTTY    R
+                       BNKENTSN    R
+                       FULNAME     R
+                       ADDR1       R
+                       ADDR2       R
+                       ADDR3       R
+                       POSTAL      R
+                       SWFTBNK     R
+                       SHFTBNK     R
+                       TELNO       R
+                       TELEXNO     R
+                       FAXNO       R
+                       CABLADDR    R
+                       ANSBKCD     R
+                       TID         R
+                       MASLMTP     R
+                       MASLMTS     R
+                       BRIND       R
+                       MASNOSTR    R
+                       SETUPDTE    R
+                       LSTUPDTE    R

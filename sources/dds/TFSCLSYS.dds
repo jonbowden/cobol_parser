@@ -1,0 +1,37 @@
+      ****************************************************************
+     A*                                 AMENDMENT     HISTORY                                   *
+     A* ************************************************************* ** *
+     A*   NUMBER   DATE            BY           DESCRIPTION                                     *
+     A* GHISDF     25f0912002      TMPSDF       GLOBAL   HUBBING:                               *
+     A*                                         1.   REMOVE HARDCODE        LIB.(DDSDB)         *
+     A*                                         2.   CHANGE   REFERENCE      FILE   FROM        *
+     A*                                              COMREF   TO   REMREF                       *
+     A* ************************************************************* ** *
+GHISDF*                                                   REF(DDSDB/COMREF)
+GHISDF                                                    REF(REMREF)
+                   R   TFSCLSYSR
+                       TSYSIND     R
+                       RSYSIND     R
+                       SYSDTE      R
+                       NXTPROCDT   R
+                       LSTPROCDT           8S   0         TEXT('LAST        PROCESS.   DATE')
+                       LCNTRYCD    R
+                       LCUYCD      R
+                       USCUYCD     R
+                       CAIND       R
+                       FCCAIND     R
+                       SAIND       R
+                       FXIND       R
+                       CLSIND      R
+                       MERVIND     R
+                       MERVTIND    R
+                       MERVRIND    R
+                       MSGNOTRD    R
+                       MSGNOREM    R
+                       CAEMNO      R
+                       FCCAEMNO    R
+                       FORMLNO     R
+                       PARALNO     R                      TEXT('USE FOR INCOMING MESSAGE')
+                       FXDEAL              6S   0         TEXT(TREMIS BATCH NO')
+                       SETUPDTE    R
+                       LSTUPDTE    R

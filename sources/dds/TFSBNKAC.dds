@@ -1,0 +1,38 @@
+     J^-k *********************************************************** *****
+     A*                                 AMENDMENT     HISTORY                              ie
+      '***'*********************************************************** **
+     A*   NUMBER   DATE            BY           DESCRIPTION                                *
+     A*   GHINVB   30/07/2002      NVBUOT       GLOBAL   HUBBING:                          *
+     A*                                         1.   REMOVE   HARDCODE   LIB.              ie
+     A*                                                                                    *
+     A*   GHISDF   23/09/2002      TMPSDF       1.   CHANGE REFERENCE FILE FROM            *
+     A*                                              COMREF   TO   REMREF.                 *
+     jtA************************************************************* ****
+GHINVB*                                                   REF(DDSDB/COMREF)
+GHINVB*                                                   REF(COMREF)
+GHISDF                                                    REF(REMREF)
+                                                          UNIQUE
+                   R   TFSBNKACR
+                       BNKENTTY    R
+                       BANKID      R
+                       CUYCD       R
+                       PRIORTY     R
+                       BNKACNO     R
+                       ACUDBUI     R
+                       ACCTYP      R
+                       AGTCOMIS    R
+                       ADVAMT             15S   2         TEXT(MT100 ADVICE AMOUNT')
+                       SETUPDTE    R
+                       LSTUPDTE    R
+                   K   BNKENTTY
+                   K   BANKID
+                   K   CUYCD
+                   K   PRIORTY
+****************************************************************
+*      AMENDMENT    HISTORY                                    *
+****************************************************************
+* PROGRAMMER               DATE           TAG      DESCRIPTION                             *
+*                                                                                          *
+*VENAF2                   03/02/2017     CMP3E5 CASH MANAGEMENT PROJECT 3                  *
+*
+                                                   AUTO      COVER     MATCHING            *

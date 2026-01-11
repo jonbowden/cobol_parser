@@ -1,0 +1,42 @@
+      *TFSCNTRY.cpybk
+      *I-O FORMAT:TFSCNTRY FROM FILE TFSCNTRY OF LIBRAR Y COMLIB
+      *
+           05 TFSCNTRY REDEFINES TFSCNTRY-RECORD.
+           06 TFSCNTRY-CNTRYCD PIC X(2).
+      *            COUNTRY CODE
+           06 TFSCNTRY-SHRNAME PIC X(11).
+      *            SHORT NAME
+           06 TFSCNTRY-FULNAME PIC X(35).
+      *            FULL NAME
+           06 TFSCNTRY-RISKIND PIC X(1).
+      *            RISK COUNTRY IND Y/N
+           06 TFSCNTRY-CABLEFULL PIC S9(13)V9(2).
+      *            FULL CABLE CHARGES
+           06 TFSCNTRY-CABLEBRIF PIC S9(13)V9(2).
+      *            BRIEF CABLE CHARGES
+           06 TFSCNTRY-CABLEOTHR PIC S9(13)V9(2).
+      *            OTHER CABLE CHARGES
+           06 TFSCNTRY-PAYCABLE PIC S9(13)V9(2).
+      *            PAYMENT CABLE
+           06 TFSCNTRY-POSTAGE PIC S9(13)V9(2).
+      *            POSTAGE CHARGES OBC,CBP,ETC
+           06 TFSCNTRY-NODOCPOS PIC S9(13)V9(2).
+      *            POSTAGE W/O DOCUMENT OTHER POSTAGE CH
+           06 TFSCNTRY-COURIER PIC S9(13)V9(2).
+      *            COURIER CHARGES
+           06 TFSCNTRY-NODOCOCU PIC S9(13)V9(2).
+      *            COURIER W/O DOCUMENT OTHER COURIER CHAR
+           06 TFSCNTRY-REPORTIND PIC X(1).
+      *            REPORTABLE IND
+           06 TFSCNTRY-GPRDETA PIC S9(3).
+      *            GRACE PERIOD-DAYS FOR ETA
+           06 TFSCNTRY-RCABL PIC S9(13)V9(2).
+      *            REMITTANCE CABLE CHARGE
+           06 TFSCNTRY-RCABLN P PIC S9(13)V9(2).
+      *            REMITTANCE CABLE CHARGE NO P
+           06 TFSCNTRY-RPOSTAGE PIC S9(13)V9(2).
+      *            REMITTANCE POSTAGE CHARGE
+           06 TFSCNTRY-SETUPDTE PIC S9(8).
+      *            SET UP DATE
+           06 TFSCNTRY-LSTUPDTE PIC S9(8).
+      *            LAST UPDATE DATE

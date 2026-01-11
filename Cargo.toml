@@ -1,0 +1,33 @@
+[package]
+name = "cobol_parser"
+version = "0.1.0"
+edition = "2021"
+description = "COBOL parser for legacy code analysis - comparing tree-sitter vs cobolparser approaches"
+authors = ["Jon Bowden"]
+
+[dependencies]
+# Tree-sitter core and COBOL grammar (local build)
+tree-sitter = "0.24"
+tree-sitter-cobol = { path = "tree-sitter-cobol-grammar" }
+
+# Alternative parser (AlephTree based)
+cobolparser = "0.1"
+aleph-syntax-tree = "0.1"
+
+# Common utilities
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+anyhow = "1.0"
+walkdir = "2.5"
+regex = "1.11"
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "parser_benchmark"
+harness = false
+
+[[example]]
+name = "parse_program"

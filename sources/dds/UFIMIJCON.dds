@@ -1,0 +1,50 @@
+ ****************************************************************
+A*   HISTORY   OF    AMENDMENT       :
+PA* ************************************************************ -k ie * *
+A*   IDL2A1        ACNNPL        02/02/2017          INTRA-DAY   LIMIT
+A*                                                   INITIAL   VERSION
+pA* ************************************************************ ****
+                                                        REF(REMREF)
+               R    UFIMIJCONR
+                    QUENUM       R
+                    QUESUF       R
+                    TRNNO        R
+                    STATUS                 1A          TEXT(’STATUS')
+                    SWFTMGTY     R
+                    SENBNKID              11A          TEXT('SENDING BANK')
+                    RELTRNREF             16A          TEXT('RELATED TRANS REF')
+                    VALUEDTE               6S          TEXT('VALUE DATE')
+                    CUYCD        R
+                    AMOUNT                15S    2     TEXT('AMOUNT')
+                    BENEBNK               11A          TEXT('BENE BANK')
+                    INTDTE       R
+                    TOLERA                 1A          TEXT('TOLERANCE')
+                    UTLIDL                 1A          TEXT('IDL UTILIZATION')
+                   ACCNO         R
+                   ACCCUY        R
+                    BNKENTTY     R
+                    MSGBDY           lOOOOA
+                    REVTRNNO              12A          TEXT('ITT REVERSAL TXN NO')
+                   RESETCOV                1A          TEXT('RESET COVER INDICATOR')
+                    PASTDUE                3S    0     TEXT('DAYS PAST DUE')
+                    LSTUPDTE               6S          TEXT('LAST UPDATE PAST DUE')
+                    SEGCDE                 1A          TEXT('SEGMENT CODE')
+                    LCCUY                  3A          TEXT('LOCAL CURRENCY CODE')
+                    LCAMT                 15S    2     TEXT('LOCAL CURRENCY AMOUNT')
+                    FUNCTID               12A          TEXT('FUNCTION ID')
+                    OPRID                 lOA          TEXT('OPERATOR ID')
+                   APROVID                 8A          TEXT('APPROVAL ID')
+                    CREATEDTE              6S    0     TEXT('CREATE DATE')
+                   APROVDTE                6S    0     TEXT('APPROVED DATE')
+                    BENEACCNO             15A          TEXT('BENE ACC NO')
+                    BENEACCNAM            3 5A         TEXT(’BENE ACC NAME         )
+                    FILLER1              250A          TEXT('FILLER 1')
+                    FILLER2              250A          TEXT('FILLER 2')
+                    FILLERS              250A          TEXT('FILLER 3')
+                    FILLER4              250A          TEXT('FILLER 4')
+                    FILLERS               18S          TEXT('FILLER 5')
+                    FILLER6               18S          TEXT('FILLER 6')
+                    FILLER?               18S          TEXT('FILLER 7')
+                    FILLERS               18S          TEXT('FILLER 8')
+               K    QUENUM
+               K    QUESUF

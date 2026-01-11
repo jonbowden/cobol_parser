@@ -1,0 +1,27 @@
+       15  WK-C-VCSA-REG-ADDR3         PIC X(35).
+       15  WK-C-VCSA-REG-ADDR4         PIC X(35).
+       15  WK-C-VCSA-REG-BLK           PIC X(07).
+       15  WK-C-VCSA-REG-STOREY        PIC X(04).
+       15  WK-C-VCSA-REG-UNIT          PIC X(07).
+       15  WK-C-VCSA-REG-PO-BOX        PIC X(06).
+       15  WK-C-VCSA-REG-BUILD         PIC X(04).
+       15  WK-C-VCSA-REG-STREET        PIC X(32).
+       15  WK-C-VCSA-REG-STATE         PIC X(20).
+       15  WK-N-VCSA-REG-POSTAL        PIC 9(09).
+       15  WK-C-VCSA-REG-CTY-CODE      PIC X(03).
+       15  WK-C-VCSA-REG-ADDR-TYPE     PIC X(01).
+       15  WK-C-VCSA-REG-ADDR-FORMAT   PIC X(01).
+       15  WK-C-VCSA-REG-FOREIGN-IND   PIC X(01).
+       15  WK-C-VCSA-REG-VERIFY-IND    PIC X(01).
+       15  WK-C-VCSA-HOLDMAIL-IND      PIC X(01).
+       15  WK-C-VCSA-ACCT-ADDR-FORMAT  PIC X(01).
+       15  WK-C-VCSA-PRI-ID-NUM        PIC X(15).
+       15  WK-C-VCSA-PRI-ID-TYPE       PIC X(02).
+       15  WK-C-VCSA-PRI-OWN-CTY-CODE  PIC X(03).
+       15  WK-N-VCSA-PRI-DOB           PIC 9(08).
+       15  WK-C-VCSA-PRI-CTIZEN-CTY-CODE PIC X(03).
+       15  WK-C-VCSA-ACCT-ADDR1        PIC X(35).
+       15  WK-C-VCSA-ACCT-ADDR2        PIC X(35).
+       15  WK-C-VCSA-ACCT-ADDR3        PIC X(35).
+       15  WK-C-VCSA-ACCT-ADDR4        PIC X(35).
+      * end of 626JTC *

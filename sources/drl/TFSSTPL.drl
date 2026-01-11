@@ -1,0 +1,235 @@
+      *                                    SMITYI*       05    TFSSTPL-RECORD                            PIC       X(1499).
+SMITYI 05 TFSSTPL-RECORD                PIC X(1504).
+      *
+           I-O   FORMAT:TFSSTPLR           FROM   FILE    TFSSTPL                 OF    LIBRARY     COMLIB
+      *
+
+
+              05 TFSSTPLR             REDEFINES   TFSSTPL-RECORD.
+              06 TFSSTPL-PARALNO        PIC 9(08) .
+      *
+      *                                    PARA    FILE       LAST       RUNNING       NO
+              06 TFSSTPL-SEQNUM         PIC 9(02).
+      *
+      *                                    SEQUENCE          NUMBER
+              06 TFSSTPL-INTDTE         PIC 9(08).
+      *
+      *                                    INTERFACE             DATE
+              06 TFSSTPL-INTTIM         PIC 9(08).
+      *
+      *                                    INTERFACE             TIME
+              06 TFSSTPL-SWFTMGTY       PIC 9(03).
+      *
+      *                                    SWIFT          MSG    TYP
+              06 TFSSTPL-IMSGTYPE       PIC X(01).
+      *
+      *                                    INWARD       MESSAGE          TYPE
+              06 TFSSTPL-TRNSMTMD       PIC X.
+      *
+      *                                    TRANSMIT          MTD
+SMITYI 06 TFSSTPL-SSNO                  PIC X(04).
+      *                                    SMITYI*                                                       SESSION          NO
+              06 TFSSTPL-OSNNO          PIC X(06).
+      *
+      *                                    OUT       NO
+              06 TFSSTPL-ISNNO          PIC 9(06).
+      *
+      *                                    IN    NO
+              06 TFSSTPL-PROCUNIT       PIC X(03).
+      *
+      *                                    PROCESSING             UNIT
+              06 TFSSTPL-BNKENTTY       PIC X(02).
+      *
+      *                                    BANK    ENTITY          NO.
+              06 TFSSTPL-SENBNKID       PIC X (11) .
+      *
+      *                                    SEND       BANK       ID
+              06 TFSSTPL-PRCIND         PIC X.
+      *
+      *                                    PROCESS          IND
+              06 TFSSTPL-STRIND         PIC X.
+      *
+      *                                    STP       IND
+              06 TFSSTPL-CUYCD          PIC X(03).
+      *
+      *                                    CURRENCY          CODE
+              06 TFSSTPL-AMT            PIC S9(15)V9(2) COMP-3.
+      *
+      *                                    AMOUNT
+              06 TFSSTPL-LCAMT          PIC S9(15)V9(2) COMP-3.
+      *
+      *                                    LOCAL EQUIVALENT                   AMOUNT
+              06 TFSSTPL-TAG53.
+                 08 TFSSTPL-TAG53-OPT      PIC X(04).
+                 08 TFSSTPL-TAG53-VAL.
+                 10 TFSSTPL-TAG53-V1.
+                    12 TFSSTPL-TAG53-V1A      PIC X (02) .
+                    12 TFSSTPL-TAG53-V1B      PIC X(35).
+                 10 TFSSTPL-TAG53-V2       PIC X(35) OCCURS 4             TIMES.
+      *
+      *                                    TAG    53    OPTION
+              06 TFSSTPL-TAG54.
+                 08 TFSSTPL-TAG54-OPT      PIC X(04).
+                 08 TFSSTPL-TAG54-VAL.
+                 10 TFSSTPL-TAG54-V1.
+                    12 TFSSTPL-TAG54-V1A      PIC X(02).
+                    12 TFSSTPL-TAG54-V1B      PIC X(35).
+                 10 TFSSTPL-TAG54-V2       PIC X(35) OCCURS 4             TIMES.
+      *                                                  TAG    54    OPTION
+              06 TFSSTPL-TAG56.
+                 08 TFSSTPL-TAG56-OPT      PIC X(04).
+                 08 TFSSTPL-TAG56-VAL.
+                 10 TFSSTPL-TAG56-V1.
+                    12 TFSSTPL-TAG56-V1A      PIC X(02).
+                    12 TFSSTPL-TAG56-V1B      PIC X(35).
+                 10 TFSSTPL-TAG56-V2       PIC X(35) OCCURS 4             TIMES.
+      *                                    it                                                 TAG    56    OPTION
+              06 TFSSTPL-TAG57.
+                 08 TFSSTPL-TAG57-OPT      PIC X(04).
+                 08 TFSSTPL-TAG57-VAL.
+                 10 TFSSTPL-TAG57-V1.
+                    12 TFSSTPL-TAG57-V1A      PIC X(02).
+                    12 TFSSTPL-TAG57-V1B      PIC X(35).
+                 10 TFSSTPL-TAG57-V2       PIC X(35) OCCURS 4               TIMES.
+      *                                    TAG    57    OPTION
+              06 TFSSTPL-TAG58.
+                 08 TFSSTPL-TAG58-OPT      PIC X(04).
+                 08 TFSSTPL-TAG58-VAL.
+                 10 TFSSTPL-TAG58-V1.
+                    12 TFSSTPL-TAG58-V1A      PIC X(02).
+                    12 TFSSTPL-TAG58-V1B      PIC X(35).
+                 10 TFSSTPL-TAG58-V2       PIC X(35) OCCURS 4 TIMES.
+      *                                    TAG    58       OPTION
+              06 TFSSTPL-TAG59.
+                 08 TFSSTPL-TAG59-OPT      PIC X(03).
+                 08 TFSSTPL-TAG59-VAL.
+                 10 TFSSTPL-TAG59-V1       PIC X(35).
+                 10 TFSSTPL-TAG59-V2       PIC X(35) OCCURS             4 TIMES.
+                 08 TFSSTPL-TAG59-OPCH     PIC X(01).
+                 08 TFSSTPL-TAG59-FILL     PIC X (02) .
+      *                                    TAG    59       OPTION
+              06 TFSSTPL-DATAAREA.
+                 08 TFSSTPL-DATAREA1       PIC X (20) .
+      *                                    TABLE       A    IND
+                 08 TFSSTPL-DATAREB1       PIC X(20).
+      *                                    TABLE       B1    IND
+                 08 TFSSTPL-DATAREB2       PIC X(20).
+      *                                    TABLE       B2    IND
+                 08 TFSSTPL-DATAREB3       PIC X(20).
+      *                                    TABLE       B3    IND
+                 08 TFSSTPL-DATAREC1       PIC X(20).
+      *                                    TABLE       C    IND
+                 08 TFSSTPL-DATARED1       PIC X(20).
+      *                                    TABLE       D1    IND
+                 08 TFSSTPL-DATARED2       PIC X(20).
+      *                                    TABLE       D2    IND
+                 08 TFSSTPL-DATAREE1       PIC X(20).
+      *                                    TABLE       El    IND
+                 08 TFSSTPL-DATAREE2       PIC X(20).
+      *                                    TABLE       E2    IND
+                 08 TFSSTPL-DATAREE3       PIC X(20).
+      *                                    TABLE       E3    IND
+                 08 TFSSTPL-DATARFIA       PIC X(20).
+      *                                    TABLE       FIA    IND
+                 08 TFSSTPL-DATARFIB       PIC X(20).
+      *                                    TABLE       FIB    IND
+                 08 TFSSTPL-DATARF2        PIC X(20).
+      *                                    TABLE       F2    IND
+              06 TFSSTPL-ACTA.
+                 08 TFSSTPL-ACTA1          PIC X.
+      *                                  ACTION    INDICATOR        A1
+                 08 TFSSTPL-ACTA2          PIC X.
+      *                                  ACTION    INDICATOR        A2
+              06 TFSSTPL-ACTBl.
+                 08 TFSSTPL-ACTB11         PIC X.
+      *
+      *                                    ACTION    INDICATOR        Bll
+                 08 TFSSTPL-ACTB12         PIC X.
+      *
+      *                                    ACTION    INDICATOR        B12
+                 08 TFSSTPL-ACTB13         PIC X.
+      *
+      *                                    ACTION    INDICATOR B13
+                 08 TFSSTPL-ACTB14         PIC X.
+      *
+      *                                    ACTION    INDICATOR        B14
+                 08 TFSSTPL-ACTB15         PIC X.
+      *
+      *                                    ACTION    INDICATOR        B15
+                 08 TFSSTPL-ACTB16         PIC X.
+      *
+      *                                    ACTION       INDICATOR          B16
+              06 TFSSTPL-ACTB2.
+                 08 TFSSTPL-ACTB21         PIC X.
+      *
+      *                                    ACTION       INDICATOR          B21
+                 08 TFSSTPL-ACTB22         PIC X.
+      *
+      *                                    ACTION       INDICATOR          B22
+                 08 TFSSTPL-ACTB23         PIC X.
+      *
+      *                                    ACTION       INDICATOR          B23
+              06 TFSSTPL-ACTB3.
+                 08 TFSSTPL-ACTB31         PIC X.
+      *
+      *                                    ACTION       INDICATOR          B31
+                 08 TFSSTPL-ACTB32         PIC X.
+      *
+      *                                    ACTION       INDICATOR          B32
+                 08 TFSSTPL-ACTB33         PIC X.
+      *
+      *                                    ACTION       INDICATOR          B33
+                 08 TFSSTPL-ACTB34         PIC X.
+      *
+      *                                    ACTION       INDICATOR          B34
+              06 TFSSTPL-ACTDl.
+                 08 TFSSTPL-ACTD11         PIC X.
+      *                                    ACTION       INDICATOR          Dll
+                 08 TFSSTPL-ACTD12         PIC X.
+      *                               ACTION       INDICATOR          D12
+              06 TFSSTPL-ACTEl.
+                 08 TFSSTPL-ACTE11         PIC X.
+      *
+      *                                    ACTION       INDICATOR          Ell
+                 08 TFSSTPL-ACTE12         PIC X.
+      *                                    k
+      *                                    ACTION       INDICATOR          E12
+                 08 TFSSTPL-ACTE13         PIC X.
+      *
+      *                                    ACTION       INDICATOR          E13
+              06 TFSSTPL-ACTE2          PIC X.
+      *
+      *                                    ACTION       INDICATOR          E2
+              06 TFSSTPL-ACTE3          PIC X.
+      *
+      *                                    ACTION       INDICATOR          E3
+              06 TFSSTPL-ERRT72         PIC X.
+      *                               TAG72    ERROR       INDICATOR
+              06 TFSSTPL-ERRCDT         PIC X.
+      *                                    'k
+      *                                    DATE    ERROR       INDICATOR
+              06 TFSSTPL-ERRCCY         PIC X.
+      *
+      *                                    CURRENCY       ERROR       INDICATOR
+              06 TFSSTPL-ERRAMT         PIC X.
+      *                               AMOUNT       ERROR    INDICATOR
+              06 TFSSTPL-ERRTMD         PIC X.
+      *                               TELEX    INDICATOR
+              06 TFSSTPL-IRSWERR        PIC X.
+      *                               IRSWAMT       ERROR
+              06 TFSSTPL-FUNCTID        PIC X(08).
+      *                               FUNCTION       ID
+              06 TFSSTPL-FFUNCTID       PIC X(08).
+      *                                    k                               FINAL    FUNCTION          ID
+              06 TFSSTPL-STPTYP         PIC X(05).
+      *                               STP    TYPE
+              06 TFSSTPL-FSTPTYP        PIC X(05).
+      *                               FINAL    STP       TYPE
+              06 TFSSTPL-DRMODE         PIC X(08).
+      *                               DEBIT    PAYMENT          MODE
+              06 TFSSTPL-CRMODE         PIC X(08).
+      *                                    k                               CREDIT       PAYMENT       MODE
+              06 TFSSTPL-FXRATETY       PIC X(02).
+      *                               CUSTOMER       FX    RATE
+      *                                    REF(REMREF)
+      *                                    UNIQUE

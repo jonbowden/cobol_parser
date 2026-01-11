@@ -1,0 +1,118 @@
+
+      *                                    "k
+      *                                    INITIAL       VERSION                       k
+
+      *                                    kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+
+              05 UFIMIJCON-RECORD       PIC X(11323).
+
+      *    I-O    FORMAT:UFIMIJCON             FROM   FILE    UFIMIJCON
+              05 UFIMIJCONR         REDEFINES      UFIMIJCON-RECORD.
+      *
+
+
+              06 UFIMIJCON-QUENUM       PIC S9(08).
+      *                                    k
+      *                                    QUEUE NUMBER
+              06 UFIMIJCON-QUESUF       PIC S9(02) .
+      *
+      *                                    QUEUE     SUF
+              06 UFIMIJCON-TRNNO        PIC X(12).
+      *
+      *                                    TRANSACTION          NO
+              06 UFIMIJCON-STATUS       PIC X (01) .
+      *
+      *                                    STATUS
+              06 UFIMIJCON-SWFTMGTY     PIC S9(3) .
+      *
+      *                                    SWIFT    MSG      TYPE
+              06 UFIMIJCON-SENBNKID     PIC X(11).
+      *
+      *                                    SENDER     BIC
+              06 UFIMIJCON-RELTRNREF    PIC X(16).
+      *
+      *                                    RELATED       REFERENCE
+              06 UFIMIJCON-VALUEDTE     PIC S9(6) .
+      *
+      *                                    VALUE    DATE
+              06 UFIMIJCON-CUYCD        PIC X(3).
+      *
+      *                                    CURRENCY        CODE
+              06 UFIMIJCON-AMOUNT       PIC S9(13)V9(2).
+      *
+      *                                    AMOUNT
+              06 UFIMIJCON-BENEBNK      PIC X(11).
+      *                                    k
+      *                                    BENEFICIARY          INSTITUTION
+              06 UFIMIJCON-INTDTE       PIC S9(8).
+      *
+      *                                    INTERFACE         DATE
+              06 UFIMIJCON-TOLERA       PIC X(1).
+      *
+      *                                    TOLERANCE
+              06 UFIMIJCON-UTLIDL       PIC X(1).
+      *
+      *                                    IDL    UTILIZATION
+              06 UFIMIJCON-ACCNO        PIC X(15).
+      *
+      *                                    Account     Number
+              06 UFIMIJCON-ACCCUY       PIC X(3).
+      *
+      *                                    BANK    ENTITY
+              06 UFIMIJCON-BNKENTTY     PIC S9(2) .
+      *
+      *                                    BANK    ENTITY
+              06 UFIMIJCON-MSGBDY       PIC X(100OO).
+      *                                                      MESSAGE       BODY
+              06 UFIMIJCON-REVTRNNO     PIC X(12).
+      *                                                      ITT Reversal           Transaction No
+              06 UFIMIJCON-RESETCOV     PIC X(01).
+      *                                                      Reset Cover          Indicator
+              06 UFIMIJCON-PASTDUE      PIC S9(03) .
+      *
+      *                                    Days Past Due
+           0 6    UFIMIJCON-LSTUPDTE              PIC    S9(06) .
+      *
+      *                                    Last Update Past Due
+              06 UFIMIJCON-SEGCDE       PIC X(01).
+      *
+      *                                    Segment Code
+              06 UFIMIJCON-LCCUY        PIC X(03).
+      *
+      *                                    Local Currency Code
+              06 UFIMIJCON-LCAMT        PIC S9(13)V9(2).
+      *
+      *                                    Local Currency Amount
+              06 UFIMIJCON-FUNCTID      PIC X(12).
+      *                                    k                                                      Function        ID
+              06 UFIMIJCON-OPRID        PIC X(10).
+      *                                Operator ID
+              06 UFIMIJCON-APROVID      PIC X (08) .
+      *                                Approval ID
+              06 UFIMIJCON-CREATEDTE    PIC S9(06).
+      *                                Create    Date
+              06 UFIMIJCON-APROVDTE     PIC S9(06).
+      *
+      *                                    Approved Date
+              06 UFIMIJCON-BENEACCNO    PIC X(15).
+      *
+      *                                    Beneficiary Account   Number
+              06 UFIMIJCON-BENEACCNAM   PIC X(35).
+      *                                Beneficiary Account   Name
+
+              06 UFIMIJCON-FILLER1      PIC X(250).
+      *                                Filler    1
+              06 UFIMIJCON-FILLER2      PIC X(250).
+      *                                Filler    2
+              06 UFIMIJCON-FILLERS      PIC X(250).
+      *                                Filler    3
+           0 6   UFIMIJCON-FILLER4      PIC X(250).
+      *                                Filler    4
+              06 UFIMIJCON-FILLERS      PIC S9(18).
+      *                                Filler    5
+              06 UFIMIJCON-FILLERS      PIC S9(18) .
+      *                                Filler    6
+              06 UFIMIJCON-FILLER?      PIC S9(18) .
+      *                                Filler    7
+              06 UFIMIJCON-FILLERS      PIC S9(18).
+      *                                Filler    8
