@@ -379,12 +379,15 @@ impl TreeSitterCobolParser {
 
             if kind.contains("call") {
                 // Try to get the called program name
+                // The grammar uses "string" for quoted literals like "PROGNAME"
                 for i in 0..node.child_count() {
                     if let Some(child) = node.child(i) {
                         let child_kind = child.kind();
-                        if child_kind.contains("literal") || child_kind.contains("identifier") {
+                        if child_kind == "string" || child_kind.contains("literal") || child_kind.contains("identifier") {
                             let name = self.node_text(&child, source)
-                                .trim_matches(|c| c == '"' || c == '\'')
+                                .chars()
+                                .filter(|c| c.is_alphanumeric() || *c == '-' || *c == '_')
+                                .collect::<String>()
                                 .to_uppercase();
                             if !name.is_empty() && name != "CALL" {
                                 calls.push(name);

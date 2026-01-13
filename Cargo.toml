@@ -23,6 +23,7 @@ walkdir = "2.5"
 regex = "1.11"
 
 [dev-dependencies]
+cobolparser = "0.1"
 criterion = "0.5"
 
 [[bench]]
@@ -31,3 +32,7 @@ harness = false
 
 [[example]]
 name = "parse_program"
+
+[[bin]]
+name = "cobol_parse"
+path = "src/bin/cobol_parse.rs"
