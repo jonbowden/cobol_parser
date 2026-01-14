@@ -19,16 +19,19 @@ cobol_parser/
 │   ├── lib.rs              # Library entry point
 │   ├── main.rs             # CLI application
 │   ├── model.rs            # IR object model (Program, Procedure, Entity, etc.)
+│   ├── preprocessor.rs     # COBOL source preprocessing (continuation lines, etc.)
 │   └── parsers/
-│       ├── mod.rs          # Parser trait and factory
+│       ├── mod.rs          # Parser trait, factory, and source normalization
 │       ├── tree_sitter_parser.rs  # Tree-sitter implementation
 │       └── aleph_parser.rs # Cobolparser/AlephTree implementation
-├── tree-sitter-cobol-grammar/  # Local tree-sitter COBOL grammar
+├── tree-sitter-cobol-grammar/  # Local tree-sitter COBOL grammar (modified)
 ├── sources/                    # COBOL source files for testing
 │   ├── pgm/               # COBOL programs
 │   └── cpy/               # Copybooks
 └── examples/
-    └── parse_program.rs   # Example usage
+    ├── parse_program.rs   # Example usage
+    ├── count_clean.rs     # Count files parsing without errors
+    └── show_all_errors.rs # Display parsing errors across files
 ```
 
 ## Usage
@@ -72,13 +75,22 @@ println!("{}", comparison.report());
 - Accurate node type identification (paragraph_header, section_header)
 - Well-tested with NIST COBOL85 test suite
 - Incremental parsing support
+- EXEC SQL/CICS/DLI block support (via external scanner)
+
+**Source Normalization Features:**
+- Tab expansion (8-column tab stops)
+- Change marker removal (inline version control markers)
+- Continuation line handling
+- Multiple space collapsing (reduces line length)
+- Split keyword fixing (e.g., "AN D" → "AND")
+- Level number indentation correction
+- Support for both fixed-format and free-format COBOL
 
 **Limitations:**
-- Strict column formatting requirements (COBOL fixed-format)
-- May miss paragraphs in non-standard or scanned code
-- Requires exact COBOL85 compliance
+- Some complex multi-line statements may not parse correctly
+- Source files with typos (e.g., `0I` instead of `01`) will have errors
 
-**Best for:** Production COBOL code with proper column formatting
+**Best for:** Production COBOL code with any formatting style
 
 ### Cobolparser (AlephTree)
 
@@ -94,7 +106,17 @@ println!("{}", comparison.report());
 
 **Best for:** Quick analysis, exploration, code with column formatting issues
 
-## Initial Test Results
+## Test Results
+
+### Current Parsing Status (21 test files)
+
+| Status | Count |
+|--------|-------|
+| Parsing cleanly (0 errors) | 9 |
+| Parsing with errors | 12 |
+| Total error nodes | 34 |
+
+**Clean files:** TRFVGLAC, TRFVCUYP, TRFVBACU, TRFXGSPA, GHOINSSTPL, TRFVBAC, TRFVTAG57, TRFVTB3, TRFVLMT
 
 ### TRFVBAC.cob (well-formatted, small file)
 
@@ -114,18 +136,13 @@ Both parsers correctly identified all 7 procedures:
 - Z000-END-PROGRAM-ROUTINE
 - Z999-END-PROGRAM-ROUTINE-EX
 
-### TRFVTB1.cob (larger file, possible column issues)
+### Remaining Error Types
 
-| Metric | Tree-sitter | Cobolparser |
-|--------|-------------|-------------|
-| Parse Time | 27 ms | 14 ms |
-| Procedures Found | 4 | 62 |
-| External Calls | 0 | 10 |
-
-**Analysis:**
-- Tree-sitter found only 4 procedures (strict column formatting)
-- Cobolparser found 62 but includes false positives like "END-IF"
-- This validates the concern about column adherence with scanned code
+The 34 remaining errors across 12 files are caused by:
+- **Source typos**: e.g., `0I` instead of `01` in level numbers
+- **Complex multi-line statements**: Conditions spanning multiple lines
+- **Non-standard VALUE/PIC ordering**: `VALUE "X". PIC X(20)` instead of `PIC X(20) VALUE "X"`
+- **Comment edge cases**: Unusual comment marker combinations
 
 ## Object Model
 
@@ -185,10 +202,18 @@ cargo bench
 | Tree-sitter | Native support | Via ctypes FFI |
 | Maturity | New | Production-ready |
 
+## Recent Improvements
+
+- **EXEC SQL/CICS/DLI support** - Grammar modified to use external scanner for multi-line embedded SQL blocks
+- **Tab expansion** - Source files with tabs are properly handled
+- **Space collapsing** - Excessive whitespace in source is collapsed to reduce line length
+- **Change marker handling** - Inline version control markers (e.g., `GP3M00`, `5Q1ARV`) are stripped
+- **Continuation line handling** - Multi-line strings and statements are properly joined
+- **Free-format support** - Both fixed-format and free-format COBOL files are supported
+
 ## Next Steps
 
-1. **Improve tree-sitter extraction** - Handle more node types for robustness
-2. **Add copybook resolution** - Inline COPY statements before parsing
-3. **Benchmark suite** - Compare performance systematically
-4. **Error recovery** - Better handling of malformed COBOL
-5. **SQL/CICS extraction** - Parse embedded SQL and CICS commands
+1. **Add copybook resolution** - Inline COPY statements before parsing
+2. **Benchmark suite** - Compare performance systematically
+3. **Grammar refinements** - Handle remaining edge cases (multi-line conditions, VALUE before PIC)
+4. **Error recovery** - Better handling of source files with typos
