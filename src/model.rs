@@ -244,6 +244,15 @@ pub struct FunctionKey {
     pub label: Option<String>,
 }
 
+/// Business rule extracted from IF conditions
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct BusinessRule {
+    pub variable: String,
+    pub operator: String,
+    pub value: String,
+    pub raw_condition: String,
+}
+
 /// Procedure/Paragraph object
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Procedure {
@@ -252,9 +261,14 @@ pub struct Procedure {
     pub parameters: Vec<String>,
     pub returns: Option<String>,
     pub calls: Vec<String>,
+    pub performs: Vec<String>,           // PERFORM targets (internal procedure calls)
     pub reads: Vec<String>,
     pub writes: Vec<String>,
     pub variables_used: Vec<String>,
+    pub business_rules: Vec<BusinessRule>, // Extracted IF conditions
+    pub reason_codes: Vec<String>,        // RSNxxxx codes
+    pub code_body: Option<String>,        // Actual source code
+    pub summary: Option<String>,          // Natural language summary
     pub source_start_line: Option<usize>,
     pub source_end_line: Option<usize>,
 }
@@ -266,9 +280,14 @@ impl Procedure {
             parameters: Vec::new(),
             returns: None,
             calls: Vec::new(),
+            performs: Vec::new(),
             reads: Vec::new(),
             writes: Vec::new(),
             variables_used: Vec::new(),
+            business_rules: Vec::new(),
+            reason_codes: Vec::new(),
+            code_body: None,
+            summary: None,
             source_start_line: None,
             source_end_line: None,
         }

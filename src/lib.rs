@@ -43,10 +43,12 @@
 pub mod copybook;
 pub mod model;
 pub mod parsers;
+pub mod preprocessor;
 
 pub use copybook::{CopybookConfig, CopybookResolver, ResolvedSource};
 pub use model::*;
 pub use parsers::{CobolParser, ParserConfig, ParserError};
+pub use preprocessor::{preprocess, PreprocessResult, SourceFix, FixType};
 
 use std::path::Path;
 

@@ -8,6 +8,7 @@ use crate::model::*;
 use std::path::Path;
 use std::time::Instant;
 use tree_sitter::{Parser, Tree, Node, TreeCursor};
+use regex::Regex;
 
 /// Tree-sitter based COBOL parser
 pub struct TreeSitterCobolParser {
@@ -185,7 +186,7 @@ impl TreeSitterCobolParser {
         divisions
     }
 
-    /// Extract procedures (paragraphs and sections)
+    /// Extract procedures (paragraphs and sections) with full semantic analysis
     fn extract_procedures(
         &self,
         root: &Node,
@@ -193,33 +194,215 @@ impl TreeSitterCobolParser {
         program_id: &str,
         config: &ParserConfig,
     ) -> Vec<Procedure> {
-        let mut procedures = Vec::new();
+        let source_str = String::from_utf8_lossy(source);
+        let source_lines: Vec<&str> = source_str.lines().collect();
+
+        // First pass: collect all procedure positions
+        let mut proc_positions: Vec<(String, usize, usize)> = Vec::new();
         let mut cursor = root.walk();
 
         self.walk_tree(&mut cursor, |node| {
             let kind = node.kind();
-
-            // Look for paragraph_header or section_header (tree-sitter-cobol specific node types)
             if kind == "paragraph_header" || kind == "section_header" {
-                // Extract the name from the first WORD child
-                let name = self.extract_procedure_name(node, source);
-                if let Some(name) = name {
-                    let urn = generate_urn(
-                        &ObjectType::Procedure,
-                        &format!("{}:{}", program_id, name),
-                        &config.app,
-                        config.urn_format,
-                    );
-
-                    let mut proc = Procedure::new(urn, name);
-                    proc.source_start_line = Some(node.start_position().row + 1);
-                    proc.source_end_line = Some(node.end_position().row + 1);
-                    procedures.push(proc);
+                if let Some(name) = self.extract_procedure_name(node, source) {
+                    let start = node.start_position().row;
+                    let end = node.end_position().row;
+                    proc_positions.push((name, start, end));
                 }
             }
         });
 
+        // Sort by start line
+        proc_positions.sort_by_key(|p| p.1);
+
+        // Second pass: extract body and analyze each procedure
+        let mut procedures = Vec::new();
+
+        for (i, (name, start_line, _)) in proc_positions.iter().enumerate() {
+            let urn = generate_urn(
+                &ObjectType::Procedure,
+                &format!("{}:{}", program_id, name),
+                &config.app,
+                config.urn_format,
+            );
+
+            let mut proc = Procedure::new(urn, name.clone());
+            proc.source_start_line = Some(*start_line + 1);
+
+            // Determine end line (next procedure or end of source)
+            let end_line = if i + 1 < proc_positions.len() {
+                proc_positions[i + 1].1
+            } else {
+                source_lines.len()
+            };
+            proc.source_end_line = Some(end_line);
+
+            // Extract procedure body
+            let body_lines: Vec<&str> = source_lines
+                .get(*start_line..end_line.min(source_lines.len()))
+                .unwrap_or(&[])
+                .to_vec();
+            let body = body_lines.join("\n");
+
+            // Store code body (limited to 2000 chars for efficiency)
+            proc.code_body = Some(if body.len() > 2000 {
+                body[..2000].to_string()
+            } else {
+                body.clone()
+            });
+
+            // Analyze the body
+            proc.performs = self.extract_performs(&body);
+            proc.calls = self.extract_procedure_calls(&body);
+            proc.business_rules = self.extract_business_rules(&body);
+            proc.reason_codes = self.extract_reason_codes(&body);
+            proc.reads = self.extract_reads(&body);
+            proc.writes = self.extract_writes(&body);
+
+            // Generate summary
+            proc.summary = Some(self.generate_procedure_summary(&proc));
+
+            procedures.push(proc);
+        }
+
         procedures
+    }
+
+    /// Extract PERFORM targets from procedure body
+    fn extract_performs(&self, body: &str) -> Vec<String> {
+        let mut performs = Vec::new();
+        let re = Regex::new(r"(?i)PERFORM\s+([A-Z0-9][\w-]+)").unwrap();
+
+        for cap in re.captures_iter(body) {
+            if let Some(target) = cap.get(1) {
+                let name = target.as_str().to_uppercase();
+                // Skip VARYING, UNTIL, etc.
+                if !["VARYING", "UNTIL", "TIMES", "WITH", "TEST"].contains(&name.as_str()) {
+                    if !performs.contains(&name) {
+                        performs.push(name);
+                    }
+                }
+            }
+        }
+        performs
+    }
+
+    /// Extract CALL statements from procedure body
+    fn extract_procedure_calls(&self, body: &str) -> Vec<String> {
+        let mut calls = Vec::new();
+        let re = Regex::new(r#"(?i)CALL\s+["']([A-Z0-9]+)["']"#).unwrap();
+
+        for cap in re.captures_iter(body) {
+            if let Some(target) = cap.get(1) {
+                let name = target.as_str().to_uppercase();
+                if !calls.contains(&name) {
+                    calls.push(name);
+                }
+            }
+        }
+        calls
+    }
+
+    /// Extract business rules from IF conditions
+    fn extract_business_rules(&self, body: &str) -> Vec<BusinessRule> {
+        let mut rules = Vec::new();
+        let re = Regex::new(r#"(?i)IF\s+([A-Z0-9][\w-]*)\s*(=|NOT\s*=|>|<|>=|<=|NOT\s+EQUAL|EQUAL)\s*(["']?[\w\s-]+["']?)"#).unwrap();
+
+        for cap in re.captures_iter(body) {
+            if let (Some(var), Some(op), Some(val)) = (cap.get(1), cap.get(2), cap.get(3)) {
+                let variable = var.as_str().to_uppercase();
+                // Skip loop variables and counters
+                if !variable.starts_with("WS-CNT") && !variable.starts_with("WS-IDX") {
+                    let value_str = val.as_str().trim();
+                    let clean_value = value_str
+                        .trim_matches('"')
+                        .trim_matches(|c| c == '\'' || c == '"')
+                        .to_string();
+                    rules.push(BusinessRule {
+                        variable,
+                        operator: op.as_str().to_uppercase(),
+                        value: clean_value,
+                        raw_condition: cap.get(0).map(|m| m.as_str().to_string()).unwrap_or_default(),
+                    });
+                }
+            }
+        }
+
+        // Limit to 10 rules per procedure
+        rules.truncate(10);
+        rules
+    }
+
+    /// Extract reason/error codes
+    fn extract_reason_codes(&self, body: &str) -> Vec<String> {
+        let mut codes = Vec::new();
+        let re = Regex::new(r"(?i)(RSN\d{4}|ERR\d{3,4}|[A-Z]{3}\d{4})").unwrap();
+
+        for cap in re.captures_iter(body) {
+            if let Some(code) = cap.get(1) {
+                let code_str = code.as_str().to_uppercase();
+                if !codes.contains(&code_str) {
+                    codes.push(code_str);
+                }
+            }
+        }
+        codes
+    }
+
+    /// Extract READ operations from procedure body
+    fn extract_reads(&self, body: &str) -> Vec<String> {
+        let mut reads = Vec::new();
+        let re = Regex::new(r"(?i)READ\s+([A-Z0-9][\w-]+)").unwrap();
+
+        for cap in re.captures_iter(body) {
+            if let Some(table) = cap.get(1) {
+                let name = table.as_str().to_uppercase();
+                if !reads.contains(&name) {
+                    reads.push(name);
+                }
+            }
+        }
+        reads
+    }
+
+    /// Extract WRITE operations from procedure body
+    fn extract_writes(&self, body: &str) -> Vec<String> {
+        let mut writes = Vec::new();
+        let re = Regex::new(r"(?i)WRITE\s+([A-Z0-9][\w-]+)").unwrap();
+
+        for cap in re.captures_iter(body) {
+            if let Some(table) = cap.get(1) {
+                let name = table.as_str().to_uppercase();
+                if !writes.contains(&name) {
+                    writes.push(name);
+                }
+            }
+        }
+        writes
+    }
+
+    /// Generate natural language summary of procedure
+    fn generate_procedure_summary(&self, proc: &Procedure) -> String {
+        let mut parts = vec![format!("Procedure {}", proc.base.name)];
+
+        if !proc.calls.is_empty() {
+            parts.push(format!("calls {}", proc.calls.join(", ")));
+        }
+        if !proc.performs.is_empty() {
+            parts.push(format!("performs {}", proc.performs.iter().take(3).cloned().collect::<Vec<_>>().join(", ")));
+        }
+        if !proc.reads.is_empty() {
+            parts.push(format!("reads {}", proc.reads.join(", ")));
+        }
+        if !proc.business_rules.is_empty() {
+            let rule_count = proc.business_rules.len();
+            parts.push(format!("has {} business condition(s)", rule_count));
+        }
+        if !proc.reason_codes.is_empty() {
+            parts.push(format!("uses reason codes {}", proc.reason_codes.join(", ")));
+        }
+
+        parts.join("; ")
     }
 
     /// Extract procedure name from a paragraph_header or section_header node
