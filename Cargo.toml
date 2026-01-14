@@ -6,9 +6,9 @@ description = "COBOL parser for legacy code analysis - comparing tree-sitter vs 
 authors = ["Jon Bowden"]
 
 [dependencies]
-# Tree-sitter core and COBOL grammar (local build)
-tree-sitter = "0.24"
-tree-sitter-cobol = { path = "tree-sitter-cobol-grammar" }
+# Tree-sitter core and COBOL grammar
+tree-sitter = "0.20"
+tree-sitter-cobol = { path = "tree-sitter-cobol-grammar", package = "tree-sitter-COBOL" }
 
 # Alternative parser (AlephTree based)
 cobolparser = "0.1"

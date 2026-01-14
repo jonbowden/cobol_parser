@@ -22,7 +22,7 @@ impl TreeSitterCobolParser {
         let mut parser = Parser::new();
         let language = tree_sitter_cobol::language();
         parser
-            .set_language(&language)
+            .set_language(language)
             .map_err(|e| ParserError::Grammar(format!("Failed to load COBOL grammar: {}", e)))?;
 
         Ok(Self { parser })
@@ -691,7 +691,7 @@ impl CobolParser for TreeSitterCobolParser {
         let mut parser = Parser::new();
         let language = tree_sitter_cobol::language();
         parser
-            .set_language(&language)
+            .set_language(language)
             .map_err(|e| ParserError::Grammar(format!("Failed to load COBOL grammar: {}", e)))?;
 
         let tree = parser
