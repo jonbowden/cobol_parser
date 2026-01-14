@@ -31,9 +31,7 @@ name = "parser_benchmark"
 harness = false
 
 
-[[example]]
-name = "dump_ast2"
-path = "/tmp/dump_ast2.rs"
+
 
 [[example]]
 name = "dump_norm"
