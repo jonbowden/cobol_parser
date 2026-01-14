@@ -322,7 +322,7 @@ CMP3FL         10  WS-LINK-AMT              PIC S9(13)V99 VALUE 0.
 CMP3A1         10  WS-LINK-REMIND           PIC X(01).      
 CMP3FL     05  WK-C-LINK-AREA-OUTPUT.      
 CMP3FL         10  WS-LINK-STATUS           PIC X(02) VALUE SPACES.      
-      
+       
 
        01  TAG57-FORMAT.
            05  TAG57-LINE-1.
@@ -579,52 +579,52 @@ HOJE02             15 WK-C-ARR-SALU    PIC X(20).
            05  WS-BENBNKID                  PIC X(11)    VALUE SPACES.
            05  WS-ACUDBUI                   PIC X(01)    VALUE "D".
            05  WS-ACCTYP                    PIC X(01)    VALUE SPACE.
-GPI201     05  WK-C-GPI-SW                PIC X(01)    VALUE SPACE.      
-GPI201     05  WK-C-BYPASS-LMT-IND        PIC X(01)    VALUE SPACE.      
-GPI201     05  WK-C-DR-PMODE              PIC X(08)    VALUE SPACE.      
-GPI201     05  WK-C-COV-SW                PIC X(01)    VALUE SPACE.      
-GP3C00     05  WK-C-GPI3-SW               PIC X(01)    VALUE SPACE.      
-GP3C00     05  WK-C-TAG57-CD-SW           PIC X(01)    VALUE SPACE.      
-GP3K00     05  WK-C-TAG59F-SW             PIC X(01)    VALUE SPACE.      
-GP3M00     05  WK-C-NSLMT-SW              PIC X(01)    VALUE SPACE.      
+GPI201     05  WK-C-GPI-SW                PIC X(01)    VALUE SPACE. 
+GPI201     05  WK-C-BYPASS-LMT-IND        PIC X(01)    VALUE SPACE.
+GPI201     05  WK-C-DR-PMODE              PIC X(08)    VALUE SPACE.
+GPI201     05  WK-C-COV-SW                PIC X(01)    VALUE SPACE.
+GP3C00     05  WK-C-GPI3-SW               PIC X(01)    VALUE SPACE.
+GP3C00     05  WK-C-TAG57-CD-SW           PIC X(01)    VALUE SPACE.
+GP3K00     05  WK-C-TAG59F-SW             PIC X(01)    VALUE SPACE.
+GP3M00     05  WK-C-NSLMT-SW              PIC X(01)    VALUE SPACE.
 VASA      
 
 GPI201 01  WK-C-LIT-GPI.      
 GPI201     05 WK-C-Y                      PIC X(01)    VALUE "Y".      
 GPI201     05 WK-C-A                      PIC X(01)    VALUE "A".      
 GPI201     05 WK-C-GPI-SW-PARCD           PIC X(10)    VALUE      
-GPI201                                                 "GPISWITCH2".      
+GPI201                                                 "GPISWITCH2".
 GPI201     05 WK-C-STP-SW-PARCD           PIC X(10)    VALUE      
 GPI201                                                 "GPISTPSW".      
 GP3C00     05 WK-C-GPI3-SW-PARCD          PIC X(10)      
-GP3C00                                                 VALUE "GPISWITCH3".      
+GP3C00                                              VALUE "GPISWITCH3".
 GP3C00     05 WK-C-TAG57-SW-PARCD         PIC X(10)      
-GP3C00                                                 VALUE "GPI3T57SW".      
+GP3C00                                              VALUE "GPI3T57SW".
 GP3C00     05 WK-C-TAG57-MT-PARCD         PIC X(10)      
-GP3C00                                                 VALUE "GPI3T57MT".      
+GP3C00                                              VALUE "GPI3T57MT".
 GP3K00     05 WK-C-TAG59F-SW-PARCD        PIC X(10)      
-GP3K00                                                 VALUE "GPI3T59FSW".      
+GP3K00                                              VALUE "GPI3T59FSW".
 GP3M00     05 WK-C-NSLMT-PARCD            PIC X(10)      
-GP3M00                                                 VALUE "GPI3NSLMT".      
+GP3M00                                              VALUE "GPI3NSLMT".
 
-GP3C00 01  WK-C-MT-TAG57-TBL             PIC X(18)    VALUE SPACES.      
-GP3C00     05  WK-C-MT-TAG57              PIC X(03)    OCCURS 6 TIMES.      
+GP3C00 01  WK-C-MT-TAG57-TBL             PIC X(18)    VALUE SPACES.  
+GP3C00     05  WK-C-MT-TAG57              PIC X(03)    OCCURS 6 TIMES.
 
 5Q1ARV 01  WK-C-RPRRSN-AREA.      
-5Q1ARV     05  WK-C-SEGCDE                PIC X(01)    VALUE SPACE.      
-5Q1ARV     05  WK-N-STAFFIND              PIC S9(02)   VALUE ZEROS.      
-5Q1ARV     05  WK-C-ACCNO-RPR             PIC X(11)    VALUE SPACE.      
-5Q1ARV     05  WK-C-ORATE                 PIC X(02)    VALUE SPACE.      
-5Q1ARV     05  WK-C-RPRCODE               PIC X(07)    VALUE SPACE.      
-5Q1ARV     05  WK-C-TRNNO                 PIC X(12)    VALUE SPACE.      
-5Q1ARV     05  WK-C-FUNCTID               PIC X(08)    VALUE SPACE.      
-5Q1ARV     05  WK-C-ACCNAME-RPR           PIC X(35)    VALUE SPACE.      
-5Q1ARV 01  WK-N-SYSDTE                    PIC S9(08)   VALUE ZEROS.      
+5Q1ARV     05  WK-C-SEGCDE                PIC X(01)    VALUE SPACE.
+5Q1ARV     05  WK-N-STAFFIND              PIC S9(02)   VALUE ZEROS.
+5Q1ARV     05  WK-C-ACCNO-RPR             PIC X(11)    VALUE SPACE.
+5Q1ARV     05  WK-C-ORATE                 PIC X(02)    VALUE SPACE.
+5Q1ARV     05  WK-C-RPRCODE               PIC X(07)    VALUE SPACE.
+5Q1ARV     05  WK-C-TRNNO                 PIC X(12)    VALUE SPACE.
+5Q1ARV     05  WK-C-FUNCTID               PIC X(08)    VALUE SPACE.
+5Q1ARV     05  WK-C-ACCNAME-RPR           PIC X(35)    VALUE SPACE.
+5Q1ARV 01  WK-N-SYSDTE                    PIC S9(08)   VALUE ZEROS.
 5Q1ARV 01  WK-C-RPRRPM                    PIC X(10)    VALUE      
 5Q1ARV                                                "TRFVTF1A".      
-CMP3A3 01  WK-101-TAG50H-ACCNO            PIC X(11)    VALUE SPACE.      
-7Q1EM2 01  WK-C-SWFTMGTY                  PIC X(03)    VALUE SPACES.      
-7Q1EM3 01  WK-C-T91-NO                    PIC X(12)    VALUE SPACES.      
+CMP3A3 01  WK-101-TAG50H-ACCNO            PIC X(11)    VALUE SPACE.
+7Q1EM2 01  WK-C-SWFTMGTY                  PIC X(03)    VALUE SPACES.
+7Q1EM3 01  WK-C-T91-NO                    PIC X(12)    VALUE SPACES.
 REM269 01  WK-C-LCUYCD                   PIC X(03).      
 
 SGX201 01  WK-C-SGX2-PARAM.      
@@ -636,7 +636,7 @@ SGX202*SGX201         10  WK-SGX-PRTPAYM-SW     PIC X(01)    VALUE SPACES.
 SGX202*SGX201         10  FILLER                PIC X(06)    VALUE SPACES.      
 SGX202     05  WK-SGX-GLACT-SW            PIC X(01) VALUE SPACES.      
 SGX201     05  WK-C-GLACT-MTMSG-TBL       PIC X(24) VALUE SPACES.      
-SGX201         10  WK-C-GLACT-MTMSG        PIC X(06) OCCURS 4 TIMES.      
+SGX201         10  WK-C-GLACT-MTMSG        PIC X(06) OCCURS 4 TIMES.
 SGX201             15 WK-C-GLACT-MTMSG1    PIC X(03).      
 SGX201             15 WK-C-GLACT-MTMSG2    PIC X(03).      
 SGX201 01  WK-C-SGX2-VAR.      
@@ -692,7 +692,7 @@ GP3K00 COPY VTAG59F.
 7Q1EM2     ACCEPT  L-C-LOCAL-DATA-AREA   FROM  LOCAL-DATA-AREA.
 
 CMP3A3     MOVE SPACES            TO     WK-101-TAG50H-ACCNO.      
-CMP3A3     IF   WK-VTF1A-BANKAC NOT = SPACES      
+CMP3A3     IF   WK-VTF1A-BANKAC IS NOT = SPACES      
 CMP3A3          MOVE  WK-VTF1A-BANKAC     TO WK-101-TAG50H-ACCNO      
 CMP3A3          MOVE  SPACES              TO WK-VTF1A-BANKAC      
 CMP3A3     END-IF.      
@@ -777,21 +777,21 @@ VASA01         END-IF
 5Q1ARV     MOVE     TFSCLSYS-SYSDTE         TO     WK-N-SYSDTE.
 
 REM269*Retrieve local currency code
-      |         INITIALIZE  WK-C-XGSPA-RECORD.
-      |         MOVE "RSYCTLLCUY"                TO     WK-C-XGSPA-GHPARCD.
-      |         CALL "TRFXGSPA"                 USING    WK-C-XGSPA-RECORD.
-      |         IF  WK-C-XGSPA-ERROR-CD          =      SPACES
-      |             MOVE WK-C-XGSPA-GHPARVAL    TO      WK-C-LCUYCD
-      |         ELSE
-      |             MOVE SPACES                  TO      WK-C-LCUYCD
+                INITIALIZE  WK-C-XGSPA-RECORD.
+                MOVE "RSYCTLLCUY"            TO     WK-C-XGSPA-GHPARCD.
+                CALL "TRFXGSPA"              USING    WK-C-XGSPA-RECORD.
+                IF  WK-C-XGSPA-ERROR-CD          =      SPACES
+                    MOVE WK-C-XGSPA-GHPARVAL    TO      WK-C-LCUYCD
+                ELSE
+                    MOVE SPACES                  TO      WK-C-LCUYCD
 REM269     END-IF.
 
       *---------------------------------------------------------------*
       *     GET SYSTEM PARAMETERS FOR PSTP & 1STP                    *
       *---------------------------------------------------------------*
-                 MOVE     "IRMACC"              TO     WK-C-XPARA-PARACD.
-                 CALL     "TRFXPARA"            USING WK-C-XPARA-RECORD.
-                 IF       WK-C-XPARA-ERROR-CD NOT = SPACES
+                 MOVE     "IRMACC"             TO     WK-C-XPARA-PARACD.
+                 CALL     "TRFXPARA"           USING WK-C-XPARA-RECORD.
+                 IF       WK-C-XPARA-ERROR-CD IS NOT = SPACES
                           DISPLAY "TREEEDT    - TRFXPARA ROUTINE ERROR"
                           DISPLAY "FILE STATUS - " WK-C-XPARA-FS
                           DISPLAY "ERROR ID    - " WK-C-XPARA-ERROR-CD
@@ -803,9 +803,9 @@ REM269     END-IF.
                           MOVE WK-N-PARAVALU
                           TO     WK-N-IRMPSTP
                  END-IF.
-                 MOVE     "IRMACC1"             TO     WK-C-XPARA-PARACD.
-                 CALL     "TRFXPARA"            USING WK-C-XPARA-RECORD.
-                 IF       WK-C-XPARA-ERROR-CD NOT = SPACES
+                 MOVE     "IRMACC1"            TO     WK-C-XPARA-PARACD.
+                 CALL     "TRFXPARA"           USING WK-C-XPARA-RECORD.
+                 IF       WK-C-XPARA-ERROR-CD IS NOT = SPACES
                           DISPLAY "TREEEDT    - TRFXPARA ROUTINE ERROR"
                           DISPLAY "FILE STATUS - " WK-C-XPARA-FS
                           DISPLAY "ERROR ID    - " WK-C-XPARA-ERROR-CD
@@ -833,7 +833,7 @@ SGX202*SGX201     IF  WK-C-XGSPA-ERROR-CD       =     SPACES
 SGX202*SGX201         MOVE WK-C-XGSPA-GHPARVAL(1:10)
 SGX202*SGX201              TO WK-C-SGX2-TECH-SW
 SGX202*SGX201     END-IF.
-SGX201
+SGX201 
 SGX201** CHECK FOR SGX DAY2 SWITCH IN TFSGSYSPA **
 SGX201     MOVE SPACES                       TO     WK-C-SGX-DAY2-SW.
 SGX201     INITIALIZE                               WK-C-XGSPA-RECORD.
@@ -842,7 +842,7 @@ SGX201     CALL "TRFXGSPA"                   USING  WK-C-XGSPA-RECORD.
 SGX201     IF  WK-C-XGSPA-ERROR-CD            =     SPACES
 SGX201         MOVE WK-C-XGSPA-GHPARVAL       TO     WK-SGX-DAY2-SW
 SGX201     END-IF.
-SGX201
+SGX201 
 SGX202*-- Retrieve SGX Phase 2 - GL Account Tech Switch
 SGX202     INITIALIZE                               WK-C-XGSPA-RECORD
 SGX202                                              WK-SGX-GLACT-SW.
@@ -853,7 +853,7 @@ SGX202         AND WK-C-SGX-DAY2-SW            =     "Y"
 SGX202             MOVE WK-C-XGSPA-GHPARVAL(1:1)
 SGX202                                         TO     WK-SGX-GLACT-SW
 SGX202     END-IF.
-SGX202
+SGX202 
 SGX201     IF    WK-SGX-GLACT-SW = "Y"
 SGX201           PERFORM A150-INITIALIZE-SGX-FLDS
 SGX201              THRU A159-INITIALIZE-SGX-FLDS-EX
@@ -888,24 +888,24 @@ SGX201     END-IF.
                           DISPLAY "FILE STATUS - " WK-C-FILE-STATUS
                           GO TO   Z000-END-PROGRAM.
 
-      5Q1ARV     MOVE     TFSCLSYS-SYSDTE         TO     WK-N-SYSDTE.
+5Q1ARV     MOVE    TFSCLSYS-SYSDTE         TO     WK-N-SYSDTE.
 
-      REM269*Retrieve local currency code
-      |         INITIALIZE  WK-C-XGSPA-RECORD.
-      |         MOVE "RSYCTLLCUY"                TO     WK-C-XGSPA-GHPARCD.
-      |         CALL "TRFXGSPA"                 USING    WK-C-XGSPA-RECORD.
-      |         IF  WK-C-XGSPA-ERROR-CD          =      SPACES
-      |             MOVE WK-C-XGSPA-GHPARVAL    TO      WK-C-LCUYCD
-      |         ELSE
-      |             MOVE SPACES                  TO      WK-C-LCUYCD
-      REM269     END-IF.
+REM269*Retrieve local currency code
+          INITIALIZE  WK-C-XGSPA-RECORD.
+          MOVE "RSYCTLLCUY"                TO     WK-C-XGSPA-GHPARCD.
+          CALL "TRFXGSPA"                 USING    WK-C-XGSPA-RECORD.
+          IF  WK-C-XGSPA-ERROR-CD          =      SPACES
+              MOVE WK-C-XGSPA-GHPARVAL    TO      WK-C-LCUYCD
+          ELSE
+              MOVE SPACES                  TO      WK-C-LCUYCD
+REM269     END-IF.
 
       *---------------------------------------------------------------*
       *     GET SYSTEM PARAMETERS FOR PSTP & 1STP                    *
       *---------------------------------------------------------------*
                  MOVE     "IRMACC"              TO     WK-C-XPARA-PARACD.
                  CALL     "TRFXPARA"            USING WK-C-XPARA-RECORD.
-                 IF       WK-C-XPARA-ERROR-CD NOT = SPACES
+                 IF       WK-C-XPARA-ERROR-CD IS NOT = SPACES
                           DISPLAY "TREEEDT    - TRFXPARA ROUTINE ERROR"
                           DISPLAY "FILE STATUS - " WK-C-XPARA-FS
                           DISPLAY "ERROR ID    - " WK-C-XPARA-ERROR-CD
@@ -915,24 +915,24 @@ GPI201*---------------------------------------------------------------*
 GPI201* RETRIEVE GPI TECHNICAL AND STP SWITCH FROM SYSTEM PARAMETER  *
 GPI201* FILE VIA CALLING TRFXGSPA PROGRAM USING GPISMTCH PARAMETER  *
 GPI201*---------------------------------------------------------------*
-GPI201
+GPI201 
 GPI201       INITIALIZE                    WK-C-XGSPA-RECORD
 GPI201                                    SW-STP-LMT-SKP.
-GPI201
+GPI201 
 GPI201       MOVE WK-C-STP-SW-PARCD     TO    WK-C-XGSPA-GHPARCD.
 GPI201       CALL "TRFXGSPA"          USING    WK-C-XGSPA-RECORD.
-GPI201
+GPI201 
 GPI201       IF WK-C-XGSPA-ERROR-CD = SPACES
 GPI201          MOVE  WK-C-XGSPA-GHPARVAL(2:1)
 GPI201                                  TO    SW-STP-LMT-SKP
 GPI201       END-IF.
-GPI201
+GPI201 
 GPI201       INITIALIZE                    WK-C-XGSPA-RECORD
 GPI201                                    WK-C-GPI-SW.
-GPI201
+GPI201 
 GPI201       MOVE WK-C-GPI-SW-PARCD     TO    WK-C-XGSPA-GHPARCD.
 GPI201       CALL "TRFXGSPA"          USING    WK-C-XGSPA-RECORD.
-GPI201
+GPI201 
 GPI201       IF WK-C-XGSPA-ERROR-CD = SPACES
 GPI201          MOVE  WK-C-XGSPA-GHPARVAL(1:1)
 GPI201                                  TO    WK-C-GPI-SW
@@ -941,10 +941,10 @@ GPI201       END-IF.
 GP3C00*-->Retrieve GPI Day 3 Technical Switch
 GP3C00       INITIALIZE                    WK-C-XGSPA-RECORD
 GP3C00                                    WK-C-GPI3-SW.
-GP3C00
+GP3C00 
 GP3C00       MOVE WK-C-GPI3-SW-PARCD    TO    WK-C-XGSPA-GHPARCD.
 GP3C00       CALL "TRFXGSPA"          USING    WK-C-XGSPA-RECORD.
-GP3C00
+GP3C00 
 GP3C00       IF    WK-C-XGSPA-ERROR-CD = SPACES
 GP3C00             MOVE WK-C-XGSPA-GHPARVAL(1:1)
 GP3C00                                  TO    WK-C-GPI3-SW
@@ -953,10 +953,10 @@ GP3C00       END-IF.
 GP3C00*-->Retrieve GPI Day3 Tag57 C/D Enhancement Switch
 GP3C00       INITIALIZE                    WK-C-XGSPA-RECORD
 GP3C00                                    WK-C-TAG57-CD-SW.
-GP3C00
+GP3C00 
 GP3C00       MOVE WK-C-TAG57-SW-PARCD    TO    WK-C-XGSPA-GHPARCD.
 GP3C00       CALL "TRFXGSPA"          USING    WK-C-XGSPA-RECORD.
-GP3C00
+GP3C00 
 GP3C00       IF    WK-C-XGSPA-ERROR-CD = SPACES
 GP3C00             MOVE WK-C-XGSPA-GHPARVAL(1:1)
 GP3C00                                  TO    WK-C-TAG57-CD-SW
@@ -966,10 +966,10 @@ GP3C00*-->Retrieve GPI Day3 Tag57 C/D Enhancement Eligable MT Types
 GP3C00       INITIALIZE                    WK-C-XGSPA-RECORD
 GP3C00                                    WK-C-MT-TAG57-TBL.
 
-GP3C00
+GP3C00 
 GP3C00       MOVE WK-C-TAG57-MT-PARCD    TO    WK-C-XGSPA-GHPARCD.
 GP3C00       CALL "TRFXGSPA"          USING    WK-C-XGSPA-RECORD.
-GP3C00
+GP3C00 
 GP3C00       IF    WK-C-XGSPA-ERROR-CD = SPACES
 GP3C00             MOVE WK-C-XGSPA-GHPARVAL
 GP3C00                                  TO    WK-C-MT-TAG57-TBL
@@ -978,10 +978,10 @@ GP3C00       END-IF.
 GP3K00*-->Retrieve GPI Day3 Tag59F handling Enhancement Switch
 GP3K00       INITIALIZE                    WK-C-XGSPA-RECORD
 GP3K00                                    WK-C-TAG59F-SW.
-GP3K00
+GP3K00 
 GP3K00       MOVE WK-C-TAG59F-SW-PARCD    TO    WK-C-XGSPA-GHPARCD.
 GP3K00       CALL "TRFXGSPA"          USING    WK-C-XGSPA-RECORD.
-GP3K00
+GP3K00 
 GP3K00       IF    WK-C-XGSPA-ERROR-CD = SPACES
 GP3K00             MOVE WK-C-XGSPA-GHPARVAL(1:1)
 GP3K00                                  TO    WK-C-TAG59F-SW
@@ -990,10 +990,10 @@ GP3K00       END-IF.
 GP3M00*-->Retrieve GPI Day3 Nostro Bypass STP Limit Enhancement
 GP3M00       INITIALIZE                    WK-C-XGSPA-RECORD
 GP3M00                                    WK-C-NSLMT-SW.
-GP3M00
+GP3M00 
 GP3M00       MOVE WK-C-NSLMT-PARCD      TO    WK-C-XGSPA-GHPARCD.
 GP3M00       CALL "TRFXGSPA"          USING    WK-C-XGSPA-RECORD.
-GP3M00
+GP3M00 
 GP3M00       IF    WK-C-XGSPA-ERROR-CD = SPACES
 GP3M00             MOVE WK-C-XGSPA-GHPARVAL(1:1)
 GP3M00                                  TO    WK-C-NSLMT-SW
@@ -1008,7 +1008,7 @@ VASA01       IF WK-C-XGSPA-ERROR-CD     = SPACES
 VASA01          MOVE WK-C-XGSPA-GHPARVAL TO WK-C-VASA-SW
 VASA01       END-IF.
 
-      A199-INITIAL-SUBROUTINE-EX.
+       A199-INITIAL-SUBROUTINE-EX.
            EXIT.
 
 SGX201 A150-INITIALIZE-SGX-FLDS.
@@ -1024,25 +1024,25 @@ SGX201       INITIALIZE                         WK-C-XGSPA-RECORD
 SGX201                                          WK-C-GLACT-MTMSG-TBL
 SGX201       MOVE "GLACTMT"              TO     WK-C-XGSPA-GHPARCD.
 SGX201       CALL "TRFXGSPA"          USING     WK-C-XGSPA-RECORD.
-SGX201       IF  WK-XGSPA-GHPARVAL NOT EQUAL SPACES
-SGX201           MOVE WK-C-XGSPA-GHPARVAL   TO     WK-C-GLACT-MTMSG-TBL
+SGX201       IF  WK-XGSPA-GHPARVAL IS NOT = SPACES
+SGX201           MOVE WK-C-XGSPA-GHPARVAL   TO  WK-C-GLACT-MTMSG-TBL
 SGX201       END-IF.
-SGX201
+SGX201 
 SGX201*--> Retrieve Prefix Indicator of GL Account
 SGX201       INITIALIZE                         WK-C-XGSPA-RECORD
 SGX201                                          WK-C-GLACT-PREFIX
 SGX201       MOVE "GLACTIND"             TO     WK-C-XGSPA-GHPARCD.
 SGX201       CALL "TRFXGSPA"          USING     WK-C-XGSPA-RECORD.
-SGX201       IF  WK-C-XGSPA-GHPARVAL NOT EQUAL SPACES
+SGX201       IF  WK-C-XGSPA-GHPARVAL IS NOT = SPACES
 SGX201           MOVE WK-C-XGSPA-GHPARVAL(1:1)
 SGX201                                  TO     WK-C-GLACT-PREFIX
 SGX201       END-IF.
-SGX201
+SGX201 
 SGX201 A159-INITIALIZE-SGX-FLDS-EX.
 SGX201       EXIT.
        
              A200-MOVE-TAG-VALUES.
-                  IF  TAG57-BIC NOT = SPACES
+                  IF  TAG57-BIC IS NOT = SPACES
                   AND TFSSTPL-SWFTMGTY = "200"
                       MOVE TAG57-BIC        TO     WS-ACBNKID
                                                    WS-BANKID
@@ -1065,19 +1065,17 @@ GP3C00                     THRU D699-EVAL-TAG57-CD-EX
 GP3C00           END-IF
 GP3C00       END-IF.
        
-                  IF  TAG58-BIC NOT = SPACES
+                  IF  TAG58-BIC IS NOT = SPACES
                   AND TFSSTPL-SWFTMGTY = "202" OR "203"
                       MOVE TAG58-BIC        TO     WS-BENBNKID
                                                    WS-BANKID
                       MOVE TAG58-PTID       TO     WS-BENBKACC
                                                    WS-ACCNO
                   END-IF.
-CMP3FL*       IF  TAG59-BIC NOT = SPACES
-                      AND TFSSTPL-SWFTMGTY = "103"
-       
-CMP3FL         AND (TFSSTPL-SWFTMGTY = "103"
-CMP3FL         OR    TFSSTPL-SWFTMGTY = "101")
-                    MOVE TAG59-BIC        TO      WS-BANKID
+CMP3FL            IF  TAG59-BIC IS NOT = SPACES
+CMP3FL            AND (TFSSTPL-SWFTMGTY = "103"
+CMP3FL            OR    TFSSTPL-SWFTMGTY = "101")
+                     MOVE TAG59-BIC        TO      WS-BANKID
 SGX201*SGX205  IF    WK-SGX-GLACT-SW  = "Y"
 SGX201*SGX205  AND   WK-C-SGX-DAY2-SW = "Y"
 SGX201*SGX205            PERFORM Y100-VALIDATE-TAG59
@@ -1085,12 +1083,12 @@ SGX201*SGX205                 THRU Y199-VALIDATE-TAG59-EX
 SGX201*SGX205  ELSE
                      MOVE TAG59-PTID       TO      WS-BENEACC
                                                    WS-ACCNO
- 
- SGX205         IF    WK-SGX-GLACT-SW  = "Y"
- SGX205         AND   WK-C-SGX-DAY2-SW = "Y"
- SGX205              PERFORM Y100-VALIDATE-TAG59
- SGX205                   THRU Y199-VALIDATE-TAG59-EX
- SGX201         END-IF
+       
+SGX205          IF    WK-SGX-GLACT-SW  = "Y"
+SGX205          AND   WK-C-SGX-DAY2-SW = "Y"
+SGX205                PERFORM Y100-VALIDATE-TAG59
+SGX205                    THRU Y199-VALIDATE-TAG59-EX
+SGX201          END-IF
             END-IF.
 
 SGX201         IF    WK-SGX-GLACT-SW  = "Y"
@@ -1116,7 +1114,7 @@ SGX201         END-IF.
                END-IF.
 
 SGX201 A201-MOVE-TAG-VALUES.
-           IF  TAG58-NAME    NOT = SPACES
+           IF  TAG58-NAME    IS NOT = SPACES
            AND TAG58-OPT         = "D"
                MOVE SPACES           TO      WS-BANKID
                                              WS-BENBNKID
@@ -1128,7 +1126,7 @@ SGX201 A201-MOVE-TAG-VALUES.
                MOVE TAG58-LINE-4     TO      WS-ADDR2
                MOVE TAG58-LINE-5     TO      WS-ADDR3
            END-IF.
-           IF  TAG59-NAME    NOT = SPACES
+           IF  TAG59-NAME    IS NOT = SPACES
 
            AND TAG59-OPT         = SPACE
                MOVE SPACES           TO      WS-BANKID
@@ -1154,32 +1152,32 @@ SGX201         END-IF
 
 GP3K00       IF  WK-C-GPI3-SW     = "Y"
 GP3K00       AND WK-C-TAG59F-SW   = "Y"
-GP3K00           IF  TAG59-NAME  NOT = SPACES
+GP3K00           IF  TAG59-NAME  IS NOT = SPACES
 GP3K00           AND TAG59-OPT       = "F"
 GP3K00               PERFORM Y400-REFORMAT-TAG59F
 GP3K00                    THRU Y499-REFORMAT-TAG59F-EX
 GP3K00           END-IF
 GP3K00       END-IF.
 
-299-MOVE-TAG-VALUES-EX.
-    EXIT.
-      EJECT
+       A299-MOVE-TAG-VALUES-EX.
+            EXIT.
+            EJECT
 
-      B100-PATH-CHOICE.
-           MOVE "Y"         TO WS-FLAG1.
+       B100-PATH-CHOICE.
+            MOVE "Y"         TO WS-FLAG1.
 
-           IF  TFSSTPL-SWFTMGTY = "103"
-           AND TAG59-OPT         = "A"
-           AND TAG59-PTID    NOT = SPACES
-           AND TAG59-BIC     NOT = SPACES
-CMP3FL       OR  TFSSTPL-SWFTMGTY = "101"
-CMP3FL       AND TAG59-OPT         = "A"
-CMP3FL       AND TAG59-PTID    NOT = SPACES
-CMP3FL       AND TAG59-BIC     NOT = SPACES
-           OR  TFSSTPL-SWFTMGTY = "200"
-           AND TAG57-OPT         = "A"
-           AND TAG57-PTID    NOT = SPACES
-           AND TAG57-BIC     NOT = SPACES
+            IF  TFSSTPL-SWFTMGTY = "103"
+            AND TAG59-OPT         = "A"
+            AND TAG59-PTID    IS NOT = SPACES
+            AND TAG59-BIC     IS NOT = SPACES
+CMP3FL      OR  TFSSTPL-SWFTMGTY = "101"
+CMP3FL      AND TAG59-OPT         = "A"
+CMP3FL      AND TAG59-PTID    IS NOT = SPACES
+CMP3FL      AND TAG59-BIC     IS NOT = SPACES
+            OR  TFSSTPL-SWFTMGTY = "200"
+            AND TAG57-OPT         = "A"
+            AND TAG57-PTID    IS NOT = SPACES
+            AND TAG57-BIC     IS NOT = SPACES
                 PERFORM C100-VALIDATION-PART
                      THRU C199-VALIDATION-PART-EX
 
@@ -1188,19 +1186,19 @@ CMP3FL       AND TAG59-BIC     NOT = SPACES
            IF  TFSSTPL-SWFTMGTY = "103"
            AND TAG59-OPT         = "A"
            AND TAG59-PTID        = SPACES
-           AND TAG59-BIC     NOT = SPACES
+           AND TAG59-BIC     IS NOT = SPACES
 CMP3FL       OR  TFSSTPL-SWFTMGTY = "101"
 CMP3FL       AND TAG59-OPT         = "A"
 CMP3FL       AND TAG59-PTID        = SPACES
-CMP3FL       AND TAG59-BIC     NOT = SPACES
-    	     OR  TFSSTPL-SWFTMGTY = "202"
-    	     AND TAG58-OPT         = "A"
-    	     AND TAG58-PTID        = SPACES
-             AND TAG58-BIC     NOT = SPACES
+CMP3FL       AND TAG59-BIC     IS NOT = SPACES
+             OR  TFSSTPL-SWFTMGTY = "202"
+             AND TAG58-OPT         = "A"
+             AND TAG58-PTID        = SPACES
+             AND TAG58-BIC     IS NOT = SPACES
              OR  TFSSTPL-SWFTMGTY = "203"
              AND TAG58-OPT         = "A"
              AND TAG58-PTID        = SPACES
-             AND TAG58-BIC     NOT = SPACES
+             AND TAG58-BIC     IS NOT = SPACES
                 PERFORM C200-VALIDATION-PART
                      THRU C299-VALIDATION-PART-EX
 
@@ -1208,22 +1206,22 @@ CMP3FL       AND TAG59-BIC     NOT = SPACES
 
            IF  TFSSTPL-SWFTMGTY = "103"
            AND TAG59-OPT         = SPACES
-           AND TAG59-PTID    NOT = SPACES
-           AND TAG59-NAME    NOT = SPACES
+           AND TAG59-PTID    IS NOT = SPACES
+           AND TAG59-NAME    IS NOT = SPACES
 CMP3FL     OR  TFSSTPL-SWFTMGTY = "101"
 CMP3FL     AND TAG59-OPT         = SPACES
-CMP3FL     AND TAG59-PTID    NOT = SPACES
-CMP3FL     AND TAG59-NAME    NOT = SPACES
+CMP3FL     AND TAG59-PTID    IS NOT = SPACES
+CMP3FL     AND TAG59-NAME    IS NOT = SPACES
            OR  TFSSTPL-SWFTMGTY = "202"
            AND TAG58-OPT         = "D"
-           AND TAG58-PTID    NOT = SPACES
-           AND TAG58-BIC     NOT = SPACES
-           AND TAG58-NAME    NOT = SPACES
+           AND TAG58-PTID    IS NOT = SPACES
+           AND TAG58-BIC     IS NOT = SPACES
+           AND TAG58-NAME    IS NOT = SPACES
            OR  TFSSTPL-SWFTMGTY = "203"
            AND TAG58-OPT         = "D"
-           AND TAG58-PTID    NOT = SPACES
-           AND TAG58-BIC     NOT = SPACES
-           AND TAG58-NAME    NOT = SPACES
+           AND TAG58-PTID    IS NOT = SPACES
+           AND TAG58-BIC     IS NOT = SPACES
+           AND TAG58-NAME    IS NOT = SPACES
                 PERFORM C300-VALIDATION-PART
                      THRU C399-VALIDATION-PART-EX
 
@@ -1237,8 +1235,8 @@ GP3K01       AND WK-C-TAG59F-SW   = "Y"
 GP3K00           IF (TFSSTPL-SWFTMGTY = "103"
 GP3K00            OR TFSSTPL-SWFTMGTY = "101")
 GP3K00           AND TAG59-OPT         = "F"
-GP3K00           AND TAG59-PTID    NOT = SPACES
-GP3K00           AND TAG59-NAME    NOT = SPACES
+GP3K00           AND TAG59-PTID    IS NOT = SPACES
+GP3K00           AND TAG59-NAME    IS NOT = SPACES
 GP3K00               PERFORM C300-VALIDATION-PART
 GP3K00                    THRU C399-VALIDATION-PART-EX
 GP3K00           END-IF
@@ -1247,10 +1245,10 @@ GP3K00       END-IF.
            PERFORM  D100-VALIDATION  THRU D199-VALIDATION-EX.
            PERFORM  D200-VALIDATION  THRU D299-VALIDATION-EX.
 
-      B199-PATH-CHOICE-EX.
+       B199-PATH-CHOICE-EX.
            EXIT.
 
-      C100-VALIDATION-PART.
+       C100-VALIDATION-PART.
            MOVE WS-BANKID           TO WK-NSTP-ACCTBIC.
            CALL "TRFNSTP"    USING WK-NSTP.
            IF  WK-NSTP-NONSTPCR = "Y"
@@ -1287,10 +1285,10 @@ SGX201                MOVE WS-ACCNO           TO WK-C-ACCNO
                      END-IF
 SGX201           END-IF
                  IF (WK-C-ACCNO-4         = "1" AND
-                     WK-C-VCSA-ERROR-CD NOT = SPACES) OR
+                     WK-C-VCSA-ERROR-CD IS NOT = SPACES) OR
 
                     (WK-C-ACCNO-4         NOT = "1" AND
-                     WK-C-VCCA-ERROR-CD NOT = SPACES)
+                     WK-C-VCCA-ERROR-CD IS NOT = SPACES)
 SGX201           OR (WK-SGX-GLACT-SW        = "Y" AND
 SGX201               WK-C-TAG59-G-IND       = "Y" AND
 SGX201               WK-C-SGX-DAY2-SW       = "Y" AND
@@ -1415,11 +1413,11 @@ SM1TY1       END-IF.
                        CALL "TRFVCFA"   USING WK-C-VCFA-RECORD
                    END-IF
                    IF  (WK-C-ACCNO-4         = "1"
-                   AND WK-C-VCSA-ERROR-CD NOT = SPACES)
+                   AND WK-C-VCSA-ERROR-CD IS NOT = SPACES)
                    OR  (WK-C-ACCNO-4         = "3"
-                   AND WK-C-VCCA-ERROR-CD NOT = SPACES)
+                   AND WK-C-VCCA-ERROR-CD IS NOT = SPACES)
                    OR  (WK-C-ACCNO-4         = "9"
-                   AND WK-C-VCFA-ERROR-CD NOT = SPACES)
+                   AND WK-C-VCFA-ERROR-CD IS NOT = SPACES)
                        MOVE "N" TO  WS-OKAY  WS-ROUTE  TAB-VAL(05)
                        MOVE "Y" TO  TAB-VAL(04)
                        MOVE 0   TO  WS-JUMP
@@ -1471,9 +1469,9 @@ SM1TY1       IF  WS-OKAY = "Y" AND WS-JUMP = 7
                         CALL "TRFVCCA"  USING WK-C-VCCA-RECORD
                     END-IF
                     IF (WK-C-ACCNO-4         = "1" AND
-                        WK-C-VCSA-ERROR-CD NOT = SPACES) OR
+                        WK-C-VCSA-ERROR-CD IS NOT = SPACES) OR
                        (WK-C-ACCNO-4       NOT = "1" AND
-                        WK-C-VCCA-ERROR-CD NOT = SPACES)
+                        WK-C-VCCA-ERROR-CD IS NOT = SPACES)
                         MOVE "N" TO  WS-OKAY
                         MOVE "N" TO  TAB-VAL(07)
                         MOVE 0   TO  WS-JUMP
@@ -1512,20 +1510,20 @@ SM1TY1       IF  WS-OKAY = "Y" AND WS-JUMP = 7
                         ELSE
                             MOVE WK-C-VCCA-CUSTFNAM TO WK-VTF1A-BENENAME
                             MOVE WK-C-VCCA-ADDR1    TO WK-VTF1A-BENEADR1
-                                   MOVE WK-C-VCCA-ADDR2    TO WK-VTF1A-BENEADR2
-                                   MOVE WK-C-VCCA-ADDR3    TO WK-VTF1A-BENEADR3
-                                   MOVE WK-C-VCCA-ADDR4    TO WK-VTF1A-BENEADR4
-                                   MOVE WK-C-VCCA-ADDR5    TO WK-VTF1A-BENEADR5
-                                   MOVE WK-C-VCCA-ADDR6    TO WK-VTF1A-BENEADR6
-                                   MOVE WK-C-VCCA-AOCD     TO WK-VTF1A-AOCD
-                                   MOVE WK-N-VCCA-RESCD    TO WK-VTF1A-RESCD
-                                   MOVE WK-N-VCCA-DOMBRCH  TO WK-VTF1A-DOMBRCH
-                                   MOVE WK-N-VCCA-HOLDCD1  TO WK-VTF1A-HOLDCD1
-                                   MOVE WK-N-VCCA-HOLDCD2  TO WK-VTF1A-HOLDCD2
-                                   MOVE WK-N-VCCA-HOLDCD3  TO WK-VTF1A-HOLDCD3
-                                   MOVE "CA"               TO WK-VTF1A-PMODE
-                               END-IF
+                            MOVE WK-C-VCCA-ADDR2    TO WK-VTF1A-BENEADR2
+                            MOVE WK-C-VCCA-ADDR3    TO WK-VTF1A-BENEADR3
+                            MOVE WK-C-VCCA-ADDR4    TO WK-VTF1A-BENEADR4
+                            MOVE WK-C-VCCA-ADDR5    TO WK-VTF1A-BENEADR5
+                            MOVE WK-C-VCCA-ADDR6    TO WK-VTF1A-BENEADR6
+                            MOVE WK-C-VCCA-AOCD     TO WK-VTF1A-AOCD
+                            MOVE WK-N-VCCA-RESCD    TO WK-VTF1A-RESCD
+                            MOVE WK-N-VCCA-DOMBRCH  TO WK-VTF1A-DOMBRCH
+                            MOVE WK-N-VCCA-HOLDCD1  TO WK-VTF1A-HOLDCD1
+                            MOVE WK-N-VCCA-HOLDCD2  TO WK-VTF1A-HOLDCD2
+                            MOVE WK-N-VCCA-HOLDCD3  TO WK-VTF1A-HOLDCD3
+                            MOVE "CA"               TO WK-VTF1A-PMODE
                            END-IF
+                    END-IF
 SM1TY1       ELSE       
 SM1TY1           MOVE "N" TO  WS-OKAY       
 SM1TY1           MOVE "X" TO  TAB-VAL(07)       
@@ -1547,9 +1545,9 @@ SGX201           MOVE "Y" TO  WK-VTF1A-BENEFLG
 SGX201           MOVE 9   TO  WS-JUMP       
 SGX201       ELSE       
                  IF (WK-C-ACCNO-4         = "1" AND       
-                     WK-C-VCSA-ERROR-CD NOT = SPACES) OR       
+                     WK-C-VCSA-ERROR-CD IS NOT = SPACES) OR       
                     (WK-C-ACCNO-4       NOT = "1" AND       
-                     WK-C-VCCA-ERROR-CD NOT = SPACES)       
+                     WK-C-VCCA-ERROR-CD IS NOT = SPACES)       
                      MOVE "N" TO  WS-OKAY       
                      MOVE "Y" TO  TAB-VAL(08)       
                      MOVE 0   TO  WS-JUMP       
@@ -1601,19 +1599,19 @@ SGX201       ELSE
                          MOVE "Y" TO  TAB-VAL(09)       
                          MOVE 0   TO  WS-JUMP       
 5Q1ARV                   INITIALIZE WK-C-RPRRSN-AREA       
-5Q1ARV                   MOVE WS-ACCNO           TO WK-C-ACCNO-RPR       
+5Q1ARV                   MOVE WS-ACCNO           TO WK-C-ACCNO-RPR
 5Q1ARV                   MOVE "RSN0034"          TO WK-C-RPRCODE       
 5Q1ARV                   PERFORM D400-PROCESS-RPRRSN       
 5Q1ARV                        THRU D499-PROCESS-RPRRSN-EX       
                      ELSE       
-                         MOVE WS-BANKID          TO WK-NSTP-ACCTBIC       
+                         MOVE WS-BANKID          TO WK-NSTP-ACCTBIC
                          CALL "TRFNSTP"   USING WK-NSTP       
                          IF  WK-NSTP-NONSTPCR NOT = "N"       
                              MOVE "N" TO  WS-OKAY       
                              MOVE "Y" TO  TAB-VAL(09)       
                              MOVE 0   TO  WS-JUMP       
 5Q1ARV                       INITIALIZE WK-C-RPRRSN-AREA       
-5Q1ARV                       MOVE "RSN0034"          TO WK-C-RPRCODE       
+5Q1ARV                       MOVE "RSN0034"          TO WK-C-RPRCODE
 5Q1ARV                       PERFORM D400-PROCESS-RPRRSN       
 5Q1ARV                            THRU D499-PROCESS-RPRRSN-EX       
                          ELSE       
@@ -1641,7 +1639,7 @@ SGX201       ELSE
                  MOVE TFSSTPL-CUYCD      TO WK-C-VBANO-CUYCD       
                  MOVE WS-ACCNO           TO WK-C-VBANO-ACCNO       
                  CALL "TRFVBANO"  USING WK-C-VBANO-RECORD       
-                 IF  WK-C-VBANO-ERROR-CD NOT = SPACES       
+                 IF  WK-C-VBANO-ERROR-CD IS NOT = SPACES       
                      MOVE "N" TO  TAB-VAL(10)       
                      MOVE "Y" TO  WK-VTF1A-NO910       
                      MOVE 15  TO  WS-JUMP       
@@ -1661,11 +1659,11 @@ SGX201       END-IF
                  PERFORM D300-LOGGING  THRU D399-LOGGING-EX       
            END-IF.       
        
-      C199-VALIDATION-PART-EX.       
+       C199-VALIDATION-PART-EX.       
            EXIT.       
-      EJECT       
+           EJECT       
        
-      C200-VALIDATION-PART.       
+       C200-VALIDATION-PART.       
            MOVE WS-BANKID           TO WK-NSTP-ACCTBIC.       
            CALL "TRFNSTP"    USING WK-NSTP.       
            IF  WK-NSTP-NONSTPCR NOT = "N"       
@@ -1719,20 +1717,19 @@ SM1TY1       IF  WS-OKAY = "Y" AND WS-JUMP = 3
                        CALL "TRFVCCA"  USING WK-C-VCCA-RECORD       
                    END-IF       
                    IF (WK-C-ACCNO-4         = "1" AND       
-                       WK-C-VCSA-ERROR-CD NOT = SPACES) OR       
+                       WK-C-VCSA-ERROR-CD IS NOT = SPACES) OR       
                       (WK-C-ACCNO-4       NOT = "1" AND       
-                       WK-C-VCCA-ERROR-CD NOT = SPACES)       
+                       WK-C-VCCA-ERROR-CD IS NOT = SPACES)       
                        MOVE "N" TO  WS-OKAY       
                        MOVE "N" TO  TAB-VAL(03)       
                        MOVE 0   TO  WS-JUMP       
 5Q1ARV                 INITIALIZE WK-C-RPRRSN-AREA       
-5Q1ARV                 IF WK-C-VCSA-ERROR-CD NOT = SPACES       
-5Q1ARV                    MOVE WK-C-VCSA-ERROR-CD  TO WK-C-RPRCODE       
+5Q1ARV                 IF WK-C-VCSA-ERROR-CD IS NOT = SPACES       
+5Q1ARV                    MOVE WK-C-VCSA-ERROR-CD  TO WK-C-RPRCODE
 5Q1ARV                 ELSE       
-       
-5Q1ARV                    MOVE WK-C-VCCA-ERROR-CD  TO WK-C-RPRCODE       
+5Q1ARV                    MOVE WK-C-VCCA-ERROR-CD  TO WK-C-RPRCODE
 5Q1ARV                 END-IF       
-5Q1ARV                 MOVE WS-ACCNO              TO WK-C-ACCNO-RPR       
+5Q1ARV                 MOVE WS-ACCNO              TO WK-C-ACCNO-RPR
 5Q1ARV                 PERFORM D400-PROCESS-RPRRSN       
 5Q1ARV                      THRU D499-PROCESS-RPRRSN-EX       
                    ELSE       
@@ -1740,35 +1737,35 @@ SM1TY1       IF  WS-OKAY = "Y" AND WS-JUMP = 3
                                     WK-VTF1A-BENEFLG       
                        MOVE 8   TO  WS-JUMP       
                        IF  WK-C-ACCNO-4 = "1"       
-                           MOVE WK-C-VCSA-CUSTFNAM TO WK-VTF1A-BENENAME       
-                           MOVE WK-C-VCSA-ADDR1    TO WK-VTF1A-BENEADR1       
-                           MOVE WK-C-VCSA-ADDR2    TO WK-VTF1A-BENEADR2       
-                           MOVE WK-C-VCSA-ADDR3    TO WK-VTF1A-BENEADR3       
-                           MOVE WK-C-VCSA-ADDR4    TO WK-VTF1A-BENEADR4       
-                           MOVE WK-C-VCSA-ADDR5    TO WK-VTF1A-BENEADR5       
-                           MOVE WK-C-VCSA-ADDR6    TO WK-VTF1A-BENEADR6       
-                           MOVE WK-C-VCSA-AOCD     TO WK-VTF1A-AOCD       
-                           MOVE WK-N-VCSA-RESCD    TO WK-VTF1A-RESCD       
-                           MOVE WK-N-VCSA-DOMBRCH  TO WK-VTF1A-DOMBRCH       
-                           MOVE WK-N-VCSA-HOLDCD1  TO WK-VTF1A-HOLDCD1       
-                           MOVE WK-N-VCSA-HOLDCD2  TO WK-VTF1A-HOLDCD2       
-                           MOVE WK-N-VCSA-HOLDCD3  TO WK-VTF1A-HOLDCD3       
-                           MOVE "SA"               TO WK-VTF1A-PMODE       
+                           MOVE WK-C-VCSA-CUSTFNAM TO WK-VTF1A-BENENAME
+                           MOVE WK-C-VCSA-ADDR1    TO WK-VTF1A-BENEADR1
+                           MOVE WK-C-VCSA-ADDR2    TO WK-VTF1A-BENEADR2
+                           MOVE WK-C-VCSA-ADDR3    TO WK-VTF1A-BENEADR3
+                           MOVE WK-C-VCSA-ADDR4    TO WK-VTF1A-BENEADR4
+                           MOVE WK-C-VCSA-ADDR5    TO WK-VTF1A-BENEADR5
+                           MOVE WK-C-VCSA-ADDR6    TO WK-VTF1A-BENEADR6
+                           MOVE WK-C-VCSA-AOCD     TO WK-VTF1A-AOCD   
+                           MOVE WK-N-VCSA-RESCD    TO WK-VTF1A-RESCD 
+                           MOVE WK-N-VCSA-DOMBRCH  TO WK-VTF1A-DOMBRCH
+                           MOVE WK-N-VCSA-HOLDCD1  TO WK-VTF1A-HOLDCD1
+                           MOVE WK-N-VCSA-HOLDCD2  TO WK-VTF1A-HOLDCD2
+                           MOVE WK-N-VCSA-HOLDCD3  TO WK-VTF1A-HOLDCD3
+                           MOVE "SA"               TO WK-VTF1A-PMODE
                        ELSE       
-                           MOVE WK-C-VCCA-CUSTFNAM TO WK-VTF1A-BENENAME       
-                           MOVE WK-C-VCCA-ADDR1    TO WK-VTF1A-BENEADR1       
-                           MOVE WK-C-VCCA-ADDR2    TO WK-VTF1A-BENEADR2       
-                           MOVE WK-C-VCCA-ADDR3    TO WK-VTF1A-BENEADR3       
-                           MOVE WK-C-VCCA-ADDR4    TO WK-VTF1A-BENEADR4       
-                           MOVE WK-C-VCCA-ADDR5    TO WK-VTF1A-BENEADR5       
-                           MOVE WK-C-VCCA-ADDR6    TO WK-VTF1A-BENEADR6       
-                           MOVE WK-C-VCCA-AOCD     TO WK-VTF1A-AOCD       
-                           MOVE WK-N-VCCA-RESCD    TO WK-VTF1A-RESCD       
-                           MOVE WK-N-VCCA-DOMBRCH  TO WK-VTF1A-DOMBRCH       
-                           MOVE WK-N-VCCA-HOLDCD1  TO WK-VTF1A-HOLDCD1       
-                           MOVE WK-N-VCCA-HOLDCD2  TO WK-VTF1A-HOLDCD2       
-                           MOVE WK-N-VCCA-HOLDCD3  TO WK-VTF1A-HOLDCD3       
-                           MOVE "CA"               TO WK-VTF1A-PMODE       
+                           MOVE WK-C-VCCA-CUSTFNAM TO WK-VTF1A-BENENAME
+                           MOVE WK-C-VCCA-ADDR1    TO WK-VTF1A-BENEADR1
+                           MOVE WK-C-VCCA-ADDR2    TO WK-VTF1A-BENEADR2
+                           MOVE WK-C-VCCA-ADDR3    TO WK-VTF1A-BENEADR3
+                           MOVE WK-C-VCCA-ADDR4    TO WK-VTF1A-BENEADR4
+                           MOVE WK-C-VCCA-ADDR5    TO WK-VTF1A-BENEADR5
+                           MOVE WK-C-VCCA-ADDR6    TO WK-VTF1A-BENEADR6
+                           MOVE WK-C-VCCA-AOCD     TO WK-VTF1A-AOCD   
+                           MOVE WK-N-VCCA-RESCD    TO WK-VTF1A-RESCD 
+                           MOVE WK-N-VCCA-DOMBRCH  TO WK-VTF1A-DOMBRCH
+                           MOVE WK-N-VCCA-HOLDCD1  TO WK-VTF1A-HOLDCD1
+                           MOVE WK-N-VCCA-HOLDCD2  TO WK-VTF1A-HOLDCD2
+                           MOVE WK-N-VCCA-HOLDCD3  TO WK-VTF1A-HOLDCD3
+                           MOVE "CA"               TO WK-VTF1A-PMODE
                        END-IF       
                    END-IF       
 SM1TY1       ELSE       
@@ -1787,9 +1784,9 @@ SM1TY1       END-IF
        
            IF  WS-OKAY = "Y" AND WS-JUMP = 8       
                IF (WK-C-ACCNO-4         = "1" AND       
-                   WK-C-VCSA-ERROR-CD NOT = SPACES) OR       
+                   WK-C-VCSA-ERROR-CD IS NOT = SPACES) OR       
                   (WK-C-ACCNO-4       NOT = "1" AND       
-                   WK-C-VCCA-ERROR-CD NOT = SPACES)       
+                   WK-C-VCCA-ERROR-CD IS NOT = SPACES)       
                    MOVE "N" TO  WS-OKAY       
                    MOVE "Y" TO  TAB-VAL(08)       
                    MOVE 0   TO  WS-JUMP       
@@ -1801,19 +1798,19 @@ SM1TY1       END-IF
                PERFORM D300-LOGGING  THRU D399-LOGGING-EX       
            END-IF.       
        IF (WK-C-ACCNO-4             = "1" AND       
-           WK-C-VCSA-ERROR-CD NOT = SPACES) OR       
+           WK-C-VCSA-ERROR-CD IS NOT = SPACES) OR       
           (WK-C-ACCNO-4         NOT = "1" AND       
-           WK-C-VCCA-ERROR-CD NOT = SPACES)       
+           WK-C-VCCA-ERROR-CD IS NOT = SPACES)       
            MOVE "N" TO  WS-OKAY       
            MOVE "Y" TO  TAB-VAL(08)       
            MOVE 0   TO  WS-JUMP       
 5Q1ARV     INITIALIZE WK-C-RPRRSN-AREA       
                   
 5Q2JE1     IF  WK-C-ACCNO-4      = "1"       
-5Q2JE1             MOVE WK-C-VCSA-ERROR-CD TO WK-C-RPRCODE                   
+5Q2JE1             MOVE WK-C-VCSA-ERROR-CD TO WK-C-RPRCODE
 5Q2JE1         END-IF                   
 5Q2JE1         IF  WK-C-ACCNO-4 NOT = "1"                   
-5Q2JE1             MOVE WK-C-VCCA-ERROR-CD TO WK-C-RPRCODE                   
+5Q2JE1             MOVE WK-C-VCCA-ERROR-CD TO WK-C-RPRCODE
 5Q2JE1         END-IF                   
 5Q2JE1         MOVE WS-ACCNO        TO WK-C-ACCNO-RPR                   
 5Q2JE1         PERFORM D400-PROCESS-RPRRSN                   
@@ -1825,7 +1822,7 @@ SM1TY1       END-IF
                  MOVE "Y" TO  WK-VTF1A-BENEFLG                   
                  MOVE 9   TO  WS-JUMP                   
              END-IF                   
-             PERFORM D300-LOGGING  THRU D399-LOGGING-EX                   
+             PERFORM D300-LOGGING  THRU D399-LOGGING-EX
          END-IF.                   
              
          IF  WS-OKAY = "Y" AND WS-JUMP = 9                   
@@ -1836,8 +1833,8 @@ SM1TY1       END-IF
              MOVE "Y" TO  TAB-VAL(09)                   
              MOVE 0   TO  WS-JUMP                   
 5Q1ARV         INITIALIZE WK-C-RPRRSN-AREA                   
-5Q1ARV         MOVE WS-ACCNO-ORG       TO WK-C-ACCNO-RPR                   
-5Q1ARV         MOVE "RSN0007"          TO WK-C-RPRCODE                   
+5Q1ARV         MOVE WS-ACCNO-ORG       TO WK-C-ACCNO-RPR
+5Q1ARV         MOVE "RSN0007"          TO WK-C-RPRCODE
 5Q1ARV         PERFORM D400-PROCESS-RPRRSN                   
 5Q1ARV             THRU D499-PROCESS-RPRRSN-EX                   
          ELSE                   
@@ -1848,8 +1845,8 @@ SM1TY1       END-IF
                  MOVE "Y" TO  TAB-VAL(09)                   
                  MOVE 0   TO  WS-JUMP                   
 5Q1ARV             INITIALIZE WK-C-RPRRSN-AREA                   
-5Q1ARV             MOVE WS-ACCNO        TO WK-C-ACCNO-RPR                   
-5Q1ARV             MOVE "RSN0007"       TO WK-C-RPRCODE                   
+5Q1ARV             MOVE WS-ACCNO        TO WK-C-ACCNO-RPR
+5Q1ARV             MOVE "RSN0007"       TO WK-C-RPRCODE
 5Q1ARV             PERFORM D400-PROCESS-RPRRSN                   
 5Q1ARV                 THRU D499-PROCESS            
 HOJE02         WK-C-ARR-SALU(WK-N-TALLY, WK-N-CNT3)             
@@ -1946,7 +1943,7 @@ SGX201     AND  WK-C-SGX-DAY2-SW = "Y"
 SGX203          MOVE "N"                     TO  WK-C-CR-GLACNO
 SGX201          IF   WK-C-TAG59-G-IND  = "Y"
 SGX201          AND  WK-C-VALID-GLACNO = "Y"
-SGX201          AND  WS-ACCNO NOT = SPACES
+SGX201          AND  WS-ACCNO IS NOT = SPACES
 SGX203*SGX201          MOVE "A0"                TO  WS-LINK-STATUS
 SGX203               MOVE "A1"                TO  WS-LINK-STATUS
 SGX203               MOVE "Y"                 TO  WK-C-CR-GLACNO
@@ -1978,8 +1975,8 @@ GPI201     END-IF.
 
 CMP3X1*CMP3A2  MOVE SPACES  TO  WS-LINK-STATUS.
 CMP3A2      MOVE "A1"    TO  WS-LINK-STATUS.
-CMP3FL      IF  WS-ACCNO NOT = SPACES
-CMP3A3      OR (WK-101-TAG50H-ACCNO NOT = SPACES AND
+CMP3FL      IF  WS-ACCNO IS NOT = SPACES
+CMP3A3      OR (WK-101-TAG50H-ACCNO IS NOT = SPACES AND
 CMP3A3          TFSSTPL-SWFTMGTY = "101")
 CMP3FL          INITIALIZE WK-C-RPRRSN-AREA
 CMP3FL          INITIALIZE WK-C-LINK-LIMIT
@@ -2085,38 +2082,38 @@ CMP3X1*CMP3X2IF  WS-LINK-STATUS = "A0"
 CMP3X1*CMP3X2  MOVE "PSTP"         TO     WS-STPTYP
 CMP3X1*CMP3X2  MOVE "N"            TO     TAB-VAL(16)
 CMP3X1*CMP3X2ELSE
-      |         MOVE WS-ACCNO           TO     WK-C-VDUPL-ACCNO
-      |         MOVE WS-ACCCUY          TO     WK-C-VDUPL-REMCUY
-      |         MOVE TFSSTPL-AMT        TO     WK-N-VDUPL-REMAMT
-7Q1EM1           MOVE WK-VTF1A-TRNREF TO     WK-C-VDUPL-TRNREF
+                 MOVE WS-ACCNO           TO     WK-C-VDUPL-ACCNO
+                 MOVE WS-ACCCUY          TO     WK-C-VDUPL-REMCUY
+                 MOVE TFSSTPL-AMT        TO     WK-N-VDUPL-REMAMT
+7Q1EM1           MOVE WK-VTF1A-TRNREF    TO     WK-C-VDUPL-TRNREF
 7Q1EM2           MOVE SPACES             TO     WK-C-SWFTMGTY
 7Q1EM3           MOVE SPACES             TO     WK-C-TRN-NO
-7Q1EM2           MOVE L-C-G-MSGTYP      TO     WK-C-SWFTMGTY
-7Q1EM3           MOVE L-C-TRN-NO        TO     WK-C-TRN-NO
-7Q1EM2           MOVE TFSSTPL-SWFTMGTY TO  L-C-G-MSGTYP
+7Q1EM2           MOVE L-C-G-MSGTYP       TO     WK-C-SWFTMGTY
+7Q1EM3           MOVE L-C-TRN-NO         TO     WK-C-TRN-NO
+7Q1EM2           MOVE TFSSTPL-SWFTMGTY   TO  L-C-G-MSGTYP
 7Q1EM3           MOVE SPACES             TO  L-C-TRN-NO
 7Q1EM2           DISPLAY L-C-LOCAL-DATA-AREA     UPON  LOCAL-DATA-AREA
-      |          CALL "TREVDUPL"  USING   WK-C-VDUPL-RECORD
+                 CALL "TREVDUPL"  USING   WK-C-VDUPL-RECORD
 7Q1EM2           MOVE WK-C-SWFTMGTY   TO  L-C-G-MSGTYP
 7Q1EM3           MOVE WK-C-TRN-NO     TO  L-C-TRN-NO
 7Q1EM2           DISPLAY L-C-LOCAL-DATA-AREA     UPON  LOCAL-DATA-AREA
-      |          IF   WK-C-VDUPL-DPTRNNO NOT = SPACE
-      |               MOVE "1STP"         TO     WS-STPTYP
-      |               MOVE "Y"            TO     TAB-VAL(16)
+                 IF   WK-C-VDUPL-DPTRNNO NOT = SPACE
+                      MOVE "1STP"         TO     WS-STPTYP
+                      MOVE "Y"            TO     TAB-VAL(16)
 5Q1ARV               INITIALIZE WK-C-RPRRSN-AREA
 5Q1ARV               MOVE WS-ACCNO    TO     WK-C-ACCNO-RPR
 5Q4LN1*              MOVE "RSN0028"  TO WK-C-RPRCODE
 5Q4LN1               MOVE "RSN0003"  TO WK-C-RPRCODE
 5Q1ARV               PERFORM D400-PROCESS-RPRRSN
 5Q1ARV                    THRU D499-PROCESS-RPRRSN-EX
-      |          ELSE
-      |
-      |               MOVE "PSTP"         TO     WS-STPTYP
-      |               MOVE "N"            TO     TAB-VAL(16)
-      |
-      |          END-IF
+                 ELSE
+       
+                      MOVE "PSTP"         TO     WS-STPTYP
+                      MOVE "N"            TO     TAB-VAL(16)
+       
+                 END-IF
 CMP3X1*CMP3X2END-IF
-      |         PERFORM D300-LOGGING  THRU D399-LOGGING-EX
+                PERFORM D300-LOGGING  THRU D399-LOGGING-EX
 SM1TY1     END-IF.
        D199-VALIDATION-EX.
                 EXIT.
@@ -2127,14 +2124,14 @@ GPI201 D110-VALIDATE-STP-BYPASS.
 GPI201*--------------------------------------------------------------*
 GPI201* THIS WILL CALL TRFVBACU TO CHECK IF THE BNK BRANCH IND = Y  *
 GPI201*--------------------------------------------------------------*
-GPI201
+GPI201 
 GPI201     MOVE SPACES                 TO  WK-C-BYPASS-LMT-IND.
-GPI201
+GPI201 
 GPI201*--Bypass STP Limit if Debit Leg is a VOSTRO account
 GP3M00*--Additional Validation:
 GP3M00*-- - MT202/C: Do not bypass STP Limit if Dr Leg = VOSTRO
 GP3M00*--           and CR Leg = CASA
-GP3M00
+GP3M00 
 GP3M00     IF       WK-C-GPI3-SW  = WK-C-Y
 GP3M00     AND      WK-C-NSLMT-SW = WK-C-Y
 GP3M00     AND      TFSSTPL-SWFTMGTY = "202"
@@ -2151,7 +2148,7 @@ GPI201               GO TO D119-VALIDATE-STP-BYPASS-EX
 GPI201          END-IF
 GP3M00     END-IF.
 GPI201     END-IF.
-GPI201
+GPI201 
 GP3M00*--MT103: Bypass STP Limit if Dr Leg = NOSTRO, CR Leg = CASA
 GP3M00*--      and both Tag 53/54 not present
 GP3M00     IF   WK-C-GPI3-SW  = WK-C-Y
@@ -2192,7 +2189,7 @@ GP3M01                    GO TO D119-VALIDATE-STP-BYPASS-EX
 GP3M01               END-IF
 GP3M01          END-IF
 GP3M00     END-IF.
-GP3M00
+GP3M00 
 GPI201*--Check the cover received indicator
 GPI201     IF   TFSSTPL-SWFTMGTY  = "103"
 GPI201          MOVE SPACE         TO  WK-C-COV-SW
@@ -2203,13 +2200,13 @@ GPI201               MOVE WK-C-Y   TO  WK-C-BYPASS-LMT-IND
 GPI201               GO TO D119-VALIDATE-STP-BYPASS-EX
 GPI201          END-IF
 GPI201     END-IF.
-GPI201
+GPI201 
 GPI201*--Check if Sending BankID is a Nostro - BNK Branch
 GPI201     INITIALIZE WK-C-VBACU-RECORD.
-GPI201
+GPI201 
 GPI201     MOVE TFSSTPL-SENBNKID   TO WK-C-VBACU-BANKID.
 GPI201     CALL "TRFVBACU"  USING WK-C-VBACU-RECORD.
-GPI201
+GPI201 
 GPI201     IF  WK-C-VBACU-ERROR-CD = SPACES
 GPI201          IF  WK-C-VBACU-BNKBRH = WK-C-Y
 GPI201               MOVE WK-C-Y      TO  WK-C-BYPASS-LMT-IND
@@ -2217,7 +2214,7 @@ GPI201          ELSE
 GPI201               MOVE SPACES      TO  WK-C-BYPASS-LMT-IND
 GPI201          END-IF
 GPI201     END-IF.
-GPI201
+GPI201 
 GPI201 D119-VALIDATE-STP-BYPASS-EX.
 GPI201     EXIT.
 GPI201 EJECT
@@ -2270,7 +2267,7 @@ GPI201 EJECT
 
 5Q1ARV D400-PROCESS-RPRRSN SECTION.
 5Q1ARV D400-ENTRY.
-5Q1ARV
+5Q1ARV 
 5Q1ARV     MOVE WK-VTF1A-PARALNO    TO WK-C-RRSN-QUENUM.
 5Q1ARV     MOVE WK-VTF1A-SEQNUM     TO WK-C-RRSN-QUESUF.
 5Q1ARV     MOVE WK-C-TRNNO          TO WK-C-RRSN-TRNNO.
@@ -2279,7 +2276,7 @@ GPI201 EJECT
 5Q1ARV     MOVE SPACES              TO WK-C-RRSN-SEGDESC.
 5Q1ARV     MOVE WK-N-STAFFIND       TO WK-C-RRSN-STAFFIND.
 5Q1ARV     MOVE WK-C-ACCNO-RPR      TO WK-C-RRSN-ACCNO.
-CMP3A3     IF WK-101-TAG50H-ACCNO NOT = SPACES AND
+CMP3A3     IF WK-101-TAG50H-ACCNO IS NOT = SPACES AND
 CMP3A3        TFSSTPL-SWFTMGTY = "101"
 CMP3A3          MOVE WK-101-TAG50H-ACCNO    TO  WK-C-RRSN-ACCNO
 CMP3A3     END-IF.
@@ -2291,39 +2288,39 @@ CMP3A3     END-IF.
 5Q1JE1     ELSE
 5Q1JE1          MOVE WK-C-RPRCODE   TO WK-C-RRSN-RSNCDE
 5Q1JE1     END-IF.
-5Q1ARV
+5Q1ARV 
 5Q1ARV     MOVE SPACES              TO WK-C-RRSN-RSNDESC.
 5Q1ARV     MOVE WK-C-RPRPGM         TO WK-C-RRSN-RPRPGM.
 5Q1ARV     CALL "TRFGRRSN"  USING WK-C-RRSN-RECORD.
-5Q1ARV
+5Q1ARV 
 5Q1ARV D499-PROCESS-RPRRSN-EX.
 5Q1ARV     EXIT.
-5Q1ARV
+5Q1ARV 
 
 GPI201 R100-READ-UFIMIJCON.
-GPI201
+GPI201 
 GPI201     INITIALIZE UFIMIJCON-REC WK-C-UFIMIJCON.
-GPI201
+GPI201 
 GPI201     MOVE WK-VTF1A-PARALNO    TO UFIMIJCON-QUENUM
 GPI201     MOVE WK-VTF1A-SEQNUM     TO UFIMIJCON-QUESUF
-GPI201
+GPI201 
 GPI201     READ UFIMIJCON KEY IS EXTERNALLY-DESCRIBED-KEY
-GPI201
+GPI201 
 GPI201     IF NOT WK-C-SUCCESSFUL
 GPI201          GO TO R199-READ-UFIMIJCON-EX
 GPI201     END-IF.
-GPI201
+GPI201 
 GPI201*-- Turn ON the switch if COVER is already received.
 GPI201     IF      UFIMIJCON-STATUS EQUAL WK-C-A
 GPI201             MOVE WK-C-Y     TO WK-C-COV-SW
 GPI201     END-IF.
-GPI201
+GPI201 
 GPI201 R199-READ-UFIMIJCON-EX.
 GPI201     EXIT.
-GPI201
-       *===============================================================*
+GPI201 
+      *===============================================================*
 GP3C00 D600-EVAL-TAG57-CD.
-       *===============================================================*
+      *===============================================================*
 GP3C00*--This routine will check Tag57 C/D Lines 1-2 if it exact matches
 GP3C00*--Tag Validation table. If Match, treat it as Tag57A w/ our Own BIC
 GP3C00*--(UOVBSGSGXXX - parameterized) to further proceed with STP processing.
@@ -2339,11 +2336,11 @@ GP3C00*--                                  Line3: *blank
 GP3C00*--                                  Line4: *blank
 GP3C00*--                                  Line5: *blank
 GP3C00*--and proceed with BAU STP processing.
-GP3C00
+GP3C00 
 GP3C00     INITIALIZE                       WK-C-VTAG57-RECORD.
 GP3C00     MOVE TAG57-OPT              TO   WK-C-VTAG57-OPTION.
 
-GP3C00
+GP3C00 
 GP3C00*--Tag57C:
 GP3C00     IF   TAG57-OPT = "C"
 GP3C00          IF  TAG57-PTID = SPACES
@@ -2352,7 +2349,7 @@ GP3C00          ELSE
 GP3C00               MOVE TAG57-PTID     TO     WK-C-VTAG57-INFO(1)
 GP3C00          END-IF
 GP3C00     END-IF.
-GP3C00
+GP3C00 
 GP3C00*--Tag57D:
 GP3C00     IF   TAG57-OPT = "D"
 GP3C00          IF  TAG57-PTID = SPACES
@@ -2366,19 +2363,19 @@ GP3C01*GP3C00          MOVE TAG57-LINE-4  TO     WK-C-VTAG57-INFO(4)
 GP3C01*GP3C00          MOVE TAG57-LINE-5  TO     WK-C-VTAG57-INFO(5)
 GP3C00          END-IF
 GP3C00     END-IF.
-GP3C00
+GP3C00 
 GP3C00     MOVE TFSSTPL-BNKENTTY           TO     WK-C-VTAG57-I-BNKENTTY.
-GP3C00
+GP3C00 
 GP3C00*--Check Tag57 if either Lines 1-2 matches Tag validation table.
 GP3C00     CALL   "TRFVTAG57"       USING     WK-C-VTAG57-RECORD.
 GP3C00     CANCEL "TRFVTAG57".
-GP3C00
+GP3C00 
 GP3C00     IF   WK-C-VTAG57-ERROR-CD = SPACES
 GP3C00          CONTINUE
 GP3C00     ELSE
 GP3C00          GO TO D699-EVAL-TAG57-CD-EX
 GP3C00     END-IF.
-GP3C00
+GP3C00 
 GP3C00*--If it match, overide w/ Tag57A:<Own BIC> (parameterized)
 GP3C00     IF   WK-C-VTAG57-VALID = "Y"
 GP3C00          MOVE SPACES         TO     TAG57-PTID
@@ -2389,9 +2386,9 @@ GP3C00          MOVE WK-C-VTAG57-BIC     TO     TAG57-BIC
 GP3C00                                     WS-ACBNKID
 GP3C00                                     WS-BANKID
 GP3C00     END-IF.
-       *===============================================================*
+      *===============================================================*
 GP3C00 D699-EVAL-TAG57-CD-EX.
-       *===============================================================*
+      *===============================================================*
 GP3C00     EXIT.
 
 VASA01*================================================================*
@@ -2407,12 +2404,12 @@ VASA01     INSPECT WK-C-CA-NO-EXPAND REPLACING ALL SPACE BY ZERO.
 VASA01     MOVE WK-C-CA-NO-EXPAND      TO ACCNO OF TFSICLCA2R.
 VASA01     MOVE  SPACE                 TO WK-C-CA-EXIST.
 VASA01     READ TFSICLCA2.
-VASA01
+VASA01 
 VASA01     IF   WK-C-RECORD-NOT-FOUND
 VASA01     OR   NOT WK-C-SUCCESSFUL
 VASA01          MOVE     "N"              TO     WK-C-CA-EXIST
 VASA01     END-IF.
-VASA01
+VASA01 
 VASA01*================================================================*
 VASA01 R299-READ-TFSICLCA2-EX.
 VASA01*================================================================*
@@ -2429,12 +2426,12 @@ VASA01     INSPECT WK-C-CA-NO-EXPAND REPLACING ALL SPACE BY ZERO.
 VASA01     MOVE WK-C-CA-NO-EXPAND      TO ACCNO OF TFSICLSA2R.
 VASA01     MOVE  SPACE                 TO WK-C-CA-EXIST.
 VASA01     READ TFSICLSA2.
-VASA01
+VASA01 
 VASA01     IF   WK-C-RECORD-NOT-FOUND
 VASA01     OR   NOT WK-C-SUCCESSFUL
 VASA01          MOVE     "N"              TO     WK-C-CA-EXIST
 VASA01     END-IF.
-VASA01
+VASA01 
 VASA01*================================================================*
 VASA01 R399-READ-TFSICLSA2-EX.
 VASA01*================================================================*
@@ -2445,13 +2442,13 @@ VASA02*================================================================*
 VASA02     IF WK-C-VASA-SW = "Y" AND
 VASA02        (VERIADDI OF TFSICLCA2 = "Y" OR
 VASA02         VERIADDI OF TFSICLSA2 = "Y")
-VASA02          IF WK-C-VCSA-CUSTFNAM NOT = SPACES
+VASA02          IF WK-C-VCSA-CUSTFNAM IS NOT = SPACES
 VASA02               MOVE ACCTM1 OF TFSICLSA2 TO WK-C-STRING
 VASA02               PERFORM C500-ACCNAME-VALIDATION
 VASA02                    THRU C599-ACCNAME-VALIDATION-EX
 VASA02               MOVE WK-C-STRING TO WK-C-CON-SA-NAME-SUB
 VASA02          END-IF
-VASA02          IF WK-C-VCCA-CUSTFNAM NOT = SPACES
+VASA02          IF WK-C-VCCA-CUSTFNAM IS NOT = SPACES
 
 VASA02               MOVE ACCTM1 OF TFSICLCA2 TO WK-C-STRING
 VASA02               PERFORM C500-ACCNAME-VALIDATION
@@ -2467,13 +2464,13 @@ VASA02                           WK-VTF1A-BENEFLG
 VASA02               MOVE 14  TO WS-JUMP
 VASA02               GO TO R499-VASA-NAME-CHECK-EX
 VASA02          ELSE
-VASA02               IF WK-C-VCSA-CUSTFNAM NOT = SPACES
+VASA02               IF WK-C-VCSA-CUSTFNAM IS NOT = SPACES
 VASA02                    MOVE MACTN1 OF TFSICLSA2 TO WK-C-STRING
 VASA02                    PERFORM C500-ACCNAME-VALIDATION
 VASA02                         THRU C599-ACCNAME-VALIDATION-EX
 VASA02                    MOVE WK-C-STRING TO WK-C-CON-SA-NAME-SUB
 VASA02               END-IF
-VASA02               IF WK-C-VCCA-CUSTFNAM NOT = SPACES
+VASA02               IF WK-C-VCCA-CUSTFNAM IS NOT = SPACES
 VASA02                    MOVE MACTN1 OF TFSICLCA2 TO WK-C-STRING
 VASA02                    PERFORM C500-ACCNAME-VALIDATION
 VASA02                         THRU C599-ACCNAME-VALIDATION-EX
@@ -2512,7 +2509,7 @@ VASA02          END-IF
 VASA02     ELSE
 VASA02          GO TO R499-VASA-NAME-CHECK-EX
 VASA02     END-IF.
-VASA02
+VASA02 
 VASA02*================================================================*
 VASA02 R499-VASA-NAME-CHECK-EX.
 VASA02*================================================================*
@@ -2522,7 +2519,7 @@ SGX206     INITIALIZE   WS-SUB.
 SGX201     PERFORM Y200-VALIDATE-SWFTMGTY
 SGX201          THRU Y299-VALIDATE-SWFTMGTY-EX.
 SGX201     IF   WK-C-GLACT-VALID-MSG  = "Y"
-SGX201     AND  WK-C-GLACT-PREFIX NOT = SPACES
+SGX201     AND  WK-C-GLACT-PREFIX IS NOT = SPACES
 SGX201     AND  TAG59-PTID-1(1:1)      = WK-C-GLACT-PREFIX
 SGX205     AND  TAG59-PTID(10:)        = SPACES
 SGX205          PERFORM VARYING WS-SUB FROM 2 BY 1 UNTIL WS-SUB > 9
@@ -2544,14 +2541,14 @@ SGX201*SGX205                                          WS-ACCNO
 SGX201     END-IF.
 SGX201 Y199-VALIDATE-TAG59-EX.
 SGX201     EXIT.
-SGX201
+SGX201 
 SGX204 Y150-FORMAT-ACCOUNT.
 SGX204     INITIALIZE                        WK-ACCNO-JUST-RT.
 SGX204     MOVE WS-ACCNO             TO     WK-ACCNO-JUST-RT.
 SGX204     CALL "TRFGRJTFY"          USING     WK-ACCNO-JUST-RT
 SGX204     INSPECT WK-ACCNO-JUST-RT
 SGX204          REPLACING ALL SPACE BY ZERO.
-SGX204
+SGX204 
 SGX204     IF   WK-ACCNO-JR-1-10   = ZEROES
 SGX204     AND  WK-ACCNO-JR-11-18 IS NUMERIC
 SGX204          MOVE WK-ACCNO-JR-11-18      TO     WS-BENEACC
@@ -2559,22 +2556,22 @@ SGX204                                             WS-ACCNO
 SGX204     END-IF.
 SGX204 Y199-FORMAT-ACCOUNT-EX.
 SGX204     EXIT.
-SGX204
+SGX204 
 SGX201 Y200-VALIDATE-SWFTMGTY.
 SGX201*--> Validate if msgtype is eligible for CR GL Account
 
 SGX201     MOVE "N"                        TO   WK-C-GLACT-VALID-MSG.
-SGX201     IF   TFSSTPL-SWFTMGTY NOT = SPACES
+SGX201     IF   TFSSTPL-SWFTMGTY IS NOT = SPACES
 SGX201     AND (TFSSTPL-SWFTMGTY EQUAL WK-C-GLACT-MTMSG1(1)
 SGX201     OR   TFSSTPL-SWFTMGTY EQUAL WK-C-GLACT-MTMSG1(2)
 SGX201     OR   TFSSTPL-SWFTMGTY EQUAL WK-C-GLACT-MTMSG1(3)
 SGX201     OR   TFSSTPL-SWFTMGTY EQUAL WK-C-GLACT-MTMSG1(4))
 SGX201          MOVE "Y"                   TO   WK-C-GLACT-VALID-MSG
 SGX201     END-IF.
-SGX201
+SGX201 
 SGX201 Y299-VALIDATE-SWFTMGTY-EX.
 SGX201     EXIT.
-SGX201
+SGX201 
 SGX201 Y300-CHECK-TAG59-GLACT.
 SGX201*--> Check if Beneficiary (Tag 59 has prefix 'G') is
 SGX201*--  a valid GL Number. If valid, retrieve CR Payment Mode
@@ -2583,10 +2580,10 @@ SGX201*--  to repair.
 SGX201     MOVE "N"                        TO   WK-C-VALID-GLACNO.
 SGX201     MOVE SPACES                     TO   WK-C-GLACT-RPRCODE.
 SGX201     MOVE ZEROES                     TO   WK-N-GLACNO.
-SGX201
+SGX201 
 SGX201     PERFORM Y350-FORMAT-ACCOUNT
 SGX201          THRU Y359-FORMAT-ACCOUNT-EX.
-SGX201
+SGX201 
 SGX201     IF   WK-N-GLACNO IS NUMERIC
 SGX201     AND  WK-N-GLACNO NOT = ZEROES
 SGX201          INITIALIZE                       WK-C-VGLAC-RECORD
@@ -2596,7 +2593,7 @@ SGX201          CALL "TRFVGLAC"          USING   WK-C-VGLAC-RECORD
 SGX201          IF   WK-C-VGLAC-GLIND  = "Y"
 SGX201               MOVE "Y"                TO   WK-C-VALID-GLACNO
 SGX201               IF   WK-C-VGLAC-PYIND   = "Y"
-SGX201               AND  WK-C-VGLAC-O-PMODE NOT = SPACES
+SGX201               AND  WK-C-VGLAC-O-PMODE IS NOT = SPACES
 SGX201                    MOVE WK-C-VGLAC-O-PMODE
 SGX201                                        TO   WK-C-GLACT-CRMOD
 SGX201               ELSE
@@ -2608,10 +2605,10 @@ SGX201          END-IF
 SGX201     ELSE
 SGX201          MOVE "RSN0357"                TO   WK-C-GLACT-RPRCODE
 SGX201     END-IF.
-SGX201
+SGX201 
 SGX201 Y399-CHECK-TAG59-GLACT-EX.
 SGX201     EXIT.
-SGX201
+SGX201 
 SGX201*---------------------------------------------------------------*
 SGX201 Y350-FORMAT-ACCOUNT.
 SGX201*---------------------------------------------------------------*
@@ -2621,23 +2618,23 @@ SGX201     MOVE WS-ACCNO             TO     WK-ACCNO-JUST-RT.
 SGX201     CALL "TRFGRJTFY"          USING     WK-ACCNO-JUST-RT
 SGX201     INSPECT WK-ACCNO-JUST-RT
 SGX201          REPLACING ALL SPACE BY ZERO.
-SGX201
+SGX201 
 SGX201     IF   WK-ACCNO-JR-1-10   = ZEROES
 SGX201     AND  WK-ACCNO-JR-11-18 IS NUMERIC
 SGX201          MOVE WK-ACCNO-JR-11-18      TO     WK-N-GLACNO
 SGX201     END-IF.
-SGX201
+SGX201 
 SGX201 Y359-FORMAT-ACCOUNT-EX.
 SGX201     EXIT.
-SGX201
-       *================================================================*
+SGX201 
+      *================================================================*
 GP3K00 Y400-REFORMAT-TAG59F.
-       *================================================================*
+      *================================================================*
 GP3K00*--This routine will evaluate Tag59F's structured Lines 1-5 based on
 GP3K00*--prefixes (e.g "1/" for Bene name etc..), remove prefixes and string
 GP3K00*--multiple occurence of prefixes to be later used for Account Name check
 GP3K00     INITIALIZE                        WK-C-VTAG59F-RECORD.
-GP3K00
+GP3K00 
 GP3K00     MOVE TAG59-PTID              TO   WS-BENEACC
 GP3K00                                       WS-ACCNO.
 GP3K00     MOVE TAG59-NAME              TO   WK-C-VTAG59F-I-BENE(1).
@@ -2645,11 +2642,11 @@ GP3K00     MOVE TAG59-LINE-3            TO   WK-C-VTAG59F-I-BENE(2).
 GP3K00     MOVE TAG59-LINE-4            TO   WK-C-VTAG59F-I-BENE(3).
 GP3K00     MOVE TAG59-LINE-5            TO   WK-C-VTAG59F-I-BENE(4).
 GP3K00     MOVE "I"                     TO   WK-C-VTAG59F-REMIND.
-GP3K00
+GP3K00 
 GP3K00*--Call Utility pgm to remove prefixes "1/", "2/" etc from Tag59F
 GP3K00     CALL   "TRFVTAG59F"       USING     WK-C-VTAG59F-RECORD.
 GP3K00     CANCEL "TRFVTAG59F".
-GP3K00
+GP3K00 
 GP3K00     IF   WK-C-VTAG59F-ERROR-CD = SPACES
 GP3K00*---------Move formatted values
 GP3K00          MOVE WK-C-VTAG59F-O-BENE-NME      TO WS-NAME
@@ -2665,26 +2662,26 @@ GP3K00          MOVE TAG59-LINE-3                 TO WS-ADDR1
 GP3K00          MOVE TAG59-LINE-4                 TO WS-ADDR2
 GP3K00          MOVE TAG59-LINE-5                 TO WS-ADDR3
 GP3K00     END-IF.
-       *================================================================*
+      *================================================================*
 GP3K00 Y499-REFORMAT-TAG59F-EX.
-       *================================================================*
+      *================================================================*
 GP3K00     EXIT.
       /
 5Q2JE1*5Q1ARV D500-PROCESS-ACC-ERR SECTION.
 5Q2JE1*5Q1ARV D500-ENTRY.
 5Q2JE1*5Q1ARV
 5Q2JE1*5Q1ARV     EVALUATE TRUE
-5Q2JE1*5Q1ARV          WHEN WK-C-VCSA-ERROR-CD NOT = SPACES
+5Q2JE1*5Q1ARV          WHEN WK-C-VCSA-ERROR-CD IS NOT = SPACES
 5Q2JE1*5Q1ARV               MOVE WK-C-VCSA-ERROR-CD TO WK-C-RPRCODE
 5Q2JE1*5Q1ARV               MOVE WK-C-VCSA-SEG-CODE TO WK-C-SEGCDE
 5Q2JE1*5Q1ARV               MOVE WK-N-VCSA-STAFFIND TO WK-N-STAFFIND
 5Q2JE1*5Q1ARV               MOVE SPACES              TO WK-C-QRATE
-5Q2JE1*5Q1ARV          WHEN WK-C-VCCA-ERROR-CD NOT = SPACES
+5Q2JE1*5Q1ARV          WHEN WK-C-VCCA-ERROR-CD IS NOT = SPACES
 5Q2JE1*5Q1ARV               MOVE WK-C-VCCA-ERROR-CD TO WK-C-RPRCODE
 5Q2JE1*5Q1ARV               MOVE WK-C-VCCA-SEG-CODE TO WK-C-SEGCDE
 5Q2JE1*5Q1ARV               MOVE WK-N-VCCA-STAFFIND TO WK-N-STAFFIND
 5Q2JE1*5Q1ARV               MOVE SPACES              TO WK-C-QRATE
-5Q2JE1*5Q1ARV          WHEN WK-C-VCFA-ERROR-CD NOT = SPACES
+5Q2JE1*5Q1ARV          WHEN WK-C-VCFA-ERROR-CD IS NOT = SPACES
 5Q2JE1*5Q1ARV               MOVE WK-C-VCFA-ERROR-CD TO WK-C-RPRCODE
 5Q2JE1*5Q1ARV               MOVE WK-C-VCFA-SEG-CODE TO WK-C-SEGCDE
 5Q2JE1*5Q1ARV               MOVE WK-N-VCFA-STAFFIND TO WK-N-STAFFIND
@@ -2700,17 +2697,17 @@ GP3K00     EXIT.
 5Q2JE1*5Q1ARV D600-PROCESS-ACC-ERR SECTION.
 5Q2JE1*5Q1ARV D600-ENTRY.
 5Q2JE1*5Q1ARV     EVALUATE TRUE
-5Q2JE1*5Q1ARV          WHEN WK-C-VCSA-ERROR-CD NOT = SPACES
+5Q2JE1*5Q1ARV          WHEN WK-C-VCSA-ERROR-CD IS NOT = SPACES
 5Q2JE1*5Q1ARV               MOVE WK-C-VCSA-ERROR-CD TO WK-C-RPRCODE
 5Q2JE1*5Q1ARV               MOVE WK-C-VCSA-SEG-CODE TO WK-C-SEGCDE
 5Q2JE1*5Q1ARV               MOVE WK-N-VCSA-STAFFIND TO WK-N-STAFFIND
 5Q2JE1*5Q1ARV               MOVE SPACES              TO WK-C-QRATE
-5Q2JE1*5Q1ARV          WHEN WK-C-VCCA-ERROR-CD NOT = SPACES
+5Q2JE1*5Q1ARV          WHEN WK-C-VCCA-ERROR-CD IS NOT = SPACES
 5Q2JE1*5Q1ARV               MOVE WK-C-VCCA-ERROR-CD TO WK-C-RPRCODE
 5Q2JE1*5Q1ARV               MOVE WK-C-VCCA-SEG-CODE TO WK-C-SEGCDE
 5Q2JE1*5Q1ARV               MOVE WK-N-VCCA-STAFFIND TO WK-N-STAFFIND
 5Q2JE1*5Q1ARV               MOVE SPACES              TO WK-C-QRATE
-5Q2JE1*5Q1ARV          WHEN WK-C-VCFA-ERROR-CD NOT = SPACES
+5Q2JE1*5Q1ARV          WHEN WK-C-VCFA-ERROR-CD IS NOT = SPACES
 5Q2JE1*5Q1ARV               MOVE WK-C-VCFA-ERROR-CD TO WK-C-RPRCODE
 5Q2JE1*5Q1ARV               MOVE WK-C-VCFA-SEG-CODE TO WK-C-SEGCDE
 5Q2JE1*5Q1ARV               MOVE WK-N-VCFA-STAFFIND TO WK-N-STAFFIND

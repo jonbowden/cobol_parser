@@ -45,7 +45,7 @@
            DATA RECORD IS TFSAPLPA-REC.
        01  TFSAPLPA-REC.
            COPY DDS-ALL-FORMATS OF TFSAPLPA.
-       01  TFSAPLPA-REC-1
+       01  TFSAPLPA-REC-1.
            COPY TFSAPLPA.
       
       *************************
@@ -72,7 +72,7 @@
               THRU A099-MAIN-PROCESSING-EX.
            PERFORM Z000-END-PROGRAM-ROUTINE
               THRU Z099-END-PROGRAM-ROUTINE-EX.
-       MPIDCK     GOBACK.
+MPIDCK     GOBACK.
       
        EJECT
       *---------------------------------------------------------------*

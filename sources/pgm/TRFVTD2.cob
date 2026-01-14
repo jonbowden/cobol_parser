@@ -141,29 +141,29 @@
                05  WS-RISKIND           PIC X(01) VALUE SPACE.
        05  WS-CNTRYCD           PIC X(02) VALUE SPACE.
 
-               5Q1ARV    01  WK-C-RPRRSN-AREA.
-               5Q1ARV        05  WK-C-SEGCODE       PIC X(01) VALUE SPACE.
-               5Q1ARV        05  WK-N-STAFFIND      PIC S9(02) VALUE ZEROS.
-               5Q1ARV        05  WK-C-ACCNO         PIC X(11) VALUE SPACE.
-               5Q1ARV        05  WK-C-ACCNAME       PIC X(35) VALUE SPACE.
-               5Q1ARV        05  WK-C-QRATE         PIC X(02) VALUE SPACE.
-               5Q1ARV        05  WK-C-RPRCODE       PIC X(07) VALUE SPACE.
-               5Q1ARV        05  WK-C-TRNNO         PIC X(12) VALUE SPACE.
-               5Q1ARV        05  WK-C-FUNCTID       PIC X(08) VALUE SPACE.
-               5Q1ARV    01  WK-N-SYSPTE            PIC S9(08) VALUE ZEROS.
-               5Q1ARV    01  WK-C-RPRPGM            PIC X(10) VALUE "TRFVTID2".
+5Q1ARV    01  WK-C-RPRRSN-AREA.
+5Q1ARV        05  WK-C-SEGCODE       PIC X(01) VALUE SPACE.
+5Q1ARV        05  WK-N-STAFFIND      PIC S9(02) VALUE ZEROS.
+5Q1ARV        05  WK-C-ACCNO         PIC X(11) VALUE SPACE.
+5Q1ARV        05  WK-C-ACCNAME       PIC X(35) VALUE SPACE.
+5Q1ARV        05  WK-C-QRATE         PIC X(02) VALUE SPACE.
+5Q1ARV        05  WK-C-RPRCODE       PIC X(07) VALUE SPACE.
+5Q1ARV        05  WK-C-TRNNO         PIC X(12) VALUE SPACE.
+5Q1ARV        05  WK-C-FUNCTID       PIC X(08) VALUE SPACE.
+5Q1ARV    01  WK-N-SYSPTE            PIC S9(08) VALUE ZEROS.
+5Q1ARV    01  WK-C-RPRPGM            PIC X(10) VALUE "TRFVTID2".
 
-               5Q1ARV    COPY RRSN.
-               COPY VSTPL.
-               COPY ACNT.
-               COPY BLKB.
-               COPY EXCB.
-       COPY OECD.
-               COPY LOGG.
+5Q1ARV    COPY RRSN.
+          COPY VSTPL.
+          COPY ACNT.
+          COPY BLKB.
+          COPY EXCB.
+          COPY OECD.
+          COPY LOGG.
 
        LINKAGE SECTION.
       ****************
-               COPY VTD2.
+          COPY VTD2.
 
        PROCEDURE DIVISION USING WK-VTD2.
       ********************************
@@ -175,11 +175,11 @@
            MOVE ALL "X" TO TABLE-ARR2.
            MOVE "Y" TO FIRST-TIME.
 
-               5Q1ARV    MOVE ZEROS    TO WK-C-RRSN-QUENUM
-               5Q1ARV                    WK-C-RRSN-QUESUF
-               5Q1ARV                    WK-C-RRSN-STAFFIND
-               5Q1ARV                    WK-C-RRSN-SEQNUM
-       5Q1ARV                    WK-C-RRSN-RPRDTE.
+5Q1ARV    MOVE ZEROS    TO WK-C-RRSN-QUENUM
+5Q1ARV                    WK-C-RRSN-QUESUF
+5Q1ARV                    WK-C-RRSN-STAFFIND
+5Q1ARV                    WK-C-RRSN-SEQNUM
+5Q1ARV                    WK-C-RRSN-RPRDTE.
 
            IF FIRST-TIME = "Y"
                OPEN    INPUT TFSSTPL
@@ -201,12 +201,12 @@
        DISPLAY "FILE STATUS IS " WK-C-FILE-STATUS
                    GO TO 2000-END-PROGRAM
                END-IF
-                   5Q1ARV        OPEN    INPUT TFSCLSYS
-                   5Q1ARV        IF NOT WK-C-SUCCESSFUL
-       5Q1ARV            DISPLAY "TRFVTD2 - OPEN FILE ERROR - TFSCLSYS"
-       5Q1ARV            DISPLAY "FILE STATUS IS " WK-C-FILE-STATUS
-                   5Q1ARV            GO TO 2000-END-PROGRAM
-                   5Q1ARV        END-IF
+5Q1ARV        OPEN    INPUT TFSCLSYS
+5Q1ARV        IF NOT WK-C-SUCCESSFUL
+5Q1ARV            DISPLAY "TRFVTD2 - OPEN FILE ERROR - TFSCLSYS"
+5Q1ARV            DISPLAY "FILE STATUS IS " WK-C-FILE-STATUS
+5Q1ARV            GO TO 2000-END-PROGRAM
+5Q1ARV        END-IF
        END-IF.
 
                MOVE WK-VTD2-PARALNO    TO TFSSTPL-PARALNO.
@@ -245,12 +245,12 @@
                    MOVE "Y" TO WS-FOUND
                    MOVE TFSCNTRY-RISKIND TO WS-RISKIND
        END-READ.
-                       5Q1ARV   READ TFSCLSYS.
-                       5Q1ARV   IF NOT WK-C-SUCCESSFUL
-                       5Q1ARV       DISPLAY "TRFVTID2 - READ TFSCLSYS ERROR"
-       5Q1ARV       DISPLAY "FILE STATUS - " WK-C-FILE-STATUS
+5Q1ARV   READ TFSCLSYS.
+5Q1ARV   IF NOT WK-C-SUCCESSFUL
+5Q1ARV       DISPLAY "TRFVTID2 - READ TFSCLSYS ERROR"
+5Q1ARV       DISPLAY "FILE STATUS - " WK-C-FILE-STATUS
                        5Q1ARV       GO TO Z000-END-PROGRAM.
-       5Q1ARV   MOVE TFSCLSYS-SYSDTE TO WK-N-SYSDTE.
+5Q1ARV   MOVE TFSCLSYS-SYSDTE TO WK-N-SYSDTE.
 
        A199-INITIAL-SUBROUTINE-EX.
        EXIT.
@@ -273,19 +273,19 @@
                        CALL "TRFBLKB"         USING WK-BLKB.
        SM0TY1****IF WK-OECD-INDIC NOT = "Y"
                        IF WK-BLKB-INDIC       = "Y"
-                           PERFORM C200-VALIDATION THRU C299-VALIDATION-EX
+                         PERFORM C200-VALIDATION THRU C299-VALIDATION-EX
        END-IF.
       *-----------------------------------------------------------------*
       * C3 - EXCEPTIONAL BANK TABLE                                     *
       *-----------------------------------------------------------------*
                            MOVE WK-C-SENBNKID     TO WK-EXCB-BKID.
                            CALL "TRFEXCB"         USING WK-EXCB.
-       SM0TY1****IF WK-OECD-INDIC NOT = "Y"
-                               SM0TY1****AND WK-BLKB-INDIC NOT = "Y"
-                               SM0TY1****AND WK-EXCB-INDIC  = "Y"
-                               SM0TY1    IF WK-EXCB-INDIC   = "Y"
-                               SM0TY1    AND WK-BLKB-INDIC NOT = "Y"
-                           PERFORM C300-VALIDATION THRU C399-VALIDATION-EX
+SM0TY1****IF WK-OECD-INDIC NOT = "Y"
+SM0TY1****AND WK-BLKB-INDIC NOT = "Y"
+SM0TY1****AND WK-EXCB-INDIC  = "Y"
+SM0TY1    IF WK-EXCB-INDIC   = "Y"
+SM0TY1    AND WK-BLKB-INDIC NOT = "Y"
+              PERFORM C300-VALIDATION THRU C399-VALIDATION-EX
        END-IF.
       *-----------------------------------------------------------------*
       * C4 - OTHER BANKS                                                *
@@ -293,186 +293,182 @@
                            MOVE WK-C-SENBNKID     TO WK-EXCB-BKID.
                            CALL "TRFEXCB"         USING WK-EXCB.
        IF NOT(WK-OECD-INDIC = "Y"
-                                   OR  WK-BLKB-INDIC = "Y"
-                                   OR  WK-EXCB-INDIC = "Y")
-                               PERFORM C400-VALIDATION THRU C499-VALIDATION-EX
+       OR  WK-BLKB-INDIC = "Y"
+       OR  WK-EXCB-INDIC = "Y")
+           PERFORM C400-VALIDATION THRU C499-VALIDATION-EX
        END-IF.
 
-                               PERFORM D100-VALIDATION THRU D199-VALIDATION-EX.
-                               PERFORM D200-VALIDATION THRU D299-VALIDATION-EX.
+       PERFORM D100-VALIDATION THRU D199-VALIDATION-EX.
+       PERFORM D200-VALIDATION THRU D299-VALIDATION-EX.
 
        B199-PATH-CHOICE-EX.
        EXIT.
 
        C100-VALIDATION.
-                               IF WS-FOUND NOT = "Y"
-                                   MOVE "N" TO TAB-VL2(01)
-                                   ELSE
-                                   MOVE "Y" TO TAB-VL2(01)
-                                   IF WS-RISKIND = "Y"
-                                       MOVE "Y" TO TAB-VL2(02)
-                                           5Q1JE2    INITIALIZE WK-C-RPRRSN-AREA
-                                           5Q1JE2    MOVE "RSN0094" TO WK-C-RPRCODE
-                                           5Q1JE2    PERFORM D400-PROCESS-RPRRSN
-                                           5Q1JE2    THRU D499-PROCESS-RPRRSN-EX
-                                       ELSE
-                                       MOVE "N" TO TAB-VL2(02)
-                                       MOVE "Y" TO WS-OKAY
-                                       IF WS-FOUND = "Y"
-       MOVE WS-CNTRYCD TO WK-ACNT-CCTY
-                                           CALL "TRFACNT" USING WK-ACNT
-
-                                           MOVE WK-ACNT-INDIC TO TAB-VL2(03)
-                                           IF  WK-ACNT-INDIC = "Y"
-                                               MOVE PATH-P1 TO TABLE-ARR2
-                                               ELSE
-                                               MOVE PATH-P2 TO TABLE-ARR2
-                                           END-IF
-                                       END-IF
-       END-IF.
+               IF WS-FOUND NOT = "Y"
+                  MOVE "N" TO TAB-VL2(01)
+               ELSE
+                  MOVE "Y" TO TAB-VL2(01)
+                  IF WS-RISKIND = "Y"
+                     MOVE "Y" TO TAB-VL2(02)
+5Q1JE2               INITIALIZE WK-C-RPRRSN-AREA
+5Q1JE2               MOVE "RSN0094" TO WK-C-RPRCODE
+5Q1JE2               PERFORM D400-PROCESS-RPRRSN
+5Q1JE2                 THRU D499-PROCESS-RPRRSN-EX
+                 ELSE
+                      MOVE "N" TO TAB-VL2(02)
+                      MOVE "Y" TO WS-OKAY
+                      IF WS-FOUND = "Y"
+                         MOVE WS-CNTRYCD TO WK-ACNT-CCTY
+                         CALL "TRFACNT" USING WK-ACNT
+                         MOVE WK-ACNT-INDIC TO TAB-VL2(03)
+                         IF  WK-ACNT-INDIC = "Y"
+                             MOVE PATH-P1 TO TABLE-ARR2
+                         ELSE
+                             MOVE PATH-P2 TO TABLE-ARR2
+                         END-IF
+                      END-IF
+                 END-IF.
        C199-VALIDATION-EX.
-       EXIT.
-                                           EJECT
+            EXIT.
+            EJECT
 
        C200-VALIDATION.
-                                       MOVE "N"     TO WS-OKAY.
-                                       MOVE ALL "X" TO TABLE-ARR2.
-                                           5Q1JE1 INITIALIZE WK-C-RPRRSN-AREA.
-                                           5Q1JE1 MOVE "RSN0098" TO WK-C-RPRCODE.
-                                           5Q1JE1 PERFORM D400-PROCESS-RPRRSN
-                                           5Q1JE1     THRU D499-PROCESS-RPRRSN-EX.
+            MOVE "N"     TO WS-OKAY.
+            MOVE ALL "X" TO TABLE-ARR2.
+5Q1JE1      INITIALIZE WK-C-RPRRSN-AREA.
+5Q1JE1      MOVE "RSN0098" TO WK-C-RPRCODE.
+5Q1JE1      PERFORM D400-PROCESS-RPRRSN
+5Q1JE1          THRU D499-PROCESS-RPRRSN-EX.
        C299-VALIDATION-EX.
-       EXIT.
-                                           EJECT
-
+            EXIT.
+            EJECT
        C300-VALIDATION.
-                                       IF  WS-FOUND NOT = "Y"
-                                           MOVE "N" TO TAB-VL2(01)
-                                           ELSE
-                                           MOVE "Y" TO TAB-VL2(01)
-                                               WS-OKAY
-                                           MOVE PATH-P3 TO TABLE-ARR2
-       END-IF.
+            IF  WS-FOUND NOT = "Y"
+                MOVE "N" TO TAB-VL2(01)
+            ELSE
+                MOVE "Y" TO TAB-VL2(01)
+                            WS-OKAY
+                MOVE PATH-P3 TO TABLE-ARR2
+            END-IF.
        C399-VALIDATION-EX.
-       EXIT.
-                                               EJECT
+            EXIT.
+            EJECT
 
        C400-VALIDATION.
-                                           IF  WS-FOUND NOT = "Y"
-                                               MOVE "N" TO TAB-VL2(01)
-                                               ELSE
-                                               MOVE "Y" TO TAB-VL2(01)
-                                               IF  WS-RISKIND = "Y"
-                                                   MOVE "Y" TO TAB-VL2(02)
-                                                       5Q1JE2 INITIALIZE WK-C-RPRRSN-AREA
-                                                       5Q1JE2 MOVE "RSN0094" TO WK-C-RPRCODE
-                                                       5Q1JE2 PERFORM D400-PROCESS-RPRRSN
-                                                       5Q1JE2     THRU D499-PROCESS-RPRRSN-EX
-                                                   ELSE
-                                                   MOVE "N" TO TAB-VL2(02)
-                                                   IF  WS-FOUND = "Y"
-       MOVE WS-CNTRYCD      TO WK-ACNT-CCTY
-                                                       CALL "TRFACNT" USING WK-ACNT
-                                                       MOVE WK-ACNT-INDIC TO TAB-VL2(03)
-                                                           WS-OKAY
+            IF  WS-FOUND NOT = "Y"
+                MOVE "N" TO TAB-VL2(01)
+            ELSE
+                MOVE "Y" TO TAB-VL2(01)
+                IF  WS-RISKIND = "Y"
+                    MOVE "Y" TO TAB-VL2(02)
+5Q1JE2              INITIALIZE WK-C-RPRRSN-AREA
+5Q1JE2              MOVE "RSN0094" TO WK-C-RPRCODE
+5Q1JE2              PERFORM D400-PROCESS-RPRRSN
+5Q1JE2                THRU D499-PROCESS-RPRRSN-EX
+                ELSE
+                    MOVE "N" TO TAB-VL2(02)
+                    IF  WS-FOUND = "Y"
+                        MOVE WS-CNTRYCD      TO WK-ACNT-CCTY
+                        CALL "TRFACNT" USING WK-ACNT
+                        MOVE WK-ACNT-INDIC TO TAB-VL2(03)
+                                              WS-OKAY
 
-                                                       IF  WK-ACNT-INDIC  = "Y"
-                                                           MOVE PATH-P4   TO TABLE-ARR2
-                                                           MOVE "Y"       TO WS-OKAY
-                                                           ELSE
-                                                           MOVE "N"       TO WS-OKAY
-                                                               5Q1ARV     INITIALIZE WK-C-RPRRSN-AREA
-                                                               5Q1LN1     MOVE "RSN0119" TO WK-C-RPRCODE
-                                                               5Q1ARV     PERFORM D400-PROCESS-RPRRSN
-                                                               5Q1ARV        THRU D499-PROCESS-RPRRSN-EX
-                                                       END-IF
-                                                   END-IF
-       END-IF.
+                        IF  WK-ACNT-INDIC  = "Y"
+                            MOVE PATH-P4   TO TABLE-ARR2
+                            MOVE "Y"       TO WS-OKAY
+                        ELSE
+                            MOVE "N"       TO WS-OKAY
+5Q1ARV                      INITIALIZE WK-C-RPRRSN-AREA
+5Q1LN1                      MOVE "RSN0119" TO WK-C-RPRCODE
+5Q1ARV                      PERFORM D400-PROCESS-RPRRSN
+5Q1ARV                         THRU D499-PROCESS-RPRRSN-EX
+                        END-IF
+                     END-IF
+            END-IF.
        C499-VALIDATION-EX.
-       EXIT.
-                                                       EJECT
+            EXIT.
+            EJECT
 
        D100-VALIDATION.
-                                                   MOVE TABLE-ARR2   TO TABLE-ARRAY.
-                                                   IF TABLE-ARRAY = ALL "X"
-                                                       MOVE "N"       TO WS-OKAY
-                                                           5Q1JE1     INITIALIZE WK-C-RPRRSN-AREA
-                                                           5Q1JE1     MOVE "RSN0115" TO WK-C-RPRCODE
-                                                           5Q1JE1     PERFORM D400-PROCESS-RPRRSN
-                                                           5Q1JE1        THRU D499-PROCESS-RPRRSN-EX
-       END-IF.
-                                                       IF TAB-VL2(01) NOT = "X"
-                                                           MOVE TAB-VL2(01) TO TAB-VAL(01)
-                                                           PERFORM D300-LOGGING THRU D399-LOGGING-EX
-       END-IF.
-                                                           IF TAB-VL2(02) NOT = "X"
-                                                               MOVE TAB-VL2(02) TO TAB-VAL(02)
-                                                               PERFORM D300-LOGGING THRU D399-LOGGING-EX
-       END-IF.
-                                                               IF TAB-VL2(03) NOT = "X"
-                                                                   MOVE TAB-VL2(03) TO TAB-VAL(03)
-                                                                   PERFORM D300-LOGGING THRU D399-LOGGING-EX
-       END-IF.
+            MOVE TABLE-ARR2   TO TABLE-ARRAY.
+            IF TABLE-ARRAY = ALL "X"
+               MOVE "N"       TO WS-OKAY
+SQ1JE1         INITIALIZE WK-C-RPRRSN-AREA
+5Q1JE1         MOVE "RSN0115" TO WK-C-RPRCODE
+5Q1JE1         PERFORM D400-PROCESS-RPRRSN
+5Q1JE1           THRU D499-PROCESS-RPRRSN-EX
+             END-IF.
+             IF TAB-VL2(01) NOT = "X"
+                MOVE TAB-VL2(01) TO TAB-VAL(01)
+                PERFORM D300-LOGGING THRU D399-LOGGING-EX
+             END-IF.
+             IF TAB-VL2(02) NOT = "X"
+                MOVE TAB-VL2(02) TO TAB-VAL(02)
+                PERFORM D300-LOGGING THRU D399-LOGGING-EX
+             END-IF.
+             IF TAB-VL2(03) NOT = "X"
+                MOVE TAB-VL2(03) TO TAB-VAL(03)
+                PERFORM D300-LOGGING THRU D399-LOGGING-EX
+             END-IF.
        D199-VALIDATION-EX.
-       EXIT.
-                                                                       EJECT
+             EXIT.
+             EJECT
 
        D200-VALIDATION.
-       MOVE TABLE-ARRAY  TO WK-VTD2-DATAD2
-                                                                   MOVE WS-OKAY      TO WK-VTD2-NO-ERROR
-                                                                   MOVE "N"          TO WS-FLAG1.
-                                                                   PERFORM D300-LOGGING THRU D399-LOGGING-EX.
+             MOVE TABLE-ARRAY  TO WK-VTD2-DATAD2
+             MOVE WS-OKAY      TO WK-VTD2-NO-ERROR
+             MOVE "N"          TO WS-FLAG1.
+             PERFORM D300-LOGGING THRU D399-LOGGING-EX.
 
        D299-VALIDATION-EX.
-       EXIT.
-                                                                       EJECT
+            EXIT.
+            EJECT
 
        D300-LOGGING.
-                                                                   MOVE WK-VTD2-PARALNO TO WK-LOGG-PARALNO.
-
-                                                                   MOVE WK-VTD2-SEQNUM        TO WK-LOGG-SEQNUM.
-       MOVE TABLE-ARRAY           TO WK-LOGG-DATAD2.
-                                                                   MOVE "D2"                  TO WK-LOGG-TABTYP.
-                                                                   CALL "TRFLOGGCL" USING WK-LOGG
-                                                                       WS-FLAG1
-       WS-FLAG2.
-                                                                   IF WK-LOGG-ERROR-FOUND = "Y"
-                                                                       GO TO D399-LOGGING-EX
-       END-IF.
+            MOVE WK-VTD2-PARALNO TO WK-LOGG-PARALNO.
+            MOVE WK-VTD2-SEQNUM        TO WK-LOGG-SEQNUM.
+            MOVE TABLE-ARRAY           TO WK-LOGG-DATAD2.
+            MOVE "D2"                  TO WK-LOGG-TABTYP.
+            CALL "TRFLOGGCL" USING WK-LOGG
+                                   WS-FLAG1
+                                   WS-FLAG2.
+            IF WK-LOGG-ERROR-FOUND = "Y"
+               GO TO D399-LOGGING-EX
+            END-IF.
        D399-LOGGING-EX.
-       EXIT.
+            EXIT.
 
-       5Q1ARV  D400-PROCESS-RPRRSN SECTION.
-                                                                           5Q1ARV  D400-ENTRY.
-                                                                           5Q1ARV
-                                                                           5Q1ARV      MOVE WK-VTD2-PARALNO   TO WK-C-RRSN-QUENUM.
-                                                                           5Q1ARV      MOVE WK-VTD2-SEQNUM    TO WK-C-RRSN-QUESUF.
-                                                                           5Q1ARV      MOVE WK-C-TRNNO        TO WK-C-RRSN-TRNNO.
-                                                                           5Q1ARV      MOVE WK-C-FUNCTID      TO WK-C-RRSN-FUNCTID.
-       5Q1ARV      MOVE WK-C-SEGCDE       TO WK-C-RRSN-SEGCDE.
-                                                                           5Q1ARV      MOVE SPACES            TO WK-C-RRSN-SEGDESC.
-                                                                           5Q1ARV      MOVE WK-N-STAFFIND     TO WK-C-RRSN-STAFFIND.
-                                                                           5Q1ARV      MOVE WK-C-ACCNO        TO WK-C-RRSN-ACCNO.
-                                                                           5Q1ARV      MOVE WK-C-QRATE        TO WK-C-RRSN-QRATE.
-       5Q1ARV      MOVE WK-N-SYSDTE       TO WK-C-RRSN-RPRDTE.
-       5Q1JE1*5Q1ARV  MOVE WK-C-RPRCODE   TO WK-C-RRSN-RSNCDE.
-                                                                           5Q1JE1      IF WK-C-RPRCODE = SPACE
-       5Q1JE1          MOVE "RSN9999"     TO WK-C-RRSN-RSNCDE
-                                                                           5Q1JE1      ELSE
-       5Q1JE1          MOVE WK-C-RPRCODE  TO WK-C-RRSN-RSNCDE
-                                                                           5Q1JE1      END-IF.
-                                                                           5Q1JE1
-                                                                           5Q1ARV      MOVE SPACES            TO WK-C-RRSN-RSNDESC.
-                                                                           5Q1ARV      MOVE WK-C-RPRPGM       TO WK-C-RRSN-RPRPGM.
-       5Q1ARV      CALL "TRFGRRSN" USING WK-C-RRSN-RECORD.
-                                                                           5Q1ARV
-                                                                           5Q1ARV  D499-PROCESS-RPRRSN-EX.
-                                                                           5Q1ARV      EXIT.
-                                                                           EJECT
-
+5Q1ARV D400-PROCESS-RPRRSN SECTION.
+5Q1ARV D400-ENTRY.
+5Q1ARV
+5Q1ARV      MOVE WK-VTD2-PARALNO   TO WK-C-RRSN-QUENUM.
+5Q1ARV      MOVE WK-VTD2-SEQNUM    TO WK-C-RRSN-QUESUF.
+5Q1ARV      MOVE WK-C-TRNNO        TO WK-C-RRSN-TRNNO.
+5Q1ARV      MOVE WK-C-FUNCTID      TO WK-C-RRSN-FUNCTID.
+5Q1ARV      MOVE WK-C-SEGCDE       TO WK-C-RRSN-SEGCDE.
+5Q1ARV      MOVE SPACES            TO WK-C-RRSN-SEGDESC.
+5Q1ARV      MOVE WK-N-STAFFIND     TO WK-C-RRSN-STAFFIND.
+5Q1ARV      MOVE WK-C-ACCNO        TO WK-C-RRSN-ACCNO.
+5Q1ARV      MOVE WK-C-QRATE        TO WK-C-RRSN-QRATE.
+5Q1ARV      MOVE WK-N-SYSDTE       TO WK-C-RRSN-RPRDTE.
+5Q1JE1*5Q1ARV  MOVE WK-C-RPRCODE   TO WK-C-RRSN-RSNCDE.
+5Q1JE1      IF WK-C-RPRCODE = SPACE
+5Q1JE1          MOVE "RSN9999"     TO WK-C-RRSN-RSNCDE
+5Q1JE1      ELSE
+5Q1JE1          MOVE WK-C-RPRCODE  TO WK-C-RRSN-RSNCDE
+5Q1JE1      END-IF.
+5Q1JE1
+5Q1ARV      MOVE SPACES            TO WK-C-RRSN-RSNDESC.
+5Q1ARV      MOVE WK-C-RPRPGM       TO WK-C-RRSN-RPRPGM.
+5Q1ARV      CALL "TRFGRRSN" USING WK-C-RRSN-RECORD.
+5Q1ARV
+5Q1ARV D499-PROCESS-RPRRSN-EX.
+5Q1ARV      EXIT.
+            EJECT
        Z000-END-PROGRAM.
-                                                                       CLOSE   TFSSTPL
-                                                                           TFSCNTRY
-                                                                           5Q1ARV          TFSCLSYS
-       TFSBANK.
-                                                                       EXIT PROGRAM.
+            CLOSE   TFSSTPL
+                    TFSCNTRY
+5Q1ARV              TFSCLSYS
+                    TFSBANK.
+            EXIT PROGRAM.

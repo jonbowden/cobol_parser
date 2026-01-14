@@ -172,7 +172,7 @@ ID1VKE FILE STATUS IS WK-C-FILE-STATUS.
        01  WK-C-TFSBNKAC-1.
               COPY TFSBNKAC.
 
-ID1VKE FD  TFSBNKET.
+ID1VKE FD  TFSBNKET
 ID1VKE        LABEL RECORDS ARE OMITTED
 ID1VKE DATA RECORD IS WK-C-TFSBNKET.
 ID1VKE        01 WK-C-TFSBNKET.
@@ -282,34 +282,24 @@ ID1VKE        COPY TFSBNKET.
        01 PATH-P10                  PIC X(20)
               VALUE "XXYYYYXXXXXXXXXXXXXXX".
 
-       01  PATH-P11                        VALUE "XXNYYXXXXXXXXXX
-      -    XXXXXXXX".
-              PIC X(20).
-       01  PATH-P12                        VALUE "XXYYNXXXXXXXXXX
-      -    XXXXXXXXX".
-              PIC X(20).
-       01  PATH-P13                        VALUE "XXNNYYXXXXXXXXX
-      -    XXXXXXXXX".
-              PIC X(20).
-       01  PATH-P14                        VALUE "XYYXPIC X(20)
-      -    XXXXXXXXXXXX".
-              PIC X(20).
-       01  PATH-P15                        VALUE "XXYYXPIC X(20)
-      -    XXXXXXXXXXX".
-              PIC X(20).
-       01  PATH-P16                        VALUE "XXXXXNPIC X(20)
-      -    XXXXXXXXXX".
-              PIC X(20).
-       01  PATH-P17                        VALUE "XXXXXYPIC X(20)
-      -    XXXXXXXXXX".
-              PIC X(20).
-       01  PATH-P18                        VALUE "XXXXXXXXPIC X(20)
-      -    XXXXXXXX".
-              PIC X(20).
-       01  PATH-P19                        VALUE "XXXXXXXXXXXXXXX
-      -    XXXXXXXXX".
-              PIC X(20).
-
+       01  PATH-P11 PIC X(20)
+              VALUE "XXNYYXXXXXXXXXXXXXXXXXX".
+       01  PATH-P12 PIC x(20)                        
+              VALUE "XXYYNXXXXXXXXXXXXXXXXXXX".
+       01  PATH-P13 PIC X(20)
+              VALUE "XXNNYYXXXXXXXXXXXXXXXXXX".
+       01  PATH-P14 PIC X(20)
+              VALUE "XXNYYXXXXXXXXXXXXXXXXXX".
+       01  PATH-P15 PIC x(20)
+              VALUE "XXYYNXXXXXXXXXXXXXXXXXXX".
+       01  PATH-P16 PIC X(20)
+              VALUE "XXYYNXXXXXXXXXXXXXXXXXXX".
+       01  PATH-P17 PIC X(20)
+              VALUE "XXNYYXXXXXXXXXXXXXXXXXX".
+       01  PATH-P18 PIC x(20)
+              VALUE "XXYYNXXXXXXXXXXXXXXXXXXX".
+       01  PATH-P19 PIC X(20)
+              VALUE "XXYYNXXXXXXXXXXXXXXXXXXX".
        01  WK-C-PARADATA.
            05  WK-C-PARAVALU               PIC X(20).
            05  WK-N-PARAVALU               REDEFINES WK-C-PARAVALU
@@ -392,11 +382,9 @@ ID1VKE        01  WK-C-RTGSBICDCE              PIC X(11)  VALUE SPACE.
 5Q1JM1     05  WK-C-RPRCODE                PIC X(07)  VALUE SPACE.
 5Q1JM1     05  WK-C-TRNNO                  PIC X(12)  VALUE SPACE.
 5Q1JM1     05  WK-C-FUNCTID                PIC X(08)  VALUE SPACE.
-5Q1JM1        01  WK-N-SYSPTE                 PIC S9(08) VALUE ZEROS.
-           5Q1JM1        01  WK-C-RPRPGM                 PIC X(10)
-      -    VALUE "TRFVTB2".
-
-CMP3F1        01  WK-C-LINK-LIMIT.
+5Q1JM1 01  WK-N-SYSPTE                     PIC S9(08) VALUE ZEROS.
+5Q1JM1 01  WK-C-RPRPGM                     PIC X(10) VALUE "TRFVTB2".
+CMP3F1 01  WK-C-LINK-LIMIT.
 CMP3F1     05  WK-C-LINK-AREA-INPUT.
 CMP3F1     10  WS-LINK-BNKENTTY            PIC X(02).
 CMP3F1     10  WS-LINK-ACCNO               PIC X(15)  VALUE 0.
@@ -439,11 +427,11 @@ GP4A01        COPY VDRTGS.
               GP4D00*CMP3F1* GET STP LIMIT INDICATOR
               GP4D00*CMP3F1    INITIALIZE WK-C-XGSPA-RECORD.
            GP4D00*CMP3F1    MOVE "RSYSSTPLMT"       TO WK-C-XGSPA-
-      -    GHPARCD.
+      *    GHPARCD.
               GP4D00*CMP3F1    CALL "TRFXGSPA" USING WK-C-XGSPA-RECORD.
               GP4D00*CMP3F1    IF WK-C-XGSPA-ERROR-CD  = SPACES
            GP4D00*CMP3F1       MOVE WK-C-XGSPA-GHPARVAL TO WS-C-STPLMT-
-      -    FLAG
+      *    FLAG
               GP4D00*CMP3F1    ELSE
               GP4D00*CMP3F1       MOVE SPACES TO WS-C-STPLMT-FLAG
               GP4D00*CMP3F1    END-IF.
@@ -586,9 +574,9 @@ ID1VKE     END-READ
            G2BL00*------------------------------------------------------
       *    ---------*
            G2BL00* RETRIEVE GPI TECHNICAL AND STP SWITCH FROM SYSTEM
-      -    PARAMETER  *
+      *    PARAMETER  *
        G2BL00* FILE VIA CALLING TRFXGSPA PROGRAM USING GPISWITCH
-      -    PARAMETER  *
+      *    PARAMETER  *
            G2BL00*------------------------------------------------------
       *    ---------*
                  G2BL00
@@ -1049,7 +1037,7 @@ G2BL00                 AND WK-C-BYPASS-LMT-IND = WK-C-Y)
                     MOVE "X"    TO TAB-VL2(06)
                  END-IF
            GP4D00*-->If within Parm STP Limit and w/out Acc/CIF/Seg STP
-      -    Lmt setup
+      *    Lmt setup
                     GP4D00*-->further check STT STP CCY table.
 GP4D00           IF WK-C-STP-CCY-SW = "Y"
 GP4D00                 AND TFSTPL-AMT <= WK-N-IRM1PSTP
@@ -1106,7 +1094,7 @@ G2BL00           D110-VALIDATE-STP-BYPASS.
            G2BL00*------------------------------------------------------
       *    -------*
            G2BL00* THIS WILL CALL TRFVBACU TO CHECK IF THE UOB BRANCH
-      -    IND = Y  *
+      *    IND = Y  *
            G2BL00*------------------------------------------------------
       *    -------*
                  G2BL00
@@ -1120,7 +1108,7 @@ G2BL00           GO  TO  D119-VALIDATE-STP-BYPASS-EX
 G2BL00        END-IF.
                  G2BL00
            GP3M00*--Bypass STP Limit if Dr Leg = NOSTRO and CR Leg =
-      -    VOSTRO
+      *    VOSTRO
 GP3M00        IF  WK-C-GP13-SW  =  WK-C-Y
 GP3M00              AND  WK-C-NSLMT-SW  =  WK-C-Y
                     GP3M00*GP3M01    IF  WK-C-DR-PMODE  =  "NOSTRO"
@@ -1155,15 +1143,15 @@ GP4D00           D120-EVAL-STP-CCY.
            GP4D00*------------------------------------------------------
       *    ----------*
            GP4D00* This routine will call TRFVSTPC to check if CCY is
-      -    eligable   *
+      *    eligable   *
            GP4D00* for STP and if AMT is within CCY STP Limit.
-      -    *
+      *    *
            GP4D00*   A0 = Currency is setup and within limit
-      -    *
+      *    *
            GP4D00*   A1 = Currency is setup however exceeds STP Limit
-      -    *
+      *    *
            GP4D00*   A2 = Currency is NOT setup
-      -    *
+      *    *
            GP4D00*------------------------------------------------------
       *    ----------*
 GP4D00        INITIALIZE          WK-C-VSTPC-RECORD
@@ -1186,20 +1174,20 @@ GP4D00           WHEN "A1"
            GP4D00*------------------------------------------------------
       *    ----------*
            GP4D00*--------->RSN0370 - Inward STP CCY: Beyond CCY STP
-      -    Limit       *
+      *    Limit       *
 GP4D00           MOVE "RSN0370" TO WK-C-RPRCODE
 GP4D00           WHEN "A2"
            GP4D03*--------->Improvement: Checking of STP currency has
-      -    move to ITT *
+      *    move to ITT *
            GP4D03* Handler
-      -    *
+      *    *
 GP4D03           IF WK-C-STP-CCY-IMP-SW = "Y"
 GP4D03              GO TO D120-EVAL-STP-CCY-EX
 GP4D03           ELSE
            GP4D00*------------------------------------------------------
       *    ----------*
            GP4D00*--------->RSN0369 - Inward STP CCY: Non STP Currency.
-      -    *
+      *    *
 GP4D00              MOVE "RSN0369" TO WK-C-RPRCODE
 GP4D03           END-IF
 GP4D00           WHEN OTHER
@@ -1214,12 +1202,12 @@ GP4D00           WS-OKAY.
                  GP4D00
 GP4D00        PERFORM D500-PROCESS-RPRRSN
 GP4D00           THRU D599-PROCESS-RPRRSN-EX.
-                 GP4D00
-GP4D00           D120-EVAL-STP-CCY-EX.
-GP4D00        EXIT.
-                 GP4D00
-GP4D00           /   D200-VALIDATION.
-                 GP4D00
+GP4D00
+GP4D00    D120-EVAL-STP-CCY-EX.
+GP4D00          EXIT.
+GP4D00
+GP4D00    D200-VALIDATION.
+GP4D00
               MOVE WS-BANKID        TO WK-VTB2-BANKID.
               MOVE WS-ACBNKID       TO WK-VTB2-ACBNKID.
               MOVE WS-BENBKID       TO WK-VTB2-BENBKID.
@@ -1228,27 +1216,27 @@ GP4D00           /   D200-VALIDATION.
               MOVE WS-ACBNKACC      TO WK-VTB2-ACBNKACC.
               MOVE WS-BENBKACC      TO WK-VTB2-BENBKACC.
               MOVE TABLE-ARR2       TO WK-VTB2-DATAB2
-                 SM1TY1*        IF TAG58-OPT = "A"
-           SM1TY1*           MOVE SPACES        TO WK-VTB2-BENBKACC
-                 SM1TY1*        END-IF.
+SM1TY1*        IF TAG58-OPT = "A"
+SM1TY1*           MOVE SPACES        TO WK-VTB2-BENBKACC
+SM1TY1*        END-IF.
               IF WS-ACT1 = "Y"
                     OR WS-ACT3 = "Y"
                  MOVE WS-ACT1     TO WK-VTB2-ACT1
                  MOVE WS-ACT3     TO WK-VTB2-ACT3
                  MOVE "MAS202"    TO WK-VTB2-PMODE
-           GP4A01----->Retrieve RTGS modepay from utility TRFVDRTGS
+GP4A01*----->Retrieve RTGS modepay from utility TRFVDRTGS
 GP4A01           IF WK-C-RTGS-FCY-SW = "Y"
 GP4A02                 OR WK-C-MAS-RTGS-SW = "Y"
 GP4A01              PERFORM D600-RTGS-VALIDATION
 GP4A01                 THRU D699-RTGS-VALIDATION-EX
 GP4A01              END-IF
-           SM1TY1*           MOVE TFSSTPL-BNKENTTY  TO TFSBNKET-BNKENTTY
-           SM1TY1*           READ TFSBNKET KEY IS EXTERNALLY-DESCRIBED-
-      -    KEY
-                    SM1TY1*              NOT INVALID KEY
-           SM1TY1*              MOVE TFSBNKET-MASNOSTR TO WK-VTB2-BANKAC
-                    SM1TY1*           END-READ
-                    SM1TY1*           MOVE SPACES TO WK-VTB2-BANKAC
+SM1TY1*           MOVE TFSSTPL-BNKENTTY  TO TFSBNKET-BNKENTTY
+SM1TY1*           READ TFSBNKET KEY IS EXTERNALLY-DESCRIBED-
+      *    KEY
+SM1TY1*              NOT INVALID KEY
+SM1TY1*              MOVE TFSBNKET-MASNOSTR TO WK-VTB2-BANKAC
+SM1TY1*           END-READ
+SM1TY1*           MOVE SPACES TO WK-VTB2-BANKAC
                  END-IF
               IF WS-ACT2 = "Y"
                  MOVE WS-ACT2     TO WK-VTB2-ACT2
@@ -1259,10 +1247,9 @@ SM1TY1              AND WK-VTB2-PMODE NOT = "MAS202" AND "TT202"
 SM1TY1           MOVE SPACES        TO WK-VTB2-BENBKACC
 SM1TY1        END-IF.
 GP4A01        IF TAG58-OPT = "A"
-                    GP4A02+GP4A01AND WK-C-RTGS-FCY-SW = "Y"
+GP4A02*GP4A01AND WK-C-RTGS-FCY-SW = "Y"
 GP4A02              AND (WK-C-RTGS-FCY-SW = "Y"
 GP4A02              OR WK-C-MAS-RTGS-SW = "Y")
-
 GP4A01              AND WK-VTB2-PMODE NOT = WK-C-VDRTGS-RTGSTYPE2
 GP4A01              AND WK-VTB2-PMODE NOT = "MAS202"
 GP4A01              AND WK-VTB2-PMODE NOT = "TT202"
@@ -1372,17 +1359,17 @@ GP4A01        END-IF.
               EJECT
 
       *=================================================================
-      -    *
-GP4A01        D600-RTGS-VALIDATION.
+      *    *
+GP4A01 D600-RTGS-VALIDATION.
       *=================================================================
-      -    *
+      *    *
            GP4A01*------------------------------------------------------
       *    ----------*
            GP4A01*--This routine will call TRFVDRTGS utility module to
-      -    retrieve
+      *    retrieve
               GP4A01*--corresponding MODEPAY for RTGS Currency.
            GP4A01*--Most Countries LCY currency will have MODEPAY =
-      -    "RTGS"
+      *    "RTGS"
 
       *--For HK who currently considers 3 RTGS currency:
       *--  HKD = "RTGS"     USD = "RTGS1"
@@ -1400,27 +1387,27 @@ GP4A01        D600-RTGS-VALIDATION.
               END-IF
        END-IF.
       *=================================================================
-      -    *
+      *    *
        D699-RTGS-VALIDATION-EX.
       *=================================================================
-      -    *
+      *    *
        EXIT.
       */      *=========================================================
-      -    *
+      *    *
        D600-EVAL-TAG57-CD.
       *=========================================================*
       *--This routine will check Tag57 C/D Lines 1-5 if it exact matches
       *--Tag Validation table. If Match, treat it as Tag57A w/ our own
-      -    BIC
+      *    BIC
       *--(UOVBSGSGXXX - parameterized) to further proceed with STP
-      -    processing.
+      *    processing.
       *--E.g Raw Tag57D Line1:/123456789
       *--     Line2:UNITED OVERSEAS BANK
       *--     Line3:SINGAPORE
       *--     Line4:BUKIT BATOK
       *--     Line5:SG
       *--If Line 1 "UNITED OVERSEAS BANK" exact matches Tag validation
-      -    table
+      *    table
       *--system will treat this as Tag57A Line1: *blank
       *--     Line2: UOVBSGSGXXX
       *--     Line3: *blank
@@ -1443,39 +1430,39 @@ GP3A00        ELSE
 GP3A00           MOVE TAG57-PTID       TO  WK-C-VTAG57-INFO(1)
 GP3A00        END-IF.
 GP3A00     END-IF.
-              GP3A00*--Tag57D:
+GP3A00*--Tag57D:
 GP3A00     IF  TAG57-OPT = "D"
 GP3A00        IF  TAG57-PTID = SPACES
 GP3A00              AND TAG57-NAME = SPACES
 GP3A00           GO TO D699-EVAL-TAG57-CD-EX
 GP3A00        ELSE
-           GP3A01*GP3A00           MOVE TAG57-PTID       TO  WK-C-
-      -    VTAG57-INFO(1)
+GP3A01*GP3A00           MOVE TAG57-PTID       TO  WK-C-
+      *    VTAG57-INFO(1)
 GP3A00           MOVE TAG57-NAME       TO  WK-C-VTAG57-INFO(2)
-           GP3A01*GP3A00           MOVE TAG57-LINE-3     TO  WK-C-
-      -    VTAG57-INFO(3)
-           GP3A01*GP3A00           MOVE TAG57-LINE-4     TO  WK-C-
-      -    VTAG57-INFO(4)
-           GP3A01*GP3A00           MOVE TAG57-LINE-5     TO  WK-C-
-      -    VTAG57-INFO(5)
+GP3A01*GP3A00           MOVE TAG57-LINE-3     TO  WK-C-
+      *    VTAG57-INFO(3)
+GP3A01*GP3A00           MOVE TAG57-LINE-4     TO  WK-C-
+      *    VTAG57-INFO(4)
+GP3A01*GP3A00           MOVE TAG57-LINE-5     TO  WK-C-
+      *    VTAG57-INFO(5)
 GP3A00        END-IF
 GP3A00     END-IF.
-              GP3A00
+GP3A00
 GP3A00     MOVE TFSSTPL-BNKENTTY  TO  WK-C-VTAG57-I-BNKENTTY.
-              GP3A00
-           GP3A00*--Check Tag57 if either Lines 1-5 matches Tag
-      -    validation table.
+GP3A00
+GP3A00*--Check Tag57 if either Lines 1-5 matches Tag
+      *    validation table.
 GP3A00     CALL "TRFVTA57"       USING  WK-C-VTAG57-RECORD.
 GP3A00     CANCEL "TRFVTA57".
-              GP3A00
+GP3A00
 GP3A00     IF  WK-C-VTAG57-ERROR-CD = SPACES
 GP3A00        CONTINUE
 GP3A00     ELSE
 GP3A00        GO TO D699-EVAL-TAG57-CD-EX
 GP3A00     END-IF.
-              GP3A00
-           GP3A00*--If it match, override w/ Tag57A:<Own BIC> (
-      -    parameterized)
+GP3A00
+GP3A00*--If it match, override w/ Tag57A:<Own BIC> (
+      *    parameterized)
 GP3A00     IF  WK-C-VTAG57-VALID = "Y"
 GP3A00        MOVE SPACES           TO  TAG57-PTID
 GP3A00           WS-ACBNKACC
@@ -1486,10 +1473,10 @@ GP3A00           WS-ACBNKID
 GP3A00           WS-BANKID
 GP3A00     END-IF.
            GP3A00*======================================================
-      -    ===========*
+      *    ===========*
 GP3A00        D699-EVAL-TAG57-CD-EX.
-           GP3A00*======================================================
-      -    ===========*
+GP3A00*======================================================
+      *    ===========*
 GP3A00     EXIT.
 5Q1JM1        D500-PROCESS-RPRRSN SECTION.
 5Q1JM1        D500-ENTRY.
@@ -1498,14 +1485,13 @@ GP3A00     EXIT.
 5Q1JM1     MOVE WK-C-TRNNO       TO WK-C-RRSN-TRNNO.
 5Q1JM1     MOVE WK-C-FUNCTID     TO WK-C-RRSN-FUNCTID.
 5Q1JM1     MOVE WK-C-SEGCODE     TO WK-C-RRSN-SEGCODE.
-
 5Q1JM1     MOVE SPACES               TO WK-C-RRSN-SEGDESC.
 5Q1JM1     MOVE WK-N-STAFFIND        TO WK-C-RRSN-STAFFIND.
 5Q1JM1     MOVE WS-ACCNO             TO WK-C-RRSN-ACCNO.
 5Q1JM1     MOVE WK-C-QRATE           TO WK-C-RRSN-QRATE.
 5Q1JM1     MOVE WK-N-SYSDTE          TO WK-C-RRSN-RPRDTE.
-           5Q1JM1*          MOVE WK-C-RPRCODE         TO WK-C-RRSN-
-      -    RSNCDE.
+5Q1JM1*          MOVE WK-C-RPRCODE         TO WK-C-RRSN-
+      *    RSNCDE.
 5Q1JM1     IF WK-C-RPRCODE = SPACE
 5Q1JM1        MOVE "RSN9999"        TO WK-C-RRSN-RSNCDE
 5Q1JM1     ELSE

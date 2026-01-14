@@ -26,13 +26,13 @@
       *   - INCLUDE REM INDICATOR
       *===========================================================
       * CMP3X1 - CMPESQ  - 14/06/2016 - CASH MANAGEMENT PROJECT RELEASE
-      -    3
+      *    3
       *   JIRA: PCSHGMGMTSG-109,
       *   PCSHGMGMTSG-110
       *   - FIX STP LIMIT PROCESS
       *===========================================================
       * CMP3FL - VENAF2  - 07/01/2016 - CASH MANAGEMENT PROJECT RELEASE
-      -    3
+      *    3
       *   STP Limit by Account, CIF
       *   and Segment
       *===========================================================
@@ -821,11 +821,11 @@ CMP3FL        MOVE TFSSTPL-BNKENTITY TO WS-LINK-BNKENTITY
 5Q1JE1                 ELSE
 5Q1JE1                    MOVE WK-C-RPRCODE  TO WK-C-RRSN-RSNCDE
 5Q1JE1                 END-IF.
-5Q1JE1
+5Q1JE1 
 5Q1ARV                 MOVE SPACES  TO WK-C-RRSN-RSNDESC.
 5Q1ARV                 MOVE WK-C-RPRPGM  TO WK-C-RRSN-RPRPGM.
 5Q1ARV                 CALL "TRFRGRRSN" USING WK-C-RRSN-RECORD.
-5Q1ARV
+5Q1ARV 
 5Q1ARV                    D599-PROCESS-RPRRSN-EX.
 5Q1ARV                 EXIT.
                           EJECT
@@ -835,4 +835,4 @@ CMP3FL        MOVE TFSSTPL-BNKENTITY TO WS-LINK-BNKENTITY
                               TFSBNKET
                               TFSCLSYS.
                        EXIT PROGRAM.
- 
+       

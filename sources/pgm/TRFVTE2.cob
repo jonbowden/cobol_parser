@@ -170,137 +170,135 @@
                    09 TAGS6-PTID-2 PIC X(35).
              05 TAGS6-LINE-2 PIC X(35).
 
-      05  TAG56-BIC  REDEFINES TAG56-LINE-2.
-          07  TAG56A-SUB1       PIC X(4).
-          07  TAG56A-SUB2       PIC X(2).
-          07  TAG56A-SUB3       PIC X(2).
-          07  TAG56A-SUB4       PIC X(3).
-          07  TAG56A-FILLER     PIC X(24).
-      05  TAG56-LOC  REDEFINES TAG56-LINE-2
+             05  TAG56-BIC  REDEFINES TAG56-LINE-2.
+                 07  TAG56A-SUB1       PIC X(4).
+                 07  TAG56A-SUB2       PIC X(2).
+                 07  TAG56A-SUB3       PIC X(2).
+                 07  TAG56A-SUB4       PIC X(3).
+                 07  TAG56A-FILLER     PIC X(24).
+             05  TAG56-LOC  REDEFINES TAG56-LINE-2
                          PIC X(35).
-      05  TAG56-NAME REDEFINES TAG56-LINE-2
+             05  TAG56-NAME REDEFINES TAG56-LINE-2
                          PIC X(35).
-      05  TAG56-LINE-3         PIC X(35).
-      05  TAG56-LINE-4         PIC X(35).
-      05  TAG56-LINE-5         PIC X(35).
+             05  TAG56-LINE-3         PIC X(35).
+             05  TAG56-LINE-4         PIC X(35).
+             05  TAG56-LINE-5         PIC X(35).
 
-      01  TAG57-FORMAT.
-      05  TAG57-LINE-1.
-          07  TAG57-FIL1       PIC X(2).
-          07  TAG57-OPT        PIC X(1).
-          07  TAG57-FIL2       PIC X(1).
-          07  TAG57-PTID.
-              09  TAG57-PTID-1 PIC X(02).
-              09  TAG57-PTID-2 PIC X(35).
-      05  TAG57-LINE-2         PIC X(35).
-      05  TAG57-BIC  REDEFINES TAG57-LINE-2.
-          07  TAG57A-SUB1       PIC X(4).
-          07  TAG57A-SUB2       PIC X(2).
-          07  TAG57A-SUB3       PIC X(2).
-          07  TAG57A-SUB4       PIC X(3).
-          07  TAG57A-FILLER     PIC X(24).
-      05  TAG57-LOC  REDEFINES TAG57-LINE-2
+       01  TAG57-FORMAT.
+             05  TAG57-LINE-1.
+                07  TAG57-FIL1       PIC X(2).
+                07  TAG57-OPT        PIC X(1).
+                07  TAG57-FIL2       PIC X(1).
+                07  TAG57-PTID.
+                    09  TAG57-PTID-1 PIC X(02).
+                    09  TAG57-PTID-2 PIC X(35).
+             05  TAG57-LINE-2        PIC X(35).
+             05  TAG57-BIC  REDEFINES TAG57-LINE-2.
+                07  TAG57A-SUB1      PIC X(4).
+                07  TAG57A-SUB2      PIC X(2).
+                07  TAG57A-SUB3      PIC X(2).
+                07  TAG57A-SUB4      PIC X(3).
+                07  TAG57A-FILLER    PIC X(24).
+             05  TAG57-LOC  REDEFINES TAG57-LINE-2
                          PIC X(35).
-      05  TAG57-NAME REDEFINES TAG57-LINE-2
+             05  TAG57-NAME REDEFINES TAG57-LINE-2
                          PIC X(35).
-      05  TAG57-LINE-3         PIC X(35).
-      05  TAG57-LINE-4         PIC X(35).
-      05  TAG57-LINE-5         PIC X(35).
+             05  TAG57-LINE-3        PIC X(35).
+             05  TAG57-LINE-4        PIC X(35).
+             05  TAG57-LINE-5        PIC X(35).
 
-      01  TAG58-FORMAT.
-      05  TAG58-LINE-1.
-          07  TAG58-FIL1       PIC X(2).
-          07  TAG58-OPT        PIC X(1).
-          07  TAG58-FIL2       PIC X(1).
-          07  TAG58-PTID.
-              09  TAG58-PTID-1 PIC X(02).
-              09  TAG58-PTID-2 PIC X(35).
-      05  TAG58-LINE-2         PIC X(35).
-      05  TAG58-BIC  REDEFINES TAG58-LINE-2.
-          07  TAG58A-SUB1       PIC X(4).
-          07  TAG58A-SUB2       PIC X(2).
-          07  TAG58A-SUB3       PIC X(2).
-          07  TAG58A-SUB4       PIC X(3).
-          07  TAG58A-FILLER     PIC X(24).
-      05  TAG58-LOC  REDEFINES TAG58-LINE-2
+       01  TAG58-FORMAT.
+             05  TAG58-LINE-1.
+                 07  TAG58-FIL1      PIC X(2).
+                 07  TAG58-OPT       PIC X(1).
+                 07  TAG58-FIL2      PIC X(1).
+                 07  TAG58-PTID.
+                     09  TAG58-PTID-1 PIC X(02).
+                     09  TAG58-PTID-2 PIC X(35).
+             05  TAG58-LINE-2         PIC X(35).
+             05  TAG58-BIC  REDEFINES TAG58-LINE-2.
+                 07  TAG58A-SUB1      PIC X(4).
+                 07  TAG58A-SUB2      PIC X(2).
+                 07  TAG58A-SUB3      PIC X(2).
+                 07  TAG58A-SUB4      PIC X(3).
+                 07  TAG58A-FILLER    PIC X(24).
+             05  TAG58-LOC  REDEFINES TAG58-LINE-2
                          PIC X(35).
-
-       05 TAG58-NAME REDEFINES TAG58-LINE-2
+             05 TAG58-NAME REDEFINES TAG58-LINE-2
                          PIC X(35).
-       05 TAG58-LINE-3   PIC X(35).
-       05 TAG58-LINE-4   PIC X(35).
-       05 TAG58-LINE-5   PIC X(35).
+             05 TAG58-LINE-3   PIC X(35).
+             05 TAG58-LINE-4   PIC X(35).
+             05 TAG58-LINE-5   PIC X(35).
 
-   01 TABLE-ARRAY.
-       05 TAB-VAL OCCURS 20 TIMES PIC X VALUE "X".
+       01 TABLE-ARRAY.
+             05 TAB-VAL OCCURS 20 TIMES PIC X VALUE "X".
 
-   01 TABLE-ARR2.
-       05 TAB-VL2 OCCURS 20 TIMES PIC X VALUE "X".
+       01 TABLE-ARR2.
+             05 TAB-VL2 OCCURS 20 TIMES PIC X VALUE "X".
 
-   01 PATH-P1               PIC X(20)
+       01 PATH-P1               PIC X(20)
                             VALUE "XYXXXXXXXXXXXXXXXXXXXX".
-   01 PATH-P2               PIC X(20)
+       01 PATH-P2               PIC X(20)
                             VALUE "YXYXXXXXXXXXXXXXXXXXXXX".
-   01 PATH-P3               PIC X(20)
+       01 PATH-P3               PIC X(20)
                             VALUE "XXYXXXXXXXXXXXXXXXXXXXX".
-   01 PATH-P4               PIC X(20)
+       01 PATH-P4               PIC X(20)
                             VALUE "XWNYXXXXXXXXXXXXXXXXXXXX".
-   01 PATH-P5               PIC X(20)
+       01 PATH-P5               PIC X(20)
                             VALUE "XNXYXXXXXXXXXXXXXXXXXXXX".
-   01 PATH-P6               PIC X(20)
+       01 PATH-P6               PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
-   01 PATH-P7               PIC X(20)
+       01 PATH-P7               PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
-   01 PATH-P8               PIC X(20)
+       01 PATH-P8               PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
-   01 PATH-P9               PIC X(20)
+       01 PATH-P9               PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
-   01 PATH-P10              PIC X(20)
+       01 PATH-P10              PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
-   01 PATH-P11              PIC X(20)
+       01 PATH-P11              PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
-   01 PATH-P12              PIC X(20)
+       01 PATH-P12              PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
-   01 PATH-P13              PIC X(20)
+       01 PATH-P13              PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
-   01 PATH-P14              PIC X(20)
+       01 PATH-P14              PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
-   01 PATH-P15              PIC X(20)
+       01 PATH-P15              PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
-   01 PATH-P16              PIC X(20)
+       01 PATH-P16              PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
-   01 PATH-P17              PIC X(20)
+       01 PATH-P17              PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
-   01 PATH-P18              PIC X(20)
+       01 PATH-P18              PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
-   01 PATH-P19              PIC X(20)
+       01 PATH-P19              PIC X(20)
                             VALUE "XXXXXXXXXXCXXXXXXXXXXXXX".
 
-   01 WK-C-PARADATA.
-       05 WK-C-PARAVALU    PIC X(20).
-       05 WK-N-PARAVALU    REDEFINES WK-C-PARAVALU
+       01 WK-C-PARADATA.
+         05 WK-C-PARAVALU    PIC X(20).
+         05 WK-N-PARAVALU    REDEFINES WK-C-PARAVALU PIC X(20).
+         05  WK-N-TRNPSTP    PIC 9(13)V99.
+         05  WK-N-IRM1STP    PIC 9(13)V99.
 
-      05  WK-N-TRNPSTP                PIC 9(13)V99.
-      05  WK-N-IRM1STP                PIC 9(13)V99.
-
-01  WK-C-WORK-AREA.
-      05  FIRST-TIME                  PIC X(01) VALUE "Y".
-      05  WS-FLAG1                    PIC X(01) VALUE SPACE.
-      05  WS-FLAG2                    PIC X(01) VALUE SPACE.
-      05  WS-ACT1                     PIC X(01) VALUE SPACE.
-      05  WS-STPTYTP                  PIC X(04) VALUE SPACE.
-      05  BKAC57-IND                  PIC X(01) VALUE SPACE.
-      05  BKAC58-IND                  PIC X(01) VALUE SPACE.
-      05  WS-OKAY                     PIC X(01) VALUE SPACE.
+       01  WK-C-WORK-AREA.
+         05  FIRST-TIME                  PIC X(01) VALUE "Y".
+         05  WS-FLAG1                    PIC X(01) VALUE SPACE.
+         05  WS-FLAG2                    PIC X(01) VALUE SPACE.
+         05  WS-ACT1                     PIC X(01) VALUE SPACE.
+         05  WS-STPTYTP                  PIC X(04) VALUE SPACE.
+         05  BKAC57-IND                  PIC X(01) VALUE SPACE.
+         05  BKAC58-IND                  PIC X(01) VALUE SPACE.
+         05  WS-OKAY                     PIC X(01) VALUE SPACE.
 GP4D01*  05  WS-ACCNO                  PIC X(11) VALUE SPACE.
 GP4D01*  05  WS-ACBNKACC               PIC X(11) VALUE SPACE.
 GP4D01   05  WS-ACCNO                  PIC X(15) VALUE SPACE.
 GP4D01   05  WS-ACBNKACC               PIC X(15) VALUE SPACE.
-      05  WS-BENBNKACC                PIC X(35) VALUE SPACE.
-      05  WS-BANKID                   PIC X(11) VALUE SPACE.
-      05  WS-ACBNKID                  PIC X(11) VALUE SPACE.
-      05  WS-BENBNKID                 PIC X(11) VALUE SPACE.
-      05  WS-LCAMT                    PIC 9(13)V99 VALUE ZEROS.
+         05  WS-BENBNKACC                PIC X(35) VALUE SPACE.
+         05  WS-BANKID                   PIC X(11) VALUE SPACE.
+         05  WS-ACBNKID                  PIC X(11) VALUE SPACE.
+         05  WS-BENBNKID                 PIC X(11) VALUE SPACE.
+         05  WS-LCAMT                    PIC 9(13)V99 VALUE ZEROS.
 G2BL00   05  WK-C-BYPASS-LMT-IND      PIC X(01) VALUE SPACE.
 G2BL00   05  WK-C-GPI-SW              PIC X(01) VALUE SPACE.
 G2BL00   05  WK-C-DR-PMODE            PIC X(08) VALUE SPACE.
@@ -310,22 +308,22 @@ GP3M00   05  WK-C-NSLMT-SW            PIC X(01) VALUE SPACE.
 GP4D00   05  WK-C-STP-CCY-SW          PIC X(01) VALUE SPACE.
 GP4D03   05  WK-C-STP-CCY-IMP-SW      PIC X(01) VALUE SPACE.
 
-G2BL00   01  WK-C-LIT-GPI.
-G2BL00      05  WK-C-Y                PIC X(01) VALUE "Y".
-GP3A00      05  WK-C-GPI3-SW-PARCD    PIC X(10)
+G2BL00  01  WK-C-LIT-GPI.
+G2BL00   05  WK-C-Y                PIC X(01) VALUE "Y".
+GP3A00   05  WK-C-GPI3-SW-PARCD    PIC X(10)
 GP3A00                                   VALUE "GPISWITCH3".
-GP3A00      05  WK-C-TAG57-SW-PARCD   PIC X(10)
+GP3A00   05  WK-C-TAG57-SW-PARCD   PIC X(10)
 GP3A00                                   VALUE "GPI3T57SW".
-GP3A00      05  WK-C-TAG57-MT-PARCD   PIC X(10)
+GP3A00   05  WK-C-TAG57-MT-PARCD   PIC X(10)
 GP3A00                                   VALUE "GPI3T57MT".
-GP3M00      05  WK-C-NSLMT-PARCD      PIC X(10)
+GP3M00   05  WK-C-NSLMT-PARCD      PIC X(10)
 GP3M00                                   VALUE "GPI3NSLMT".
-GP4D00      05  WK-C-STPCCY-PARCD     PIC X(10)
+GP4D00   05  WK-C-STPCCY-PARCD     PIC X(10)
 GP4D00                                   VALUE "GPI4ISTPCY".
-GP4D03      05  WK-C-STPCCY2-PARCD    PIC X(10)
+GP4D03   05  WK-C-STPCCY2-PARCD    PIC X(10)
 GP4D03                                   VALUE "GPI4ISTPCY2".
-GP3A00      01  WK-C-MT-TAG57-TBL     PIC X(18) VALUE SPACES.
-GP3A00      05  WK-C-MT-TAG57         PIC X(03) OCCURS 6 TIMES.
+GP3A00 01  WK-C-MT-TAG57-TBL     PIC X(18) VALUE SPACES.
+GP3A00   05  WK-C-MT-TAG57         PIC X(03) OCCURS 6 TIMES.
 
 GP4D01 01  SUB                        PIC 9(02) VALUE ZEROES.
 GP4D01 01  WK-N-CTR                   PIC 9(02) VALUE ZEROES.
@@ -455,7 +453,7 @@ ID1VKE     OPEN     INPUT TFSBNKET
            ELSE
                MOVE SPACES      TO WK-C-RTGSBICCDCE
            END-IF
-ID1VKE
+ID1VKE 
 
            END-IF.
 
@@ -493,11 +491,11 @@ ID1VKE         END-READ
                END-IF
            END-IF.
 
-A199-MAIN-PROGRAM-EX.
+       A199-MAIN-PROGRAM-EX.
 
-      EXIT.
+           EXIT.
 
-      A200-INITIAL-SUBROUTINE.
+       A200-INITIAL-SUBROUTINE.
       *----------------------------------------------------------------*
       *    GET DATA FROM "TFSCLSYS" TABLE                              *
       *----------------------------------------------------------------*
@@ -508,7 +506,7 @@ A199-MAIN-PROGRAM-EX.
                GO TO Z000-END-PROGRAM.
 
       **********MOVE TFSCLSYS-SYSDTE   TO L-N-G-SYSDTE.
-      5Q1JM1 MOVE TFSCLSYS-SYSDTE   TO WK-N-SYSDTE.
+5Q1JM1 MOVE TFSCLSYS-SYSDTE   TO WK-N-SYSDTE.
       **********MOVE TFSCLSYS-LCNTRYCD  TO L-C-G-L-CNTRYCD.
       **********MOVE TFSCLSYS-LCUYCD    TO L-C-G-L-CUYCD.
 
@@ -552,109 +550,109 @@ A199-MAIN-PROGRAM-EX.
                    TO WK-N-IRMPSPTP
            END-IF.
 
-       TO  WK-N-IRM1STP
+      *TO  WK-N-IRM1STP
        END-IF.
 G2BL00*---------------------------------------------------------------------*
 G2BL00* RETRIEVE GPI TECHNICAL SWITCH FROM SYSTEM PARAMETER FILE            *
 G2BL00*---------------------------------------------------------------------*
-G2BL00
+G2BL00 
 G2BL00      INITIALIZE                 WK-C-XGSPA-RECORD
 G2BL00                                   WK-C-GPI-SW
 G2BL00        REPLACING ALPHANUMERIC BY SPACES
 G2BL00                  NUMERIC        BY ZEROS.
-G2BL00
+G2BL00 
 G2BL00      MOVE "GPISWITCH2"          TO  WK-C-XGSPA-GHPARCD.
 G2BL00      CALL "TRFXGSPA"            USING WK-C-XGSPA-RECORD.
-G2BL00
+G2BL00 
 G2BL00      IF WK-C-XGSPA-ERROR-CD = SPACES
 G2BL00          MOVE WK-C-XGSPA-GHPARVAL TO  WK-C-GPI-SW
 G2BL00      END-IF.
-G2BL00
+G2BL00 
 G2BL00*---------------------------------------------------------------------*
 G2BL00* RETRIEVE GPI STP SWITCH FROM SYSTEM PARAMETER FILE                  *
 G2BL00*---------------------------------------------------------------------*
-G2BL00
+G2BL00 
 G2BL00      INITIALIZE                 WK-C-XGSPA-RECORD
 G2BL00                                   SW-STP-LMT-SKP
 G2BL00        REPLACING ALPHANUMERIC BY SPACES
 G2BL00                  NUMERIC        BY ZEROS.
-G2BL00
+G2BL00 
 G2BL00      MOVE "GPISTPSW"            TO  WK-C-XGSPA-GHPARCD.
 G2BL00      CALL "TRFXGSPA"            USING WK-C-XGSPA-RECORD.
-G2BL00
+G2BL00 
 G2BL00      IF WK-C-XGSPA-ERROR-CD = SPACES
 G2BL00          MOVE WK-C-XGSPA-GHPARVAL(2:1)
 G2BL00                                   TO  SW-STP-LMT-SKP
 G2BL00      END-IF.
-G2BL00
+G2BL00 
 GP3A00*-->Retrieve GPI Day 3 Technical Switch
 GP3A00      INITIALIZE                 WK-C-XGSPA-RECORD
 GP3A00                                   WK-C-GPI3-SW.
-GP3A00
+GP3A00 
 GP3A00      MOVE WK-C-GPI3-SW-PARCD    TO  WK-C-XGSPA-GHPARCD.
 GP3A00      CALL "TRFXGSPA"            USING WK-C-XGSPA-RECORD.
-GP3A00
+GP3A00 
 GP3A00      IF WK-C-XGSPA-ERROR-CD = SPACES
 GP3A00          MOVE WK-C-XGSPA-GHPARVAL(1:1)
 GP3A00                                   TO  WK-C-GPI3-SW
 GP3A00      END-IF.
-GP3A00
+GP3A00 
 GP3A00*-->Retrieve GPI Day3 Tag57 C/D Enhancement Switch
 GP3A00      INITIALIZE                 WK-C-XGSPA-RECORD
 GP3A00                                   WK-C-TAG57-CD-SW.
-GP3A00
+GP3A00 
 GP3A00      MOVE WK-C-TAG57-SW-PARCD   TO  WK-C-XGSPA-GHPARCD.
 GP3A00      CALL "TRFXGSPA"            USING WK-C-XGSPA-RECORD.
 
-GP3A00
+GP3A00 
 GP3A00      IF  WK-C-XGSPA-ERROR-CD = SPACES
 GP3A00          MOVE WK-C-XGSPA-GHPARVAL(1:1)
 GP3A00               TO  WK-C-TAG57-CD-SW
 GP3A00      END-IF.
-GP3A00
+GP3A00 
 GP3A00*-->Retrieve GPI Day3 Tag57 C/D Enhancement Eligable MT Types
 GP3A00          INITIALIZE            WK-C-XGSPA-RECORD
 GP3A00                                 WK-C-MT-TAG57-TBL.
-GP3A00
+GP3A00 
 GP3A00          MOVE WK-C-TAG57-MT-PARCD  TO  WK-C-XGSPA-GHPARCD.
 GP3A00          CALL "TRFXGSPA"       USING WK-C-XGSPA-RECORD.
-GP3A00
+GP3A00 
 GP3A00      IF  WK-C-XGSPA-ERROR-CD = SPACES
 GP3A00          MOVE WK-C-XGSPA-GHPARVAL
 GP3A00               TO  WK-C-MT-TAG57-TBL
 GP3A00      END-IF.
-GP3M00
+GP3M00 
 GP3M00*-->Retrieve GPI Day3 Nostro Bypass STP Limit Enhancement
 GP3M00          INITIALIZE            WK-C-XGSPA-RECORD
 GP3M00                                 WK-C-NSLMT-SW.
-GP3M00
+GP3M00 
 GP3M00          MOVE WK-C-NSLMT-PARCD  TO  WK-C-XGSPA-GHPARCD.
 GP3M00          CALL "TRFXGSPA"       USING WK-C-XGSPA-RECORD.
-GP3M00
+GP3M00 
 GP3M00      IF  WK-C-XGSPA-ERROR-CD = SPACES
 GP3M00          MOVE WK-C-XGSPA-GHPARVAL(1:1)
 GP3M00               TO  WK-C-NSLMT-SW
 GP3M00      END-IF.
-GP4D00
+GP4D00 
 GP4D00*-->Retrieve GPI Day4 In-Country ITT STP by Currency Switch
 GP4D00          INITIALIZE            WK-C-XGSPA-RECORD
 GP4D00                                 WK-C-STP-CCY-SW
-GP4D00
+GP4D00 
 GP4D00          MOVE WK-C-STPCCY-PARCD  TO  WK-C-XGSPA-GHPARCD.
 GP4D00          CALL "TRFXGSPA"       USING WK-C-XGSPA-RECORD.
-GP4D00
+GP4D00 
 GP4D00      IF  WK-C-XGSPA-ERROR-CD = SPACES
 GP4D00          MOVE WK-C-XGSPA-GHPARVAL(1:1)
 GP4D00               TO  WK-C-STP-CCY-SW
 GP4D00      END-IF.
-GP4D03
+GP4D03 
 GP4D03*-->Retrieve GPI Day4 ITT STP by Currency Improvement Switch
 GP4D03          INITIALIZE            WK-C-XGSPA-RECORD
 GP4D03                                 WK-C-STP-CCY-IMP-SW.
-GP4D03
+GP4D03 
 GP4D03          MOVE WK-C-STPCCY2-PARCD  TO  WK-C-XGSPA-GHPARCD.
 GP4D03          CALL "TRFXGSPA"       USING WK-C-XGSPA-RECORD.
-GP4D03
+GP4D03 
 GP4D03      IF  WK-C-XGSPA-ERROR-CD = SPACES
 GP4D03          MOVE WK-C-XGSPA-GHPARVAL(1:1)
 GP4D03               TO  WK-C-STP-CCY-IMP-SW
@@ -742,26 +740,26 @@ GP3A00           END-IF.
                IF WS-ACCNO = SPACES
                    MOVE WK-C-VBAC-BNKACNO TO WS-ACCNO
                END-IF
-       GP4D01*--> To properly evaluate 1st PRIO Bank Account No pulled
-       GP4D01*--> if w/ Routing Code or not and assign accordingly.
-       GP4D01       MOVE ZEROS         TO WK-N-CTR
-       GP4D01       MOVE SPACES        TO WS-ACCNO1
-       GP4D01       PERFORM VARYING SUB FROM 1 BY 1 UNTIL SUB > 15
-       GP4D01           IF WS-ACCNO(SUB:1) NOT = SPACES
-       GP4D01               ADD 1     TO  WK-N-CTR
-       GP4D01           END-IF
-       GP4D01       END-PERFORM
-       GP4D01       IF WK-N-CTR = WK-N-ACCLEN
-       GP4D01           MOVE WS-ACCNO(4:10) TO WS-ACCNO1
-       GP4D01           MOVE WS-ACCNO1     TO WS-ACCNO
-       GP4D01       END-IF
+GP4D01*--> To properly evaluate 1st PRIO Bank Account No pulled
+GP4D01*--> if w/ Routing Code or not and assign accordingly.
+GP4D01       MOVE ZEROS         TO WK-N-CTR
+GP4D01       MOVE SPACES        TO WS-ACCNO1
+GP4D01       PERFORM VARYING SUB FROM 1 BY 1 UNTIL SUB > 15
+GP4D01           IF WS-ACCNO(SUB:1) NOT = SPACES
+GP4D01               ADD 1     TO  WK-N-CTR
+GP4D01           END-IF
+GP4D01       END-PERFORM
+GP4D01       IF WK-N-CTR = WK-N-ACCLEN
+GP4D01           MOVE WS-ACCNO(4:10) TO WS-ACCNO1
+GP4D01           MOVE WS-ACCNO1     TO WS-ACCNO
+GP4D01       END-IF
                ELSE
                    MOVE "D"           TO WK-VTE2-ACUBDUI
            END-IF.
 
-           A399-MOVE-TAG-VALUES-EX.
+       A399-MOVE-TAG-VALUES-EX.
                EXIT.
-           EJECT
+               EJECT
 
        B100-PATH-CHOICE.
            PERFORM D400-BKAC-VALIDATION.
@@ -769,22 +767,20 @@ GP3A00           END-IF.
            AND TAG57-PTID = SPACES
            AND TAG57-BIC  = SPACES
            OR  TAG57-OPT  = "A"
-       ID1VKE* AND TAG57-BIC  = "UOVBSGSGXXX"
+ID1VKE* AND TAG57-BIC  = "UOVBSGSGXXX"
 
-       ID1VKE     AND TAG57-BIC     = WK-C-SWIFTBICCDE
+ID1VKE     AND TAG57-BIC     = WK-C-SWIFTBICCDE
                   PERFORM C100-VALIDATION-PART
                           THRU C199-VALIDATION-PART-EX
-
                   END-IF.
                   IF BKAC57-IND     = "Y"
                   AND TAG57-OPT     = "A"
-       ID1VKE*    AND TAG57-BIC NOT = "UOVBSGSGXXX"
-       ID1VKE*    AND TAG57-BIC NOT = WK-C-SWIFTBICCDE
-       ID1VKE*    AND TAG57-BIC NOT = "MASGSGSGXXX"
-       ID1VKE     AND TAG57-BIC NOT = WK-C-RTGSBICCDE
+ID1VKE*    AND TAG57-BIC NOT = "UOVBSGSGXXX"
+ID1VKE*    AND TAG57-BIC NOT = WK-C-SWIFTBICCDE
+ID1VKE*    AND TAG57-BIC NOT = "MASGSGSGXXX"
+ID1VKE     AND TAG57-BIC NOT = WK-C-RTGSBICCDE
                   PERFORM C200-VALIDATION-PART
                           THRU C299-VALIDATION-PART-EX
-
                   END-IF.
                   PERFORM D100-VALIDATION THRU D199-VALIDATION-EX.
                   PERFORM D200-VALIDATION THRU D299-VALIDATION-EX.
@@ -793,46 +789,43 @@ GP3A00           END-IF.
                   EXIT.
 
        C100-VALIDATION-PART.
-                  IF TAG58-OPT     = "A"
-                  AND TAG58-BIC    NOT = SPACES
-       ID1VKE*    AND TAG58-BIC NOT = "UOVBSGSGXXX"
-       ID1VKE     AND TAG58-BIC NOT = WK-C-SWIFTBICCDE
-       ID1VKE*    AND TAG58-BIC NOT = "MASGSGSGXXX"
-       ID1VKE     AND TAG58-BIC NOT = WK-C-RTGSBICCDE
-                  AND BKAC58-IND   = "Y"
-                  MOVE PATH-P1     TO TABLE-ARRAY
-                  MOVE "Y"         TO WS-OKAY
-                  END-IF.
+           IF TAG58-OPT     = "A"
+           AND TAG58-BIC    NOT = SPACES
+ID1VKE*    AND TAG58-BIC NOT = "UOVBSGSGXXX"
+ID1VKE     AND TAG58-BIC NOT = WK-C-SWIFTBICCDE
+ID1VKE*    AND TAG58-BIC NOT = "MASGSGSGXXX"
+ID1VKE     AND TAG58-BIC NOT = WK-C-RTGSBICCDE
+           AND BKAC58-IND   = "Y"
+               MOVE PATH-P1     TO TABLE-ARRAY
+               MOVE "Y"         TO WS-OKAY
+           END-IF.
        C199-VALIDATION-PART-EX.
                   EXIT.
                   EJECT
 
        C200-VALIDATION-PART.
-                  IF TAG58-OPT     NOT = "A"
-                  AND NOT(TAG58-OPT = SPACES
-                  AND TAG58-PTID   = SPACES
-                  AND TAG58-BIC    = SPACES)
-       ID1VKE*    AND TAG58-BIC NOT = "UOVBSGSGXXX"
-       ID1VKE     AND TAG58-BIC NOT = WK-C-SWIFTBICCDE
-       ID1VKE*    AND TAG58-BIC NOT = "MASGSGSGXXX"
-       ID1VKE     AND TAG58-BIC NOT = WK-C-RTGSBICCDE
-                  MOVE PATH-P2     TO TABLE-ARRAY
-                  MOVE "Y"         TO WS-ACT1
-                                  WS-OKAY
-
-                  END-IF.
-                  IF TAG58-OPT     = "A"
-                  AND TAG58-BIC    NOT = SPACES
-       ID1VKE*    AND TAG58-BIC NOT = "UOVBSGSGXXX"
-       ID1VKE     AND TAG58-BIC NOT = WK-C-SWIFTBICCDE
-       ID1VKE*    AND TAG58-BIC NOT = "MASGSGSGXXX"
-       ID1VKE     AND TAG58-BIC NOT = WK-C-RTGSBICCDE
-                  AND BKAC58-IND   = "Y"
-
-           MOVE PATH-P3         TO TABLE-ARRAY
-           MOVE "Y"             TO WS-ACT1
-                               WS-OKAY
-
+           IF TAG58-OPT     NOT = "A"
+           AND NOT(TAG58-OPT = SPACES
+           AND TAG58-PTID   = SPACES
+           AND TAG58-BIC    = SPACES)
+ID1VKE*    AND TAG58-BIC NOT = "UOVBSGSGXXX"
+ID1VKE     AND TAG58-BIC NOT = WK-C-SWIFTBICCDE
+ID1VKE*    AND TAG58-BIC NOT = "MASGSGSGXXX"
+ID1VKE     AND TAG58-BIC NOT = WK-C-RTGSBICCDE
+               MOVE PATH-P2     TO TABLE-ARRAY
+               MOVE "Y"         TO WS-ACT1
+                                   WS-OKAY
+           END-IF.
+           IF TAG58-OPT     = "A"
+           AND TAG58-BIC    NOT = SPACES
+ID1VKE*    AND TAG58-BIC NOT = "UOVBSGSGXXX"
+ID1VKE     AND TAG58-BIC NOT = WK-C-SWIFTBICCDE
+ID1VKE*    AND TAG58-BIC NOT = "MASGSGSGXXX"
+ID1VKE     AND TAG58-BIC NOT = WK-C-RTGSBICCDE
+           AND BKAC58-IND   = "Y"
+               MOVE PATH-P3         TO TABLE-ARRAY
+               MOVE "Y"             TO WS-ACT1
+                                       WS-OKAY
            END-IF.
            IF  TAGS8-OPT        = "A"
            AND TAGS8-BIC        NOT = SPACES
@@ -1013,8 +1006,8 @@ G2BL00
 G3M00**--Bypass STP Limit if Dr Leg = NOSTRO and CR Leg = NOSTRO/VOSTRO
 G3M00           IF  WK-C-GP13-SW = WK-C-Y                             
 G3M00           AND WK-C-NSLMT-SW = WK-C-Y                            
-G3M00               IF  WK-C-DR-PMODE = "NOSTRO"                      
-G3M00+GP3M01          IF  (WK-C-DR-PMODE = "NOSTRO"                   
+G3M00               IF  (WK-C-DR-PMODE = "NOSTRO"                      
+G3M00 *GP3M01       IF  (WK-C-DR-PMODE = "NOSTRO"                   
 G3M01               OR WK-C-DR-PMODE(1:4) = "RTGS")                   
 G3M01               AND (WK-C-VBAC-ACCTYP = "C"                       
 G3M00               OR WK-C-VBAC-ACCTYP = "F"                         
@@ -1044,29 +1037,29 @@ G2BL00      D119-VALIDATE-STP-BYPASS-EX.
 G2BL00           EXIT.                                                
 G2BL00           EJECT.                                               
                                                                       
-G4P40D00      D120-EVAL-STP-CCY.                                      
-G4P40D00*----------------------------------------------------------------*
-G4P40D00* This routine will call TRFVSTPC to check if CCY is eligable  *
-G4P40D00* for STP and if AMT is within CCY STP Limit.                  *
-G4P40D00*    A0 = Currency is setup and within limit                   *
-G4P40D00*    A1 = Currency is setup however exceeds STP Limit          *
+G4P000      D120-EVAL-STP-CCY.                                      
+G4P400*----------------------------------------------------------------*
+G4P400* This routine will call TRFVSTPC to check if CCY is eligable  *
+G4P400* for STP and if AMT is within CCY STP Limit.                  *
+G4P400*    A0 = Currency is setup and within limit                   *
+G4P400*    A1 = Currency is setup however exceeds STP Limit          *
 
 GP4000* A2 = Currency is NOT setup                                           *
 GP4000*---------------------------------------------------------------------*
 GP4000      INITIALIZE                  WK-C-VSTPC-RECORD
 GP4000                                   WK-C-RPRRSN-AREA.
-GP4000
+GP4000 
 GP4000      MOVE  TFSSTPL-IMSGTYPE      TO  WK-C-VSTPC-I-IMSGTYPE.
 GP4000      MOVE  TFSSTPL-CUYCOD        TO  WK-C-VSTPC-I-CUYCD.
 GP4000      MOVE  TFSSTPL-AMT           TO  WK-N-VSTPC-I-AMT.
 GP4000      CALL  "TRFVSTPC"            USING  WK-C-VSTPC-RECORD.
-GP4000
+GP4000 
 GP4000      IF    WK-C-VSTPC-ERROR-CD = SPACES
 GP4000          CONTINUE
 GP4000      ELSE
 GP4000          GO TO D120-EVAL-STP-CCY-EX
 GP4000      END-IF.
-GP4000
+GP4000 
 GP4000      EVALUATE  WK-C-VSTPC-STATUS
 GP4000          WHEN "A0"
 GP4000              GO TO D120-EVAL-STP-CCY-EX
@@ -1085,20 +1078,20 @@ GP4003          END-IF
 GP4000          WHEN OTHER
 GP4000              GO TO D120-EVAL-STP-CCY-EX
 GP4000      END-EVALUATE.
-GP4000
+GP4000 
 GP4000      MOVE SPACES                TO WS-STPTYP.
 GP4000      MOVE "N"                   TO TAB-VL2(04)
 GP4000                                 TAB-VL2(05)
 GP4000                                 WS-OKAY.
-GP4000
+GP4000 
 GP4000      PERFORM D500-PROCESS-RPRRSN
 GP4000          THRU D599-PROCESS-RPRRSN-EX.
-GP4000
+GP4000 
 GP4000  D120-EVAL-STP-CCY-EX.
 GP4000      EXIT.
-GP4000
-/         D200-VALIDATION.
-GP4000
+GP4000 
+GP4000  D200-VALIDATION.
+GP4000 
            MOVE WS-BANKID              TO WK-VTE2-BANKID.
            MOVE WS-ACBNKID             TO WK-VTE2-ACBNKID.
            MOVE WS-BENBNKID            TO WK-VTE2-BENBNKID.
@@ -1106,9 +1099,9 @@ GP4000
            MOVE WK-C-VBAC-ACCTYP       TO WK-VTE2-BANKACTYP.
            MOVE WS-ACBNKACC            TO WK-VTE2-ACBNKACC.
 
-       MOVE WS-BENBKACC        TO WK-VTE2-BENBKACC.
-       MOVE TABLE-ARR2        TO WK-VTE2-DATA2.
-       MOVE "TT202"           TO WK-VTE2-PMODE.
+           MOVE WS-BENBKACC   TO WK-VTE2-BENBKACC.
+           MOVE TABLE-ARR2    TO WK-VTE2-DATA2.
+           MOVE "TT202"       TO WK-VTE2-PMODE.
 
            IF TAG58-OPT = "A"
                MOVE SPACES    TO WK-VTE2-BENBKACC
@@ -1125,27 +1118,27 @@ GP4000
        MOVE "N"               TO WS-FLAG1.
        PERFORM D300-LOGGING   THRU D399-LOGGING-EX.
 
-   D299-VALIDATION-EX.
-       EXIT.
-       EJECT
+       D299-VALIDATION-EX.
+          EXIT.
+          EJECT
 
-   D300-LOGGING.
-       MOVE WK-VTE2-PARALNO   TO WK-LOGG-PARALNO.
-       MOVE WK-VTE2-SEQNUM    TO WK-LOGG-SEQNUM.
-       MOVE WK-VTE2-ACT       TO WK-LOGG-ACTE2.
-       MOVE TABLE-ARR2        TO WK-LOGG-DATAE2.
-       CALL "TRFLOGGCL" USING WK-LOGG
-                               WS-FLAG1
-                               WS-FLAG2.
+       D300-LOGGING.
+          MOVE WK-VTE2-PARALNO   TO WK-LOGG-PARALNO.
+          MOVE WK-VTE2-SEQNUM    TO WK-LOGG-SEQNUM.
+          MOVE WK-VTE2-ACT       TO WK-LOGG-ACTE2.
+          MOVE TABLE-ARR2        TO WK-LOGG-DATAE2.
+          CALL "TRFLOGGCL" USING WK-LOGG
+                                 WS-FLAG1
+                                 WS-FLAG2.
 
-           IF WK-LOGG-ERROR-FOUND = "Y"
+          IF WK-LOGG-ERROR-FOUND = "Y"
                GO TO D399-LOGGING-EX
-           END-IF.
-   D399-LOGGING-EX.
-       EXIT.
-       EJECT
+          END-IF.
+       D399-LOGGING-EX.
+          EXIT.
+          EJECT
 
-   D400-BKAC-VALIDATION.
+       D400-BKAC-VALIDATION.
            IF NOT(TAG57-OPT   = SPACES
            AND TAG57-PTID     = SPACES
            AND TAG57-BIC      = SPACES)
@@ -1161,11 +1154,10 @@ GP4000
                    MOVE "Y"          TO BKAC57-IND
                ELSE
                    MOVE "N"          TO BKAC57-IND
-
- 5Q2JE1*5Q1JM1      INITIALIZE WK-C-RPRRSN-AREA
- 5Q2JE1*5Q1JM1      MOVE WK-C-VBAC-ERROR-CD TO WK-C-RPRCODE
- 5Q2JE1*5Q1JM1      PERFORM D500-PROCESS-RPRRSN
- 5Q2JE1*5Q1JM1           THRU D599-PROCESS-RPRRSN-EX
+5Q2JE1*5Q1JM1      INITIALIZE K-C-RPRRSN-AREA
+5Q2JE1*5Q1JM1      MOVE WK-C-VBAC-ERROR-CD TO WK-C-RPRCODE
+5Q2JE1*5Q1JM1      PERFORM D500-PROCESS-RPRRSN
+5Q2JE1*5Q1JM1           THRU D599-PROCESS-RPRRSN-EX
 
                     END-IF
                 END-IF.
@@ -1209,18 +1201,18 @@ GP3A00*--                Line3: *blank
 GP3A00*--                Line4: *blank
 GP3A00*--                Line5: *blank
 GP3A00*--and proceed with BAU STP processing.
-GP3A00
+GP3A00 
 GP3A00           INITIALIZE WK-C-VTAG57-RECORD.
 GP3A00           MOVE TAG57-OPT TO WK-C-VTAG57-OPTION.
-GP3A00
+GP3A00 
 GP3A00*--For MT202, validate on Tag57D ONLY.
 GP3A00           IF TAG57-OPT = "C"
 GP3A00           AND TFSSTPL-SWFTMGTY = "202"
 GP3A00               GO TO D699-EVAL-TAG57-CD-EX
 GP3A00           END-IF.
-GP3A00
+GP3A00 
 
-GP3A00
+GP3A00 
 GP3A00*----------------------------------------------------------------*
 GP3A00*--Tag57C:
 GP3A00       IF   TAG57-OPT = "C"
@@ -1230,7 +1222,7 @@ GP3A00           ELSE
 GP3A00               MOVE TAG57-PTID     TO   WK-C-VTAG57-INFO(1)
 GP3A00           END-IF
 GP3A00       END-IF.
-GP3A00
+GP3A00 
 GP3A00*----------------------------------------------------------------*
 GP3A00*--Tag57D:
 GP3A00       IF   TAG57-OPT = "D"
@@ -1245,20 +1237,20 @@ GP3A01*GP3A00       MOVE TAG57-LINE-4   TO   WK-C-VTAG57-INFO(4)
 GP3A01*GP3A00       MOVE TAG57-LINE-5   TO   WK-C-VTAG57-INFO(5)
 GP3A00           END-IF
 GP3A00       END-IF.
-GP3A00
+GP3A00 
 GP3A00       MOVE TFSSTPL-BNKNENTTY     TO   WK-C-VTAG57-I-BNKNENTTY.
-GP3A00
+GP3A00 
 GP3A00*----------------------------------------------------------------*
 GP3A00*--Check Tag57 if either Lines 1-5 matches Tag validation table.
 GP3A00       CALL "TRFVTAG57" USING   WK-C-VTAG57-RECORD.
 GP3A00       CANCEL "TRFVTAG57".
-GP3A00
+GP3A00 
 GP3A00       IF   WK-C-VTAG57-ERROR-CD = SPACES
 GP3A00           CONTINUE
 GP3A00       ELSE
 GP3A00           GO TO D699-EVAL-TAG57-CD-EX
 GP3A00       END-IF.
-GP3A00
+GP3A00 
 GP3A00*----------------------------------------------------------------*
 GP3A00*--If it match, override w/ Tag57A:<Own BIC> (parameterized)
 GP3A00       IF   WK-C-VTAG57-VALID = "Y"
@@ -1276,36 +1268,36 @@ GP3A00*----------------------------------------------------------------*
 GP3A00       EXIT.
 5Q1JM1 D500-PROCESS-RPRRSN SECTION.
 5Q1JM1 D500-ENTRY.
-5Q1JM1
+5Q1JM1 
 
-      MOVE WK-VTE2-PARALNO     TO WK-C-RRSN-QUENUM.
-      MOVE WK-VTE2-SEQMUN      TO WK-C-RRSN-QUESUF.
-      MOVE WK-C-TRNNO          TO WK-C-RRSN-TRNNO.
-      MOVE WK-C-FUNCTID        TO WK-C-RRSN-FUNCTID.
-      MOVE WK-C-SEGCDE         TO WK-C-RRSN-SEGCDE.
-      MOVE SPACES              TO WK-C-RRSN-SEGDESC.
-      MOVE WK-N-STAFFIND       TO WK-C-RRSN-STAFFIND.
-      MOVE WK-C-ACCNO          TO WK-C-RRSN-ACCNO.
-      MOVE WK-C-QRATE          TO WK-C-RRSN-QRATE.
-      MOVE WK-N-SYSDTE         TO WK-C-RRSN-RPRDTE.
+          MOVE WK-VTE2-PARALNO     TO WK-C-RRSN-QUENUM.
+          MOVE WK-VTE2-SEQMUN      TO WK-C-RRSN-QUESUF.
+          MOVE WK-C-TRNNO          TO WK-C-RRSN-TRNNO.
+          MOVE WK-C-FUNCTID        TO WK-C-RRSN-FUNCTID.
+          MOVE WK-C-SEGCDE         TO WK-C-RRSN-SEGCDE.
+          MOVE SPACES              TO WK-C-RRSN-SEGDESC.
+          MOVE WK-N-STAFFIND       TO WK-C-RRSN-STAFFIND.
+          MOVE WK-C-ACCNO          TO WK-C-RRSN-ACCNO.
+          MOVE WK-C-QRATE          TO WK-C-RRSN-QRATE.
+          MOVE WK-N-SYSDTE         TO WK-C-RRSN-RPRDTE.
       *     MOVE WK-C-RPRCODE        TO WK-C-RRSN-RSNCDE.
-      IF WK-C-RPRCODE = SPACE
-      MOVE "RSN9999"           TO WK-C-RRSN-RSNCDE
-      ELSE
-      MOVE WK-C-RPRCODE        TO WK-C-RRSN-RSNCDE
-      END-IF.
-      
-      MOVE SPACES              TO WK-C-RRSN-RSNDESC.
-      MOVE WK-C-RPRPGM         TO WK-C-RRSN-RPRPGM.
-      CALL "TRFGRRSN" USING WK-C-RRSN-RECORD.
-      
+          IF WK-C-RPRCODE = SPACE
+             MOVE "RSN9999"           TO WK-C-RRSN-RSNCDE
+          ELSE
+             MOVE WK-C-RPRCODE        TO WK-C-RRSN-RSNCDE
+          END-IF.
+       
+          MOVE SPACES              TO WK-C-RRSN-RSNDESC.
+          MOVE WK-C-RPRPGM         TO WK-C-RRSN-RPRPGM.
+          CALL "TRFGRRSN" USING WK-C-RRSN-RECORD.
+       
       D599-PROCESS-RPRRSN-EX.
-      EXIT.
-      EJECT
-      
-Z000-END-PROGRAM.
-      CLOSE TFSSPL
-            TFSBNKAC
-ID1VKE      TFSBNKET
-            TFSCLSYS.
-      EXIT PROGRAM.
+          EXIT.
+          EJECT
+       
+       Z000-END-PROGRAM.
+           CLOSE TFSSPL
+                 TFSBNKAC
+ID1VKE           TFSBNKET
+                 TFSCLSYS.
+           EXIT PROGRAM.
