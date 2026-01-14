@@ -273,6 +273,18 @@ fn preprocess_line(
         return (String::new(), fixes, warnings);
     }
 
+    // Convert EJECT and SKIP compiler directives to comments
+    // These are listing control directives that tree-sitter doesn't understand
+    let trimmed = line.trim();
+    let upper_trimmed = trimmed.to_uppercase();
+    if upper_trimmed == "EJECT"
+        || upper_trimmed.starts_with("SKIP")
+        || upper_trimmed == "EJECT."
+    {
+        // Convert to a comment line
+        return (format!("      * {}", trimmed), fixes, warnings);
+    }
+
     // Get current columns
     let cols_1_6: String = if len >= 6 {
         chars[0..6].iter().collect()
